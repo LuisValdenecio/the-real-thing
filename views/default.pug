@@ -1,0 +1,21 @@
+- var static = true
+doctype html
+include ../partials/banner.pug
+
+html(lang='en')
+  head
+    base(href=base)
+    include ./head.pug
+    block styles
+  body.app.header-fixed.sidebar-fixed.aside-menu-fixed.sidebar-lg-show
+    include ./header.pug
+    .app-body
+      include ./sidebar.pug
+      main(class='main')
+        include ./breadcrumb.pug
+        .container-fluid
+          block view
+
+      include ./aside.pug
+    include ./footer.pug
+    include ./scripts.pug

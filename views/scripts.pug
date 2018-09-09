@@ -1,0 +1,17 @@
+// CoreUI and necessary plugins
+script(src='public/jquery/dist/jquery.min.js')
+script(src='public/popper.js/dist/umd/popper.min.js')
+script(src='public/bootstrap/dist/js/bootstrap.min.js')
+script(src='public/pace-progress/pace.min.js')
+script(src='public/perfect-scrollbar/dist/perfect-scrollbar.min.js')
+script(src='public/@coreui/coreui/dist/js/coreui.min.js')
+script(src='public/js/src/userRegistrationJs.js')
+
+block scripts
+
+if ajax
+  script.
+    $('#ui-view').ajaxLoad();
+    $(document).ajaxComplete(function() {
+      Pace.restart()
+    });

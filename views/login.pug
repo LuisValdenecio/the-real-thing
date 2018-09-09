@@ -1,20 +1,88 @@
-include partials/header
+- var static = true
+doctype html
 
-div.container
-	div.row
-		.col-md-4.offset-md-4#loginBox
-			div.account-wall
-			form(class='form-signin', action='/login', method='POST')
-				input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
-				input(type='password', name='password' class='form-control', placeholder='Password', required)
-				input(type='checkbox', name='remember', placeholder='Remember me')
-				|   Remember me
-				button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
-				span.clearfix
-				
-			a(href='/join', class='text-center new-account') Create an account
+//
+  * CoreUI - Free Bootstrap Admin Template
+  * Sitema de gestão Escolar ValdisaPro
+  * Copyright (c) 2018 Todos os direitos Reservados
+="\n"
+
+html(lang="pt")
+  head
+    base(href=base)
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    meta(name='description', content='CoreUI - Open Source Bootstrap Admin Template')
+    meta(name='author', content='Łukasz Holeczek')
+    meta(name='keyword', content='Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard')
+    title Login de usuário
+
+    // Icons
+    link(href='public/@coreui/icons/css/coreui-icons.min.css', rel='stylesheet')
+    link(href='public/flag-icon-css/css/flag-icon.min.css', rel='stylesheet')
+    link(href='public/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='public/simple-line-icons/css/simple-line-icons.css', rel='stylesheet')
+
+    // Main styles for this application
+    link(href='public/css/style.css', rel='stylesheet')
+    link(href='public/pace-progress/css/pace.min.css', rel='stylesheet')
+
+    block styles
+
+  body.app.flex-row.align-items-center
+    block view
 
 
-					
-br
-include partials/footer
+    block view
+  .container
+    .row.justify-content-center
+      .col-md-8
+        .card-group
+          .card.p-4
+            .card-body
+              h1 Login
+              p.text-muted Entre em sua conta
+              form(action='/login', method='POST')
+               .input-group.mb-3
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-user
+                input.form-control(type='text', placeholder='Email do Usuario', name='username')
+               .input-group.mb-4
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-lock
+                input.form-control(type='password', placeholder='Palavra passe', name='password')
+               .row
+                .col-6
+                  button.btn.btn-primary.px-4(type='submit') Entrar
+                .col-6.text-right
+                  button.btn.btn-link.px-0(type='button') Esqueceu-se da passe?
+          .card.text-white.bg-primary.py-5.d-md-down-none(style='width:44%')
+            .card-body.text-center
+              div
+                h2 Cadastro
+                p
+                  | Uma conta é um meio ou canal de comunicação entre as suas necessidades e toda a informação disponível na base de dados
+                  | Crie uma e trabalhe de forma cómoda e segura
+                  
+                  a(href='/registar', style="color:red") Crie uma conta
+
+    // CoreUI and necessary plugins
+    script(src='node_modules/jquery/dist/jquery.min.js')
+    script(src='node_modules/popper.js/dist/umd/popper.min.js')
+    script(src='node_modules/bootstrap/dist/js/bootstrap.min.js')
+    script(src='node_modules/pace-progress/pace.min.js')
+    script(src='node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js')
+    script(src='node_modules/@coreui/coreui/dist/js/coreui.min.js')
+
+    block scripts
+
+    if ajax
+      script.
+        $('#ui-view').ajaxLoad();
+        $(document).ajaxComplete(function() {
+          Pace.restart()
+        });

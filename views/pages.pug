@@ -1,0 +1,13 @@
+- var static = true
+doctype html
+include ./banner.pug
+
+html(lang="pt")
+  head
+    base(href=base)
+    include ./head.pug
+    block styles
+  body.app.flex-row.align-items-center
+    block view
+
+    include ./scripts.pug
