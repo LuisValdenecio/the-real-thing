@@ -332,6 +332,9 @@ var brandBoxChart4 = new Chart($('#social-box-chart-4'), {
 /*****************************************************************
 All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
+const socket = io();
+
+socket.emit('init', 'Initialization');
 
 const objectToHTML = function(obj) {
   const element = document.createElement(obj.tag)
@@ -369,158 +372,158 @@ const objectToHTML = function(obj) {
   return element
 }
 
-var table = document.querySelector("table"),
-    counter = 1,
-    name = "Luís Valdenêncio";
-for (var x = 0; Number(table.attributes[1].value) > x; x++) {
-    table.children[1].appendChild(objectToHTML(
-      {
-        tag: 'tr',
-        children : [
-          {
-          tag: 'td',
-          attr: {
-            class: "text-center"
-          },
-          children : {
-            tag : "div",
+var table = document.querySelector("table");
+socket.on('students', data=>{
+  for (var x = 0; Number(table.attributes[1].value) > x; x++) {
+      table.children[1].appendChild(objectToHTML(
+        {
+          tag: 'tr',
+          children : [
+            {
+            tag: 'td',
             attr: {
-              class : "avatar"
+              class: "text-center"
             },
-            children : [
-              {
-                tag : "img",
-                attr : {
-                  class : "img-avatar",
-                  src : ""
-                }
+            children : {
+              tag : "div",
+              attr: {
+                class : "avatar"
               },
-              {
-                tag : "span",
-                attr : {
-                  class : "avatar-status badge-success"
-                }
-              }]
-            }
-          },
-          {
-            tag : 'td',
-            children : [
-              {
-                tag : "div",
-                content : `${counter} | ${name}`
-              },
-              {
-                tag : "div",
-                attr: {
-                  class : "small text-muted"
+              children : [
+                {
+                  tag : "img",
+                  attr : {
+                    class : "img-avatar",
+                    src : `public/img/avatars/${x+1}.png`
+                  }
                 },
-                children : {
+                {
                   tag : "span",
-                  content : "Nasce Em: Jan 1, 2007"
-                }
-              }
-            ]
-          },
-          {
-            tag : "td",
-            attr : {
-              class : "text-center"
-            },
-            children : {
-              tag : "i",
-              content : "",
-              attr : {
-                class : "flag-icon flag-icon-us h4 mb-0",
-                id : "us",
-                title : "us"
-              }
-            }
-          },
-          {
-            tag : "td",
-            children : [
-              {
-                tag : "div",
-                attr : {
-                  class : "clearfix"
-                },
-                children : [
-                  {
-                    tag : "div",
-                    attr : {
-                        class : "float-left"
-                    },
-                    children : {
-                      tag : "strong",
-                      content : "50%"
-                    }
-                  },
-                  {
-                    tag : "div",
-                    attr : {
-                      class : "float-right"
-                    },
-                    children : {
-                      tag : "small",
-                      content : "Jun 11, 2005 - Jul 10, 2015",
-                      attr : {
-                        class : "text-muted"
-                      }
-                    }
-                  },
-                ]
-              },
-              {
-                tag : "div",
-                attr : {
-                  class : "progress progress-xs"
-                },
-                children : {
-                  tag : "div",
                   attr : {
-                    class : "progress-bar bg-success",
-                    role : "progressbar",
-                    style : "width : 50%",
-                    "aria-valuenow" : "50",
-                    "aria-valuemin" : "0",
-                    "aria-valuemax" : "100"
+                    class : "avatar-status badge-success"
                   }
-                }
+                }]
               }
-            ]
-          },
-          {
-            tag : "td",
-            attr : {
-              class : "text-center"
             },
-            children : {
-              tag : "i",
-              attr : {
-                class : "fa fa-cc-mastercard",
-                style : "font-size:24px"
-              }
-            }
-          },
-          {
-            tag : "td",
-            children : [
-              {
+            {
+              tag : 'td',
+              children : [
+                {
                   tag : "div",
-                  content : "Última Aula",
-                  attr : {
+                  content : `${x+1} | ${data[x].nome} ${data[x].sobrenome}`
+                },
+                {
+                  tag : "div",
+                  attr: {
                     class : "small text-muted"
+                  },
+                  children : {
+                    tag : "span",
+                    content : "Nasce Em: Jan 1, 2007"
                   }
+                }
+              ]
+            },
+            {
+              tag : "td",
+              attr : {
+                class : "text-center"
               },
-              {
-                tag : "string",
-                content : "10 Seg Atraz"
+              children : {
+                tag : "i",
+                content : "",
+                attr : {
+                  class : "flag-icon flag-icon-us h4 mb-0",
+                  id : "us",
+                  title : "us"
+                }
               }
-            ]
-          }
-        ]
-      }
-    ));
-    counter++;
-}
+            },
+            {
+              tag : "td",
+              children : [
+                {
+                  tag : "div",
+                  attr : {
+                    class : "clearfix"
+                  },
+                  children : [
+                    {
+                      tag : "div",
+                      attr : {
+                          class : "float-left"
+                      },
+                      children : {
+                        tag : "strong",
+                        content : `${Math.floor(Math.random(1,10)*100)}`
+                      }
+                    },
+                    {
+                      tag : "div",
+                      attr : {
+                        class : "float-right"
+                      },
+                      children : {
+                        tag : "small",
+                        content : "Jun 11, 2005 - Jul 10, 2015",
+                        attr : {
+                          class : "text-muted"
+                        }
+                      }
+                    },
+                  ]
+                },
+                {
+                  tag : "div",
+                  attr : {
+                    class : "progress progress-xs"
+                  },
+                  children : {
+                    tag : "div",
+                    attr : {
+                      class : "progress-bar bg-success",
+                      role : "progressbar",
+                      style : `width : ${Math.floor(Math.random(1,10)*100)}%`,
+                      "aria-valuenow" : "50",
+                      "aria-valuemin" : "0",
+                      "aria-valuemax" : "100"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              tag : "td",
+              attr : {
+                class : "text-center"
+              },
+              children : {
+                tag : "i",
+                attr : {
+                  class : "fa fa-cc-mastercard",
+                  style : "font-size:24px"
+                }
+              }
+            },
+            {
+              tag : "td",
+              children : [
+                {
+                    tag : "div",
+                    content : "Última Aula",
+                    attr : {
+                      class : "small text-muted"
+                    }
+                },
+                {
+                  tag : "string",
+                  content : "10 Seg Atraz"
+                }
+              ]
+            }
+          ]
+        }
+      ));
+  }
+
+});

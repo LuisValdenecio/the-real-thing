@@ -1,6 +1,6 @@
 // ----- On render -----
-$(function() {
 
+$(function() {
   $('#profile').addClass('dragging').removeClass('dragging');
 });
 
@@ -16,7 +16,6 @@ $('#profile').on('dragover', function() {
     console.log(file);
 
     var reader = new FileReader();
-
     //attach event handlers here...
 
     reader.readAsDataURL(file);
@@ -25,7 +24,6 @@ $('#profile').on('dragover', function() {
       $('#profile').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
 
     }
-
   }
 })
 $('#profile').on('click', function(e) {

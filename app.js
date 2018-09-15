@@ -22,6 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/public', express.static(__dirname + '/public'));
+
 app.locals.basedir = path.join(__dirname, 'views');
 
 app.use(flash());
@@ -30,7 +31,10 @@ app.use(bodyParser());
 app.set('view engine', 'pug');
 app.set('view options', { layout: false });
 
-require('./lib/routes.js')(app);
+const server = app.listen(PORT, ()=> {
+  console.log('Node listening on port %s', PORT);
+});
 
-app.listen(PORT);
-console.log('Node listening on port %s', PORT);
+const io = require("socket.io").listen(server);
+
+require('./lib/routes.js')(app,io);
