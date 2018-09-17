@@ -372,8 +372,11 @@ const objectToHTML = function(obj) {
   return element
 }
 
-var table = document.querySelector("table");
-socket.on('students', data=>{
+var table = document.querySelector("table"),
+    app = document.querySelector(".app-body");
+
+socket.on('students', data => {
+
   for (var x = 0; Number(table.attributes[1].value) > x; x++) {
       table.children[1].appendChild(objectToHTML(
         {
@@ -510,20 +513,77 @@ socket.on('students', data=>{
               children : [
                 {
                     tag : "div",
-                    content : "Última Aula",
                     attr : {
-                      class : "small text-muted"
+                      class : "small text-muted text-right"
                     }
                 },
                 {
-                  tag : "string",
-                  content : "10 Seg Atraz"
+                  tag : "button",
+                  content : "Resultados",
+                  attr : {
+                    class : "btn btn-primary btn-lg",
+                    "data-toggle" : "modal",
+                    "data-target" : `#modal${x}`
+                  }
                 }
               ]
             }
           ]
         }
       ));
+
+      app.appendChild(objectToHTML(
+        {
+          tag : "div",
+          attr : {
+            class : "modal fade",
+            id : `modal${x}`,
+            tabindex : "-1",
+            role : "dialog",
+            "aria-labelledby" : "myModalLabel",
+            "aria-hidden" : "true"
+          },
+          children :
+            {
+                tag : "div",
+                attr : {
+                  class : "modal-dialog"
+                },
+                children : {
+                  tag : "div",
+                  attr : {
+                    class : "modal-content"
+                  },
+                  children : [
+                    {
+                      tag : "div",
+                      content : `${data[x].nome} ${data[x].sobrenome}`,
+                      attr : {
+                        class : "modal-header"
+                      }
+                    },
+                    {
+                      tag : "div",
+                      attr : {
+                        class : "modal-body"
+                      }
+                    },
+                    {
+                      tag : "div",
+                      attr : {
+                        class : "modal-footer"
+                      }
+                    }
+                  ]
+                }
+            }
+        }
+      ));
+
+
   }
+
+
+
 
 });
