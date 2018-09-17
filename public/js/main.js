@@ -519,7 +519,7 @@ socket.on('students', data => {
                 },
                 {
                   tag : "button",
-                  content : "Resultados",
+                  content : "Relatório",
                   attr : {
                     class : "btn btn-primary btn-lg",
                     "data-toggle" : "modal",
