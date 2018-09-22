@@ -397,7 +397,7 @@ socket.on('students', data => {
                   tag : "img",
                   attr : {
                     class : "img-avatar",
-                    src : `public/img/avatars/${x+1}.png`
+                    src : `public/photo-storage/${data[x].foto}`
                   }
                 },
                 {
