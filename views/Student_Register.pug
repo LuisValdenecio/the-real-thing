@@ -18,12 +18,13 @@ html(lang='en')
           label Click para carregar uma fotografia
         .editable
           i.fa.fa-pencil
-          form(action='/Estudante', method='POST', role="form")
+          form(action="/Estudante", method="POST", enctype='multipart/form-data')
             input(type='text', placeholder='Primeiro nome', name='firstName', required)
-            input(type='text', placeholder='Apelido', name='lastName', required)                                                
+            input(type='text', placeholder='Apelido', name='lastName', required)
             input(type='text', placeholder='Nome da Turma', name='classname', required)
-            button.btn.btn-primary.px-4(type='submit') Salvar
+            input#mediaFile(type='file', name='imageupload')
+            button.btn.btn-primary.px-4(type='submit', name='uploadimage', value='Upload Image') Salvar
 
-        input#mediaFile(type='file')
+
 
     include ./scripts.pug
