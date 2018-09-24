@@ -334,6 +334,18 @@ All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
 const socket = io();
 
+nacionalidade = {
+  Angolana : "flag-icon-ao",
+  Portuguesa : "",
+  Francesa : "",
+  Americana : "",
+  Brasileira : "",
+  "Moçambicana" : "",
+  "Alemã" : "",
+  Holandesa : "",
+  Checa : ""
+};
+
 const objectToHTML = function(obj) {
   const element = document.createElement(obj.tag)
   if (obj.content) element.innerHTML = obj.content
@@ -434,7 +446,7 @@ socket.on('students', function(data) {
                 tag : "i",
                 content : "",
                 attr : {
-                  class : "flag-icon flag-icon-ao h4 mb-0",
+                  class : `flag-icon ${nacionalidade[`Angolana`]} h4 mb-0`,
                   id : "us",
                   title : "us"
                 }
