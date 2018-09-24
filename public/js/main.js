@@ -334,8 +334,6 @@ All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
 const socket = io();
 
-socket.emit('init', 'Initialization');
-
 const objectToHTML = function(obj) {
   const element = document.createElement(obj.tag)
   if (obj.content) element.innerHTML = obj.content
@@ -375,7 +373,7 @@ const objectToHTML = function(obj) {
 var table = document.querySelector("table"),
     app = document.querySelector(".app-body");
 
-socket.on('students', data => {
+socket.on('students', function(data) {
 
   for (var x = 0; Number(table.attributes[1].value) > x; x++) {
       table.children[1].appendChild(objectToHTML(
@@ -436,7 +434,7 @@ socket.on('students', data => {
                 tag : "i",
                 content : "",
                 attr : {
-                  class : "flag-icon flag-icon-us h4 mb-0",
+                  class : "flag-icon flag-icon-ao h4 mb-0",
                   id : "us",
                   title : "us"
                 }
@@ -521,7 +519,7 @@ socket.on('students', data => {
                   tag : "button",
                   content : "Relatório",
                   attr : {
-                    class : "btn btn-primary btn-lg",
+                    class : "btn btn-primary btn-sm",
                     "data-toggle" : "modal",
                     "data-target" : `#modal${x}`
                   }
