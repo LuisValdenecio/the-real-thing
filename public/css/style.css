@@ -1533,12 +1533,10 @@ pre code {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #c8ced3;
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #c8ced3;
 }
 
 .table tbody + tbody {

@@ -12,7 +12,10 @@ html(lang='en')
     .app-body
       include ./sidebar.pug
       main(class='main')
-        include ./breadcrumb.pug
+        - if (path == "account")
+          include ./breadcrumb.pug
+        - if (path == "faltas")
+          include ./breadcrumbSubject.pug
         .container-fluid
           block view
 
