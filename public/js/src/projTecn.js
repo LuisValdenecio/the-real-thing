@@ -81,7 +81,7 @@ socket.on('faltas', function(data) {
     }
 });
 
-socket.on('professores', function(data) {
+socket.on('livroPonto', function(data) {
   livroInfos.children[0].appendChild(objectToHTML({
     tag : "div",
     attr : {
@@ -122,7 +122,7 @@ socket.on('professores', function(data) {
                   },
                   {
                     tag : "strong",
-                    content : data[0].nome_turma,
+                    content : `${data[2].classname}`,
                     attr : {
                       class : "h4"
                     }
@@ -217,7 +217,7 @@ socket.on('professores', function(data) {
             {
               tag : "div",
               attr : {
-                class : "col-sm-6"
+                class : "col-sm-5"
               },
               children : {
                 tag : "div",
@@ -237,7 +237,7 @@ socket.on('professores', function(data) {
                   },
                   {
                     tag : "strong",
-                    content : `Matemática`,
+                    content : subjectUtf[data[1].subject_name],
                     attr : {
                       class : "h4"
                     }
@@ -265,7 +265,7 @@ socket.on('professores', function(data) {
             {
               tag : "div",
               attr : {
-                class : "col-sm-6"
+                class : "col-sm-7"
               },
               children : {
                 tag : "div",
@@ -285,7 +285,7 @@ socket.on('professores', function(data) {
                   },
                   {
                     tag : "strong",
-                    content : `Tito Marques`,
+                    content : data[0].nome_professor,
                     attr : {
                       class : "h4"
                     }
@@ -322,169 +322,5 @@ socket.on('professores', function(data) {
     ]
 
   }));
-
-});
-
-socket.on('students', function(data) {
-
-  for (var x = 0; x < data.length; x++) {
-      table.children[1].appendChild(objectToHTML(
-        {
-          tag: 'tr',
-          children : [
-            {
-            tag: 'td',
-            attr: {
-              class: "text-center"
-            },
-            children : {
-              tag : "div",
-              attr: {
-                class : "avatar"
-              },
-              children : [
-                {
-                  tag : "img",
-                  attr : {
-                    class : "img-avatar",
-                    src : `public/photo-storage/${data[x].foto}`
-                  }
-                },
-                {
-                  tag : "span",
-                  attr : {
-                    class : "avatar-status badge-success"
-                  }
-                }]
-              }
-            },
-            {
-              tag : 'td',
-              children : [
-                {
-                  tag : "div",
-                  content : `${x+1} | ${data[x].nome} ${data[x].sobrenome}`
-                },
-                {
-                  tag : "div",
-                  attr: {
-                    class : "small text-muted"
-                  },
-                  children : {
-                    tag : "span",
-                    content : "Nasce Em: Jan 1, 2007"
-                  }
-                }
-              ]
-            },
-            {
-              tag : "td",
-              attr : {
-                class : "text-center"
-              },
-              children : {
-                tag : "i",
-                content : "",
-                attr : {
-                  class : `flag-icon flag-icon-ao h4 mb-0`,
-                  id : "us",
-                  title : "us"
-                }
-              }
-            },
-            {
-              tag : "td",
-              children : [
-                {
-                  tag : "div",
-                  attr : {
-                    class : "clearfix"
-                  },
-                  children : [
-                    {
-                      tag : "div",
-                      attr : {
-                          class : "float-left"
-                      },
-                      children : {
-                        tag : "strong",
-                        content : `${Math.floor(Math.random(1,10)*100)}`
-                      }
-                    },
-                    {
-                      tag : "div",
-                      attr : {
-                        class : "float-right"
-                      },
-                      children : {
-                        tag : "small",
-                        content : "Jun 11, 2005 - Jul 10, 2015",
-                        attr : {
-                          class : "text-muted"
-                        }
-                      }
-                    },
-                  ]
-                },
-                {
-                  tag : "div",
-                  attr : {
-                    class : "progress progress-xs"
-                  },
-                  children : {
-                    tag : "div",
-                    attr : {
-                      class : "progress-bar bg-success",
-                      role : "progressbar",
-                      style : `width : ${Math.floor(Math.random(1,10)*100)}%`,
-                      "aria-valuenow" : "50",
-                      "aria-valuemin" : "0",
-                      "aria-valuemax" : "100"
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              tag : "td",
-              attr : {
-                class : "text-center"
-              },
-              children : {
-                tag : "i",
-                attr : {
-                  class : "fa fa-cc-mastercard",
-                  style : "font-size:24px"
-                }
-              }
-            },
-            {
-              tag : "td",
-              children : [
-                {
-                    tag : "div",
-                    attr : {
-                      class : "small text-muted text-right"
-                    }
-                },
-                {
-                  tag : "button",
-                  content : "Relatório",
-                  attr : {
-                    class : "btn btn-primary btn-sm",
-                    "data-toggle" : "modal",
-                    "data-target" : `#modal${x}`
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ));
-
-  }
-
-
-
 
 });

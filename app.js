@@ -31,10 +31,16 @@ app.use(bodyParser());
 app.set('view engine', 'pug');
 app.set('view options', { layout: false });
 
+var first,
+    second,
+    third,
+    fourth;
+
 const server = app.listen(PORT, ()=> {
   console.log('Node listening on port %s', PORT);
 });
 
 const io = require("socket.io").listen(server);
 
-require('./lib/routes.js')(app,io);
+var application = require('./lib/routes.js');
+application.app(app,io);

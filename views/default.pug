@@ -14,7 +14,7 @@ html(lang='en')
       main(class='main')
         - if (path == "account")
           include ./breadcrumb.pug
-        - if (path == "faltas")
+        - if (path == "faltas" || path == "Proj.Tecn" || path == "A.E.F." || path == "Cont.Financeira" || path == "Empreend" || path == "Socio" || path == "Cont.Analitica" || path == "Mat" )
           include ./breadcrumbSubject.pug
         .container-fluid
           block view
