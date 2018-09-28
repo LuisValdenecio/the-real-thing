@@ -41,25 +41,33 @@ var orderedList = document.querySelector(".breadcrumb");
 var livroInfos = document.querySelector(".bookInfo");
 
 var subjectUtf = {
-  "A.E.F." : "AEF",
+  "A.E.F" : "AEF",
   "Cont.Analitica":"Cont Analítica",
   "Cont.Financeira":"Cont Financeira",
-  "D.C.C.":"DCC",
+  "D.C.C":"DCC",
   "D.L.F":"",
   "Empreend":"Empreend",
   "Fisica":"Física",
   "Mat":"Matemática",
-  "O.G.I.":"OGI",
-  "P.O.L.":"POL",
+  "O.G.I":"OGI",
+  "P.O.L":"POL",
   "Proj.Tecn":"Proj Técn",
-  "S.E.A.C.":"SEAC",
+  "S.E.A.C":"SEAC",
   "Socio":"Sociologia",
-  "T.C.C.":"TCC",
-  "T.C.O-I.E.U.":"TCO - IEU",
-  "T.C.O.E.":"TCOE",
-  "T.L.P.":"TLP",
-  "T.R.E.I.":"TREI",
-  "Tec-de-Topografia":"Téc de Topografia"
+  "T.C.C":"TCC",
+  "T.C.O-I.E.U":"TCO - IEU",
+  "T.C.O.E":"TCOE",
+  "T.L.P":"TLP",
+  "T.R.E.I":"TREI",
+  "Tec-de-Topografia":"Téc de Topografia",
+  "Ed.Fisica": "Ed. Física",
+  "T.C.E" : "TCE",
+  "I.A.C" : "IAC",
+  "L.Inglesa" : "Ingles",
+  "Economia" : "Economia",
+  "FAI" : "FAI",
+  "L.Portuguesa" : "L.Portuguesa",
+  "Ad.Empresas" : "Adm. Empresas"
 };
 
 socket.on('faltas', function(data) {
@@ -74,7 +82,7 @@ socket.on('faltas', function(data) {
             tag : "a",
             content : `${subjectUtf[`${data[index].nome_disciplina}`]}`,
             attr : {
-              href : `${"/"}${data[index].nome_disciplina}`
+              href : `${"/"}${data[index].nome_disciplina}${"."}`
             }
           }
         }));

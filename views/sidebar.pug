@@ -2,13 +2,12 @@
   nav.sidebar-nav
     ul.nav
       li.nav-item
-        a.nav-link(href=ajax ? 'main.html' : 'index.html')
-          i.nav-icon.icon-speedometer
-          |  Dashboard
-          span.badge.badge-primary NEW
+        a.nav-link(href=ajax ? 'main.html' : '/account')
+          i.nav-icon.icon-home
+          |  Início
       if !starter
         li.nav-title
-          | Theme
+          | Serviços
         li.nav-item
           a.nav-link(href="/faltas")
             i.nav-icon.icon-note

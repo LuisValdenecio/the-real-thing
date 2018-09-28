@@ -37,10 +37,9 @@ var first,
     fourth;
 
 const server = app.listen(PORT, ()=> {
-  console.log('Node listening on port %s', PORT);
 });
 
 const io = require("socket.io").listen(server);
 
 var application = require('./lib/routes.js');
-application.app(app,io);
+application.app(app,io, first, second, third, fourth);
