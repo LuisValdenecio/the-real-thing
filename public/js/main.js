@@ -547,7 +547,7 @@ socket.on('students', function(data) {
           tag : "div",
           attr : {
             class : "modal fade",
-            id : `modal${x}`,
+            id : `modal${x} largeModal`,
             tabindex : "-1",
             role : "dialog",
             "aria-labelledby" : "myModalLabel",
@@ -557,7 +557,8 @@ socket.on('students', function(data) {
             {
                 tag : "div",
                 attr : {
-                  class : "modal-dialog"
+                  class : "modal-dialog modal-lg",
+                  role : "document"
                 },
                 children : {
                   tag : "div",
@@ -592,8 +593,69 @@ socket.on('students', function(data) {
 
 
   }
+});
 
+var ulList = document.querySelector(".subjectList");
 
+var subjectUtf = {
+  "A.E.F" : "AEF",
+  "Cont.Analitica":"Cont Analítica",
+  "Cont.Financeira":"Cont Financeira",
+  "D.C.C":"DCC",
+  "D.L.F":"",
+  "Empreend":"Empreend",
+  "Fisica":"Física",
+  "Mat":"Matemática",
+  "O.G.I":"OGI",
+  "P.O.L":"POL",
+  "Proj.Tecn":"Proj Técn",
+  "S.E.A.C":"SEAC",
+  "Socio":"Sociologia",
+  "T.C.C":"TCC",
+  "T.C.O-I.E.U":"TCO - IEU",
+  "T.C.O.E":"TCOE",
+  "T.L.P":"TLP",
+  "T.R.E.I":"TREI",
+  "Tec-de-Topografia":"Téc de Topografia",
+  "Ed.Fisica": "Ed. Física",
+  "T.C.E" : "TCE",
+  "I.A.C" : "IAC",
+  "L.Inglesa" : "Ingles",
+  "Economia" : "Economia",
+  "FAI" : "FAI",
+  "L.Portuguesa" : "L.Portuguesa",
+  "Ad.Empresas" : "Adm. Empresas"
+};
 
+socket.on('faltas', function(data) {
+  for (var index = 0; index < data.length; index++) {
+        //run the subject array and place each of them at the right place
+        ulList.appendChild(objectToHTML({
+          tag : "li",
+          attr : {
+            class : "nav-item"
+          },
+          children : {
+            tag : "a",
+            attr : {
+              class : "nav-link",
+              href : `${"/"}${data[index].nome_disciplina}${"."}`
+            },
+            children : [
+              {
+                tag : "i",
+                attr : {
+                  class : "nav-icon icon-pencil"
+                }
+              },
+              {
+                tag : "span",
+                content :  ` ${subjectUtf[`${data[index].nome_disciplina}`]}`
+              }
+            ]
 
+            //content : ` ${subjectUtf[`${data[index].nome_disciplina}`]}`
+          }
+        }));
+    }
 });

@@ -40,6 +40,7 @@ var table = document.querySelector("table");
 var orderedList = document.querySelector(".breadcrumb");
 var livroInfos = document.querySelector(".bookInfo");
 
+
 var subjectUtf = {
   "A.E.F" : "AEF",
   "Cont.Analitica":"Cont Analítica",

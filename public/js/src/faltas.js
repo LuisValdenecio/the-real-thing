@@ -496,3 +496,5 @@ socket.on('students', function(data) {
 
 
 });
+
+var theBar = document.querySelector(".breadcrumb");
