@@ -333,6 +333,18 @@ socket.on('professores', function(data) {
 
 });
 
+var newLabels = [
+  "Nome",
+  "Número",
+  "Falta Disciplinar",
+  "Falta por Ausência",
+  "Tempo "
+];
+
+for (var x = 1; x < table.children[0].children[0].children.length; x++) {
+    table.children[0].children[0].children[x].innerText = newLabels[x-1]
+}
+
 socket.on('students', function(data) {
 
   for (var x = 0; x < data.length; x++) {
@@ -402,6 +414,9 @@ socket.on('students', function(data) {
             },
             {
               tag : "td",
+              attr : {
+                class : "test"
+              },
               children : [
                 {
                   tag : "div",
@@ -492,9 +507,4 @@ socket.on('students', function(data) {
 
   }
 
-
-
-
 });
-
-var theBar = document.querySelector(".breadcrumb");

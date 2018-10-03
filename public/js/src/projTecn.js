@@ -39,9 +39,8 @@ const objectToHTML = function(obj) {
 var table = document.querySelector("table");
 var orderedList = document.querySelector(".breadcrumb");
 var livroInfos = document.querySelector(".bookInfo");
-
-
 var subjectUtf = {
+
   "A.E.F" : "AEF",
   "Cont.Analitica":"Cont Analítica",
   "Cont.Financeira":"Cont Financeira",
@@ -60,7 +59,7 @@ var subjectUtf = {
   "T.C.O.E":"TCOE",
   "T.L.P":"TLP",
   "T.R.E.I":"TREI",
-  "Tec-de-Topografia":"Téc de Topografia",
+  "Tec-de-Topografia":"Topografia",
   "Ed.Fisica": "Ed. Física",
   "T.C.E" : "TCE",
   "I.A.C" : "IAC",
@@ -90,7 +89,39 @@ socket.on('faltas', function(data) {
     }
 });
 
+var newLabels = [
+  "Nome",
+  "Ranking de Faltas",
+  "Falta Disciplinar",
+  "Falta por Ausência",
+  "Trimestre "
+];
+
+
+for (var x = 1; x < table.children[0].children[0].children.length; x++) {
+    table.children[0].children[0].children[x].innerText = newLabels[x-1]
+}
+
+livroInfos.appendChild(document.createElement("br"));
+livroInfos.appendChild(document.createElement("div"));
+livroInfos.appendChild(document.createElement("div"));
+
+livroInfos.children[4].appendChild(objectToHTML(
+  {
+    tag : "button",
+    content : "Marcar",
+      attr : {
+        class : "btn btn-primary btn-sm refresh-button"
+      }
+  }
+));
+
+var subjectNow;
+
 socket.on('livroPonto', function(data) {
+
+  subjectNow = data[1].subject_name;  // the current name of subject
+
   livroInfos.children[0].appendChild(objectToHTML({
     tag : "div",
     attr : {
@@ -248,7 +279,8 @@ socket.on('livroPonto', function(data) {
                     tag : "strong",
                     content : subjectUtf[data[1].subject_name],
                     attr : {
-                      class : "h4"
+                      class : "h4",
+                      id : "disciplina"
                     }
                   },
                   {
@@ -333,3 +365,161 @@ socket.on('livroPonto', function(data) {
   }));
 
 });
+
+
+livroInfos.children[5].appendChild(objectToHTML(
+  {
+    tag : "form",
+      attr : {
+        style : "display : none",
+        action : `${"/"}${`something`}${"."}`,
+        method : "POST",
+        class : "faltas-form"
+      }
+  }
+));
+
+socket.on('students', function(data) {
+
+  for (var x = 0; x < data.length; x++) {
+
+      // for student table
+      table.children[1].appendChild(objectToHTML(
+        {
+          tag: 'tr',
+          children : [
+            {
+            tag: 'td',
+            attr: {
+              class: "text-center"
+            },
+            children : {
+              tag : "div",
+              attr: {
+                class : "avatar"
+              },
+              children : [
+                {
+                  tag : "img",
+                  attr : {
+                    class : "img-avatar",
+                    src : `public/photo-storage/${data[x].foto}`
+                  }
+                },
+                {
+                  tag : "span",
+                  attr : {
+                    class : "avatar-status badge-success"
+                  }
+                }]
+              }
+            },
+            {
+              tag : 'td',
+              children : [
+                {
+                  tag : "div",
+                  content : `${x+1} | ${data[x].nome} ${data[x].sobrenome}`
+                },
+                {
+                  tag : "div",
+                  attr: {
+                    class : "small text-muted"
+                  },
+                  children : {
+                    tag : "span",
+                    content : "Nasce Em: Jan 1, 2007"
+                  }
+                }
+              ]
+            },
+            {
+              tag : "td",
+              attr : {
+                class : "text-center"
+              },
+              children : {
+                tag : "div",
+                attr : {
+                  class : `rankingHolder`
+                },
+                children : {
+                  tag : "span",
+                  content : "1"+"º",
+                  attr : {
+                    style : "font-weight :bold"
+                  }
+                }
+              }
+            },
+            {
+              tag : "td",
+              attr : {
+                class : "text-left"
+              },
+              children : {
+                tag : "input",
+                attr : {
+                  type : "text",
+                  class : "faltas-input-absence"
+                }
+              }
+            },
+            {
+                tag : "td",
+                attr : {
+                  class : "text-left"
+                },
+                children : {
+                  tag : "input",
+                  attr : {
+                    type : "text",
+                    class : "faltas-input-disrespect"
+                  }
+                }
+            },
+            {
+              tag : "td",
+              children : [
+                {
+                    tag : "div",
+                    attr : {
+                      class : "small text-muted text-right"
+                    }
+                },
+                {
+                  tag : "span",
+                  content : "3º",
+                  attr : {
+                    style : "font-weight : bold"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ));
+
+      // filling up the student form
+      livroInfos.children[5].children[0].appendChild(objectToHTML(
+        {
+          tag : "input",
+          attr : {
+            type : "text",
+            name : `${data[x].estudante_cod}`
+          }
+        }
+      ));
+  }
+
+});
+
+var refreshButton = document.querySelector(".refresh-button");
+refreshButton.onclick = function () {
+  for (var x = 0; x < document.querySelector(".faltas-form").children.length; x++) {
+      document.querySelector(".faltas-form").children[x].value = document.querySelectorAll(".faltas-input-absence")[x].value;  // testing
+  }
+
+  document.querySelector(".faltas-form").setAttribute("action", `${"/"}${subjectNow}${"."}`);
+    document.querySelector(".faltas-form").submit();  // submit the form
+}
