@@ -1,0 +1,54 @@
+    .header-title {
+				font-weight : bold;
+				color : lightgray;
+			}
+
+			.photo_holder {
+				text-align : center;
+				padding: 10px;
+			}
+
+			.photo_holder img {
+				border: solid 1px lightgray;
+				border-radius : 5%;
+			}
+
+			.name-holder h3 {
+				color : gray;
+        font-size: 35px;
+			}
+
+			.name-holder {
+				padding-bottom : 10px;
+        padding-top : 10px;
+			}
+
+			.modal-content {
+				border-radius : 0%;
+				border : none white;
+				width : 150%;
+				position: relative;
+				left : -185px;
+                top: 20px;
+			}
+
+      thead tr th {
+          font-weight : bold;
+          color : gray;
+      }
+
+			.modal-header {
+				border: none;
+                opacity: 1;
+			}
+
+			.label-holder {
+				color : lightgray;
+				text-align : center;
+				font-weight : bold;
+			}
+
+			.containers {
+				padding-left : 10px;
+
+			}
