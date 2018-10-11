@@ -538,9 +538,10 @@ socket.on('students', function(data) {
                   tag : "button",
                   content : "Relatório",
                   attr : {
-                    class : "btn btn-primary btn-sm",
+                    class : "btn btn-primary btn-sm reportStudent",
                     "data-toggle" : "modal",
-                    "data-target" : `#modal`
+                    "data-target" : `#modal`,
+                    "data-list" : x
                   }
                 }
               ]
@@ -549,14 +550,31 @@ socket.on('students', function(data) {
         }
       ));
 
+  }
+
+  document.querySelectorAll(".reportStudent").forEach((each)=> {
+    each.addEventListener('click', hi, false)
+  });
+
+  function hi() {
+    //console.log(this.getAttribute("data-list"));
+    //console.log(data[this.getAttribute("data-list")].nome);
+    //console.log(data[this.getAttribute("data-list")].sobrenome);
+    //console.log();
+
+    document.querySelector(".studentModal .modal-body .photo_holder img").src = "public/photo-storage/"+data[this.getAttribute("data-list")].foto;
+    document.querySelector(".studentModal .modal-body .name-holder h3").innerHTML = `${Number(this.getAttribute("data-list")) + 1} | ${data[this.getAttribute("data-list")].nome}  ${data[this.getAttribute("data-list")].sobrenome}`
+
 
   }
 
-  app.appendChild(objectToHTML(
-  modalUI(`${1} | ${data[1].nome} ${data[1].sobrenome}`, data[1].foto)
-  ));
+
 
 });
+
+app.appendChild(objectToHTML(
+  modalUI(`01 | Luis Valdenecio`, "01")
+));
 
 var ulList = document.querySelector(".subjectList");
 
