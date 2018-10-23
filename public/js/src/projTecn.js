@@ -94,7 +94,7 @@ var newLabels = [
   "Ranking de Faltas",
   "Falta Disciplinar",
   "Falta por Ausência",
-  "Trimestre "
+  "Falta por material "
 ];
 
 
@@ -455,46 +455,112 @@ socket.on('students', function(data) {
             {
               tag : "td",
               attr : {
-                class : "text-left"
+                class : "text-center"
               },
               children : {
-                tag : "input",
+                tag : "ul",
                 attr : {
-                  type : "text",
-                  class : "faltas-input-absence"
+                  class : "list"
+                },
+                children : {
+                  tag : "li",
+                  attr : {
+                    class : "list__item"
+                  },
+                  children : [
+                    {
+                      tag : "input",
+                      attr : {
+                        type : "radio",
+                        class : "radio-btn",
+                        name : `${x+1}`,
+                        id : "a-opt"
+                      }
+                    },
+                    {
+                      tag : "label",
+                      attr : {
+                        for : "a-opt",
+                        class : "label"
+                      }
+                    }
+                  ]
                 }
               }
             },
             {
-                tag : "td",
+              tag : "td",
+              attr : {
+                class : "text-center"
+              },
+              children : {
+                tag : "ul",
                 attr : {
-                  class : "text-left"
+                  class : "list"
                 },
                 children : {
-                  tag : "input",
+                  tag : "li",
                   attr : {
-                    type : "text",
-                    class : "faltas-input-disrespect"
-                  }
+                    class : "list__item_two"
+                  },
+                  children : [
+                    {
+                      tag : "input",
+                      attr : {
+                        type : "radio",
+                        class : "radio-btn-two",
+                        name : "choise",
+                        id : "a-opt"
+                      }
+                    },
+                    {
+                      tag : "label",
+                      attr : {
+                        for : "a-opt",
+                        class : "label-two"
+                      }
+                    }
+                  ]
                 }
+              }
+
+
             },
             {
               tag : "td",
-              children : [
-                {
-                    tag : "div",
-                    attr : {
-                      class : "small text-muted text-right"
-                    }
+              attr : {
+                class : "text-center"
+              },
+              children : {
+                tag : "ul",
+                attr : {
+                  class : "list"
                 },
-                {
-                  tag : "span",
-                  content : "3º",
+                children : {
+                  tag : "li",
                   attr : {
-                    style : "font-weight : bold"
-                  }
+                    class : "list__item"
+                  },
+                  children : [
+                    {
+                      tag : "input",
+                      attr : {
+                        type : "radio",
+                        class : "radio-btn",
+                        name : `${x+1}`,
+                        id : "a-opt"
+                      }
+                    },
+                    {
+                      tag : "label",
+                      attr : {
+                        for : "a-opt",
+                        class : "label"
+                      }
+                    }
+                  ]
                 }
-              ]
+              }
             }
           ]
         }

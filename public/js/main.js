@@ -570,7 +570,7 @@ socket.on('students', function(data) {
 $('.studentModal').on('shown.bs.modal',function(event){
 
   // graph one
-  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[0], {
+  var chartOne = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[0], {
     type: 'bar',
     data: {
       labels: ['January', 'February', 'March', 'April'],
@@ -598,7 +598,7 @@ $('.studentModal').on('shown.bs.modal',function(event){
     }
   });
 
-  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[1], {
+  var chartTwo = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[1], {
     type: 'line',
     data: {
       labels: brandBoxChartLabels,
@@ -615,7 +615,7 @@ $('.studentModal').on('shown.bs.modal',function(event){
   });
 
   // graph three
-  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[2], {
+  var chartThree = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[2], {
     type: 'line',
     data: {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -651,14 +651,7 @@ $('.studentModal').on('shown.bs.modal',function(event){
       }
     }
   }); // eslint-disable-next-line no-unused-vars
-
-
-
-
-
-
-  }).on('hidden.bs.modal',function(event){
-
+  
   });
 });
 
