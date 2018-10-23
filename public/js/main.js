@@ -334,8 +334,13 @@ var brandBoxChart4 = new Chart($('#social-box-chart-4'), {
 Important resources in JSON-like format
 *******************************************************************/
 const modalUI = function(name, photoSrc) {
-  return {"tag":"div","attr":{"class":"modal fade studentModal","id":"modal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog modal-lg"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"},"children":{"tag":"button","content":"\n\t\t\t\t\t×\n\t\t\t\t","attr":{"type":"button","class":"close","data-dismiss":"modal","aria-hidden":"true"}}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12","style":"text-align:center"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"photo_holder"},"children":{"tag":"img","attr":{"src": `public/photo-storage/${photoSrc}`,"alt":"student photo"}}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"name-holder"},"children":{"tag":"h3","content":name}}}}]}},{"tag":"div","attr":{"class":"rowOne"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px blue; background-color: #d5f7d5"},"children":{"tag":"div","attr":{"class":"card","style":"border: none; background-color: #d5f7d5"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"98%","attr":{"class":"text-value"}},{"tag":"div","content":"Total de notas / nº Disciplinas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 98%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Grau de Participação nas aulas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px lightgray; background-color: #d5f7fa"},"children":{"tag":"div","attr":{"class":"card","style":"border: none; background-color: #d5f7fa"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"70%","attr":{"class":"text-value"}},{"tag":"div","content":"Nº de Interveções / Nº de Aulas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 70%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Situação das Faltas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px lightblue; background-color: #e4fffb"},"children":{"tag":"div","attr":{"class":"card","style":"border: none; background-color: #e4fffb"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"13 Faltas","attr":{"class":"text-value"}},{"tag":"div","content":"Acima do nível aconselhado"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-danger","role":"progressbar","style":"width: 25%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}}]}},{"tag":"div","attr":{"class":"rowTwo","style":"display:none"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Avaliação Disciplinar","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px green"},"children":{"tag":"div","attr":{"class":"card","style":"border: none"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"80.9%","attr":{"class":"text-value"}},{"tag":"div","content":"total das Notas / nº disciplinas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 80%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Avaliação Global [Comportamento]","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px green; background-color: aliceblue"},"children":{"tag":"div","attr":{"class":"card","style":"border: none; background-color: aliceblue"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"100%","attr":{"class":"text-value"}},{"tag":"div","content":"Pontos de Indisciplina / nº de Aulas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 100%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Em Relação ao Trimestre anterior","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px lightblue"},"children":{"tag":"div","attr":{"class":"card","style":"border: none"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"25%","attr":{"class":"text-value"}},{"tag":"div","content":"Total notas / % do Trimestre anterior"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-warning","role":"progressbar","style":"width: 25%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}}]}}]}},{"tag":"div","attr":{"class":"modal-footer","style":"padding:0x "},"children":{"tag":"a","content":"Próximo","attr":{"onclick":"ChangeEle()"}}}]}}};
+  return {
+
+    tag:"div","attr":{"class":"modal fade studentModal","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true"},"children":{"tag":"div","attr":{"class":"modal-dialog modal-lg"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"},"children":{"tag":"button","content":"\n\t\t\t\t\t×\n\t\t\t\t","attr":{"type":"button","class":"close","data-dismiss":"modal","aria-hidden":"true"}}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12","style":"text-align:center"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"photo_holder"},"children":{"tag":"img","attr":{"src":"5.png","alt":"student photo"}}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"name-holder"},"children":{"tag":"h3","content":"1 | Marta dos Passos Santos"}}}}]}},{"tag":"div","attr":{"class":"rowOne"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart chartjs-render-monitor","id":"card-chart4","height":"70","width":"216","style":"display:block;width: 216px; height: 70px;"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}}]}},{"tag":"div","attr":{"class":"rowTwo","style":"display:none"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Avaliação Disciplinar","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px green"},"children":{"tag":"div","attr":{"class":"card","style":"border: none"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"80.9%","attr":{"class":"text-value"}},{"tag":"div","content":"total das Notas / nº disciplinas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 80%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Avaliação Global [Comportamento]","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px green; background-color: aliceblue"},"children":{"tag":"div","attr":{"class":"card","style":"border: none; background-color: aliceblue"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"100%","attr":{"class":"text-value"}},{"tag":"div","content":"Pontos de Indisciplina / nº de Aulas"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-success","role":"progressbar","style":"width: 100%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Em Relação ao Trimestre anterior","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","attr":{"style":"border: solid 1px lightblue"},"children":{"tag":"div","attr":{"class":"card","style":"border: none"},"children":{"tag":"div","attr":{"class":"card-body"},"children":[{"tag":"div","content":"25%","attr":{"class":"text-value"}},{"tag":"div","content":"Total notas / % do Trimestre anterior"},{"tag":"div","attr":{"class":"progress progress-xs my-2"},"children":{"tag":"div","attr":{"class":"progress-bar bg-warning","role":"progressbar","style":"width: 25%","aria-valuenow":"25","aria-valuemin":"0","aria-valuemax":"100"}}},{"tag":"small","content":"Lorem ipsum dolor sit amet enim.","attr":{"class":"text-muted"}}]}}}}}]}}]}}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"href":""},"children":[{"tag":"i","attr":{"class":"icon-people"}},{"tag":"span","content":" Turma"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"href":""},"children":[{"tag":"i","attr":{"class":"icon-envelope-letter"}},{"tag":"span","content":" Envie este relatório"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"href":""},"children":[{"tag":"i","attr":{"class":"icon-globe"}},{"tag":"span","content":" Resumo global"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"href":""},"children":[{"tag":"i","attr":{"class":"icon-arrow-right"}},{"tag":"span","content":"Próximo critério"}]}}]}}}]}}
+
+  };
 }
+
 /*****************************************************************
 All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
@@ -540,7 +545,7 @@ socket.on('students', function(data) {
                   attr : {
                     class : "btn btn-primary btn-sm reportStudent",
                     "data-toggle" : "modal",
-                    "data-target" : `#modal`,
+                    "data-target" : `#myModal`,
                     "data-list" : x
                   }
                 }
@@ -557,19 +562,104 @@ socket.on('students', function(data) {
   });
 
   function hi() {
-    //console.log(this.getAttribute("data-list"));
-    //console.log(data[this.getAttribute("data-list")].nome);
-    //console.log(data[this.getAttribute("data-list")].sobrenome);
-    //console.log();
-
     document.querySelector(".studentModal .modal-body .photo_holder img").src = "public/photo-storage/"+data[this.getAttribute("data-list")].foto;
-    document.querySelector(".studentModal .modal-body .name-holder h3").innerHTML = `${Number(this.getAttribute("data-list")) + 1} | ${data[this.getAttribute("data-list")].nome}  ${data[this.getAttribute("data-list")].sobrenome}`
-
-
+    document.querySelector(".studentModal .modal-body .name-holder h3").innerHTML = `${Number(this.getAttribute("data-list")) + 1} | ${data[this.getAttribute("data-list")].nome}  ${data[this.getAttribute("data-list")].sobrenome}`;
   }
 
 
+$('.studentModal').on('shown.bs.modal',function(event){
 
+  // graph one
+  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[0], {
+    type: 'bar',
+    data: {
+      labels: ['January', 'February', 'March', 'April'],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,255,255,.2)',
+        borderColor: 'rgba(255,255,255,.55)',
+        data: [108, 81, 80, 45]
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          display: false,
+          barPercentage: 0.6
+        }],
+        yAxes: [{
+          display: false
+        }]
+      }
+    }
+  });
+
+  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[1], {
+    type: 'line',
+    data: {
+      labels: brandBoxChartLabels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,255,255,.1)',
+        borderColor: 'rgba(255,255,255,.55)',
+        pointHoverBackgroundColor: '#fff',
+        borderWidth: 2,
+        data: [35, 23, 56, 22, 97, 23, 64]
+      }]
+    },
+    options: brandBoxChartOptions
+  });
+
+  // graph three
+  new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[2], {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,255,255,.2)',
+        borderColor: 'rgba(255,255,255,.55)',
+        data: [78, 81, 80, 45, 34, 12, 40]
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          display: false
+        }],
+        yAxes: [{
+          display: false
+        }]
+      },
+      elements: {
+        line: {
+          borderWidth: 2
+        },
+        point: {
+          radius: 0,
+          hitRadius: 10,
+          hoverRadius: 4
+        }
+      }
+    }
+  }); // eslint-disable-next-line no-unused-vars
+
+
+
+
+
+
+  }).on('hidden.bs.modal',function(event){
+
+  });
 });
 
 app.appendChild(objectToHTML(
