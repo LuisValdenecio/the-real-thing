@@ -473,7 +473,7 @@ socket.on('students', function(data) {
                       attr : {
                         type : "radio",
                         class : "radio-btn",
-                        name : `${x+1}`,
+                        name : `${x+1}redFaults`,
                         id : "a-opt"
                       }
                     },
@@ -509,7 +509,7 @@ socket.on('students', function(data) {
                       attr : {
                         type : "radio",
                         class : "radio-btn-two",
-                        name : "choise",
+                        name : `${x+1}blueFaults`,
                         id : "a-opt"
                       }
                     },
@@ -539,15 +539,15 @@ socket.on('students', function(data) {
                 children : {
                   tag : "li",
                   attr : {
-                    class : "list__item"
+                    class : "list__item_three"
                   },
                   children : [
                     {
                       tag : "input",
                       attr : {
                         type : "radio",
-                        class : "radio-btn",
-                        name : `${x+1}`,
+                        class : "radio-btn-three",
+                        name : `${x+1}yellowFaults`,
                         id : "a-opt"
                       }
                     },
@@ -555,7 +555,7 @@ socket.on('students', function(data) {
                       tag : "label",
                       attr : {
                         for : "a-opt",
-                        class : "label"
+                        class : "label-three"
                       }
                     }
                   ]

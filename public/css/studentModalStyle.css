@@ -5,18 +5,13 @@
 	color : lightgray;
 }
 
-.close {
-  padding: 5px;
-  background-color: gray;
-}
-
 .text-center {
   font-family: 'Bitter', serif;
 }
 
 .photo_holder {
 	text-align : center;
-	padding: 10px;
+	padding: 7px;
 }
 
 .photo_holder img {
@@ -30,19 +25,12 @@
   font-family: 'Bitter', serif;
 }
 
-.name-holder {
-	padding-bottom : 10px;
-  padding-top : 10px;
-}
-
 .modal-content {
 	border-radius : 0;
-  background-image: url("public/img/1.jpg");
 	border : none white;
 	width : 150%;
 	position: relative;
 	left : -185px;
-  top: 50%;
 }
 
 thead tr th {
@@ -52,7 +40,7 @@ thead tr th {
 
 .modal-header {
 	border: none;
-          opacity: 1;
+  opacity: 1;
 }
 
 .label-holder {
@@ -90,11 +78,13 @@ thead tr th {
 }
 
 .radio-btn {
-  visibility: hidden;
+
 }
+
 .radio-btn:checked ~ .label {
   color: #BB4430;
 }
+
 .radio-btn:checked ~ .label::before {
   border: 6px solid #ba0b0b;
   background: #fff;
@@ -104,8 +94,6 @@ thead tr th {
   display: flex;
   align-items: center;
   color: #F8F7FF;
-  font-size: 20px;
-  font-weight: 300;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s linear;
@@ -138,13 +126,13 @@ thead tr th {
 }
 
 .radio-btn-two {
-  visibility: hidden;
+
 }
 .radio-btn-two:checked ~ .label-two {
-  color: #BB4430;
+  color: #1d84d3;
 }
 .radio-btn-two:checked ~ .label-two::before {
-  border: 6px solid #ba0b0b;
+  border: 6px solid #1d84d3;
   background: #fff;
 }
 
@@ -152,14 +140,58 @@ thead tr th {
   display: flex;
   align-items: center;
   color: #F8F7FF;
-  font-size: 20px;
-  font-weight: 300;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s linear;
 }
 
 .label-two::before {
+  display: block;
+  content: '';
+  border: 6px solid #F8F7FF;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  margin-right: 10px;
+  transition: all .25s linear;
+}
+
+/*
+  Formatação para Faltas amarelas;
+*/
+.list__item_three {
+  list-style: none;
+}
+
+.list__item_three:hover label {
+  color: #BB4430;
+}
+
+.list__item_three:hover .label-three::before {
+  border: 6px solid yellow;
+}
+
+.radio-btn-three {
+
+}
+.radio-btn-three:checked ~ .label-three {
+  color: yellow;
+}
+.radio-btn-three:checked ~ .label-three::before {
+  border: 6px solid yellow;
+  background: #fff;
+}
+
+.label-three {
+  display: flex;
+  align-items: center;
+  color: #F8F7FF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+
+.label-three::before {
   display: block;
   content: '';
   border: 6px solid #F8F7FF;
