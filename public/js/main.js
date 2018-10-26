@@ -579,23 +579,87 @@ socket.on('students', function(data) {
       document.querySelector(".studentModal .modal-body .container .student-report").style.display = "none";
       document.querySelector(".studentModal .modal-body .container .whole-class").style.display = "block";
 
+      // add a row
       document.querySelector(".studentModal .modal-body .container .whole-class .container").appendChild(
         createHtmlElemnts("div", "class", "row")
       );
 
       // create the student list
       for (var student = 0; student < data.length; student++) {
+
+        // adiciona o pic-holder contém a foto e a legenda
         document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row")[0].appendChild(
-          createHtmlElemnts("img", "src", `public/photo-storage/${data[student].foto}`)
+          objectToHTML(
+            {
+              tag : "div",
+              attr : {
+                "class" : "pic-holder"
+              },
+            },
+          )
         );
+
+        // adiciona a foto do estudante
+        document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder")[student].appendChild(
+          objectToHTML(
+            {
+              tag : "img",
+              attr : {
+                "src" : `public/photo-storage/${data[student].foto}`,
+                class : "student-pic"
+              },
+            },
+          )
+        );
+
+        // adiciona  a legenda
+        document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder")[student].appendChild(
+          objectToHTML(
+            {
+              tag : "div",
+              attr : {
+                class : "middle"
+              },
+              children : {
+                tag : "div",
+                content : "50%",
+                attr : {
+                  class : "text"
+                }
+              }
+            }
+          )
+        );
+
+        var domNode = anime({
+          targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row")[student],
+          translateX: 60,
+          duration: 2000,
+          autoplay: true
+        });
+
+        var domNode = anime({
+          targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row img")[student],
+          borderRadius: '50%',
+          duration: 5000,
+          autoplay: true
+        });
+
       }
+
 
       // register an event for every pic
       for (var x = 0; x < data.length; x++){
         document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row img")[x].addEventListener('click', function() {
-        
+
         }, false);
       }
+
+      var domNode = anime({
+        targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row img"),
+        borderRadius: '50%',
+        autoplay: false
+      });
 
   }, false);
 
@@ -771,3 +835,29 @@ socket.on('faltas', function(data) {
         }));
     }
 });
+
+/*******************************************************************************
+Anime.js code goes here
+********************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+
+*******************************************************************************/

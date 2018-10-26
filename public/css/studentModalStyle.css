@@ -60,13 +60,54 @@ thead tr th {
   style : none;
 }
 
-.studentModal .modal-body .container .whole-class .container .row img {
-	border-radius : 10%;
-	border: solid 2px lightblue;
+.studentModal .modal-body .container .whole-class .container .row .pic-holder {
+	position: relative;
+}
+
+.studentModal .modal-body .container .whole-class .container .row .pic-holder img {
+	border: solid 4px lightblue;
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 10px;
+	cursor: pointer;
+	opacity: 1;
+	backface-visibility: hidden;
+}
+
+.studentModal .modal-body .container .whole-class .container .row .pic-holder img:hover {
+	opacity: .3;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pic-holder:hover .student-pic {
+  opacity: .1;
+}
+
+.pic-holder:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: blue;
+  font-size: 25px;
+	font-weight: bold;
+}
+
+.studentModal .modal-body .container .whole-class .container .row .pic-holder {
 	width: 10%;
 	height : 10%;
 	margin: 10px;
-	cursor: pointer;
 }
 
 /*
@@ -83,10 +124,6 @@ thead tr th {
 
 .list__item:hover .label::before {
   border: 6px solid #ef5d5d;
-}
-
-.radio-btn {
-
 }
 
 .radio-btn:checked ~ .label {
