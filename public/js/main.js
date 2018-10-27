@@ -581,7 +581,15 @@ socket.on('students', function(data) {
 
       // add a row
       document.querySelector(".studentModal .modal-body .container .whole-class .container").appendChild(
-        createHtmlElemnts("div", "class", "row")
+        objectToHTML(
+          {
+            tag : "div",
+            attr : {
+              class : "row",
+              "style" : "position : relativa"
+            }
+          }
+        )
       );
 
       // create the student list
@@ -601,16 +609,26 @@ socket.on('students', function(data) {
 
         // adiciona a foto do estudante
         document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder")[student].appendChild(
-          objectToHTML(
-            {
-              tag : "img",
+            objectToHTML({
+              tag : "div",
               attr : {
-                "src" : `public/photo-storage/${data[student].foto}`,
-                class : "student-pic"
+                class : `progress-radial progress-${(student * 5)+5} setsize`
               },
-            },
-          )
-        );
+              children : {
+                tag : "div",
+                attr : {
+                  class : "overlay setsize",
+                },
+              children : {
+                tag : "img",
+                attr : {
+                  "src" : `public/photo-storage/${data[student].foto}`,
+                  class : "student-pic"
+                }
+              }
+            }
+          }
+        ));
 
         // adiciona  a legenda
         document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder")[student].appendChild(
@@ -633,13 +651,20 @@ socket.on('students', function(data) {
 
         var domNode = anime({
           targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row")[student],
-          translateX: 60,
+          translateX: 30,
           duration: 2000,
           autoplay: true
         });
 
         var domNode = anime({
-          targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row img")[student],
+          targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder .progress-radial")[student],
+          borderRadius: '50%',
+          duration: 5000,
+          autoplay: true
+        });
+
+        var domNode = anime({
+          targets: document.querySelectorAll(".studentModal .modal-body .container .whole-class .container .row .pic-holder .progress-radial .student-pic")[student],
           borderRadius: '50%',
           duration: 5000,
           autoplay: true
@@ -790,14 +815,6 @@ const subjectUtf = {
   "Ad.Empresas" : "Adm. Empresas"
 };
 
-function createHtmlElemnts(eleName, attrName, attrValue) {
-  var ele = document.createElement(eleName);
-  if (attrName && attrValue) {
-    ele.setAttribute(attrName, attrValue)
-  }
-  return ele;
-}
-
 /********************************************************
 Helpers end here
 ********************************************************/
@@ -837,8 +854,13 @@ socket.on('faltas', function(data) {
 });
 
 /*******************************************************************************
-Anime.js code goes here
+Extra code goes here
 ********************************************************************************/
+$( document ).ready(function() {
+    $(".setsize").each(function() {
+        $(this).height($(this).width());
+    });
+});
 
 
 
