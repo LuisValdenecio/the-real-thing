@@ -64,20 +64,19 @@ thead tr th {
 	position: relative;
 }
 
-/*
-.studentModal .modal-body .container .whole-class .container .row .pic-holder img {
-	border: solid 4px lightblue;
+
+.studentModal .modal-body .container .whole-class .container .row .pic-holder .student-pic {
 	display: block;
 	width: 100%;
 	height: auto;
-	margin: 10px;
+	/*margin: 10px;*/
 	cursor: pointer;
 	opacity: 1;
 	backface-visibility: hidden;
 }
 
-.studentModal .modal-body .container .whole-class .container .row .pic-holder img:hover {
-	opacity: .2;
+.studentModal .modal-body .container .whole-class .container .row .pic-holder .student-pic:hover {
+	opacity: .5;
 }
 
 .middle {
@@ -101,154 +100,99 @@ thead tr th {
 
 
 .text {
-  color: gray;
-  font-size: 35px;
+  color: blue;
+  font-size: 30px;
 	font-weight: bold;
 	font-family: 'Bitter', serif;
 }
 
 .studentModal .modal-body .container .whole-class .container .row .pic-holder {
-	width: 10%;
-	height : 10%;
-	margin: 10px;
-}
-*/
-/*
-  Formatação para Faltas vermelhas
-*/
-
-.list__item {
-  list-style: none;
+	margin: 5px;
 }
 
-.list__item:hover label {
-  color: #BB4430;
+/***************************************************************
+Faults formatation
+****************************************************************/
+
+/* The container */
+.container-input {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.list__item:hover .label::before {
-  border: 6px solid #ef5d5d;
+/* Hide the browser's default checkbox */
+.container-input input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
-.radio-btn:checked ~ .label {
-  color: #BB4430;
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
 }
 
-.radio-btn:checked ~ .label::before {
-  border: 6px solid #ba0b0b;
-  background: #fff;
+/* On mouse-over, add a grey background color */
+.container-input:hover input ~ .checkmark {
+    background-color: #ccc;
 }
 
-.label {
-  display: flex;
-  align-items: center;
-  color: #F8F7FF;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s linear;
+/* When the checkbox is checked, add a blue background */
+.container-input input:checked ~ .checkmark {
+    background-color: #2196F3;
 }
 
-.label::before {
-  display: block;
-  content: '';
-  border: 6px solid #F8F7FF;
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  margin-right: 10px;
-  transition: all .25s linear;
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 
-/*
-  Formatação para Faltas Azús
-*/
-.list__item_two {
-  list-style: none;
+/* Show the checkmark when checked */
+.container-input input:checked ~ .checkmark:after {
+    display: block;
 }
 
-.list__item_two:hover label {
-  color: #BB4430;
+/* Style the checkmark/indicator */
+.container-input .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-.list__item_two:hover .label-two::before {
-  border: 6px solid #1d84d3;
-}
 
-.radio-btn-two {
 
-}
-.radio-btn-two:checked ~ .label-two {
-  color: #1d84d3;
-}
-.radio-btn-two:checked ~ .label-two::before {
-  border: 6px solid #1d84d3;
-  background: #fff;
-}
 
-.label-two {
-  display: flex;
-  align-items: center;
-  color: #F8F7FF;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s linear;
-}
 
-.label-two::before {
-  display: block;
-  content: '';
-  border: 6px solid #F8F7FF;
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  margin-right: 10px;
-  transition: all .25s linear;
-}
 
-/*
-  Formatação para Faltas amarelas;
-*/
-.list__item_three {
-  list-style: none;
-}
+/***************************************************************
+end faults formation
+***************************************************************/
 
-.list__item_three:hover label {
-  color: #BB4430;
-}
 
-.list__item_three:hover .label-three::before {
-  border: 6px solid yellow;
-}
 
-.radio-btn-three {
-
-}
-.radio-btn-three:checked ~ .label-three {
-  color: yellow;
-}
-.radio-btn-three:checked ~ .label-three::before {
-  border: 6px solid yellow;
-  background: #fff;
-}
-
-.label-three {
-  display: flex;
-  align-items: center;
-  color: #F8F7FF;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s linear;
-}
-
-.label-three::before {
-  display: block;
-  content: '';
-  border: 6px solid #F8F7FF;
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  margin-right: 10px;
-  transition: all .25s linear;
-}
 
 /************************
 Newest photo formatation
@@ -302,8 +246,8 @@ Newest photo formatation
 }
 
 .progress-15 {
-  background-image: -webkit-linear-gradient(0deg, #f0f0f0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(306deg, #38b16b 50%, #f0f0f0 50%, #f0f0f0);
-  background-image: linear-gradient(90deg, #f0f0f0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #38b16b 50%, #f0f0f0 50%, #f0f0f0);
+  background-image: -webkit-linear-gradient(0deg, #f0f0f0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(306deg, #0cebeb 50%, #20e3b2 50%, #29ffc6);
+  background-image: linear-gradient(90deg, #f0f0f0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg,  #38b16b 50%, #f0f0f0 50%, #f0f0f0);
 }
 
 .progress-20 {

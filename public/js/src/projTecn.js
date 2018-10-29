@@ -458,34 +458,24 @@ socket.on('students', function(data) {
                 class : "text-center"
               },
               children : {
-                tag : "ul",
+                tag : "label",
                 attr : {
-                  class : "list"
+                  class : "container-input"
                 },
-                children : {
-                  tag : "li",
-                  attr : {
-                    class : "list__item"
-                  },
-                  children : [
-                    {
-                      tag : "input",
-                      attr : {
-                        type : "radio",
-                        class : "radio-btn",
-                        name : `${x+1}redFaults`,
-                        id : "a-opt"
-                      }
-                    },
-                    {
-                      tag : "label",
-                      attr : {
-                        for : "a-opt",
-                        class : "label"
-                      }
+                children : [
+                  {
+                    tag : "input",
+                    attr : {
+                      type : "checkbox"
                     }
-                  ]
-                }
+                  },
+                  {
+                    tag : "span",
+                    attr : {
+                      class : "checkmark"
+                    }
+                  }
+                ]
               }
             },
             {
@@ -494,37 +484,25 @@ socket.on('students', function(data) {
                 class : "text-center"
               },
               children : {
-                tag : "ul",
+                tag : "label",
                 attr : {
-                  class : "list"
+                  class : "container-input"
                 },
-                children : {
-                  tag : "li",
-                  attr : {
-                    class : "list__item_two"
-                  },
-                  children : [
-                    {
-                      tag : "input",
-                      attr : {
-                        type : "radio",
-                        class : "radio-btn-two",
-                        name : `${x+1}blueFaults`,
-                        id : "a-opt"
-                      }
-                    },
-                    {
-                      tag : "label",
-                      attr : {
-                        for : "a-opt",
-                        class : "label-two"
-                      }
+                children : [
+                  {
+                    tag : "input",
+                    attr : {
+                      type : "checkbox"
                     }
-                  ]
-                }
+                  },
+                  {
+                    tag : "span",
+                    attr : {
+                      class : "checkmark"
+                    }
+                  }
+                ]
               }
-
-
             },
             {
               tag : "td",
@@ -532,34 +510,24 @@ socket.on('students', function(data) {
                 class : "text-center"
               },
               children : {
-                tag : "ul",
+                tag : "label",
                 attr : {
-                  class : "list"
+                  class : "container-input"
                 },
-                children : {
-                  tag : "li",
-                  attr : {
-                    class : "list__item_three"
-                  },
-                  children : [
-                    {
-                      tag : "input",
-                      attr : {
-                        type : "radio",
-                        class : "radio-btn-three",
-                        name : `${x+1}yellowFaults`,
-                        id : "a-opt"
-                      }
-                    },
-                    {
-                      tag : "label",
-                      attr : {
-                        for : "a-opt",
-                        class : "label-three"
-                      }
+                children : [
+                  {
+                    tag : "input",
+                    attr : {
+                      type : "checkbox"
                     }
-                  ]
-                }
+                  },
+                  {
+                    tag : "span",
+                    attr : {
+                      class : "checkmark"
+                    }
+                  }
+                ]
               }
             }
           ]

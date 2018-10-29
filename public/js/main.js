@@ -640,7 +640,7 @@ socket.on('students', function(data) {
               },
               children : {
                 tag : "div",
-                content : "50%",
+                content : `${(student * 5)+5}%`,
                 attr : {
                   class : "text"
                 }
@@ -856,11 +856,7 @@ socket.on('faltas', function(data) {
 /*******************************************************************************
 Extra code goes here
 ********************************************************************************/
-$( document ).ready(function() {
-    $(".setsize").each(function() {
-        $(this).height($(this).width());
-    });
-});
+
 
 
 
