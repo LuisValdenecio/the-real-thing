@@ -466,13 +466,15 @@ socket.on('students', function(data) {
                   {
                     tag : "input",
                     attr : {
-                      type : "checkbox"
+                      type : "checkbox",
+                      class : "faults-input",
+                      name : `${data[x].estudante_cod}`
                     }
                   },
                   {
                     tag : "span",
                     attr : {
-                      class : "checkmark"
+                      class : "checkmark-one"
                     }
                   }
                 ]
@@ -492,13 +494,15 @@ socket.on('students', function(data) {
                   {
                     tag : "input",
                     attr : {
-                      type : "checkbox"
+                      type : "checkbox",
+                      class : "faults-input",
+                      name : `${data[x].estudante_cod}`
                     }
                   },
                   {
                     tag : "span",
                     attr : {
-                      class : "checkmark"
+                      class : "checkmark-two"
                     }
                   }
                 ]
@@ -518,13 +522,15 @@ socket.on('students', function(data) {
                   {
                     tag : "input",
                     attr : {
-                      type : "checkbox"
+                      type : "checkbox",
+                      class : "faults-input",
+                      name : `${data[x].estudante_cod}`
                     }
                   },
                   {
                     tag : "span",
                     attr : {
-                      class : "checkmark"
+                      class : "checkmark-three"
                     }
                   }
                 ]
@@ -534,26 +540,50 @@ socket.on('students', function(data) {
         }
       ));
 
-      // filling up the student form
+      /* filling up the student form
       livroInfos.children[5].children[0].appendChild(objectToHTML(
         {
           tag : "input",
           attr : {
-            type : "text",
+            type : "checkbox",
             name : `${data[x].estudante_cod}`
           }
         }
       ));
+      */
   }
 
 });
 
+/*
+  helpers
+*/
+
+function convertRadio(ele,name) {
+  return objectToHTML(
+    {
+      tag : "input",
+      attr : {
+        type : "text",
+        name : name,
+        value : (ele.checked) ? 1 : 0
+      }
+    }
+  );
+}
+
+/*
+  /helpers
+*/
+
 var refreshButton = document.querySelector(".refresh-button");
 refreshButton.onclick = function () {
-  for (var x = 0; x < document.querySelector(".faltas-form").children.length; x++) {
-      document.querySelector(".faltas-form").children[x].value = document.querySelectorAll(".faltas-input-absence")[x].value;  // testing
+  var copyInputs = document.querySelectorAll(".faults-input");
+
+  for (var x = 0; x < copyInputs.length; x++) {
+      document.querySelector(".faltas-form").appendChild(convertRadio(copyInputs[x],copyInputs[x].name));
   }
 
   document.querySelector(".faltas-form").setAttribute("action", `${"/"}${subjectNow}${"."}`);
-    document.querySelector(".faltas-form").submit();  // submit the form
+  document.querySelector(".faltas-form").submit();  // submit the form to the server
 }

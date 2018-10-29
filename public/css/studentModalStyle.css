@@ -138,39 +138,75 @@ Faults formatation
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.checkmark-one, .checkmark-two, .checkmark-three {
     position: absolute;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: #eee
 }
 
 /* On mouse-over, add a grey background color */
-.container-input:hover input ~ .checkmark {
-    background-color: #ccc;
+.container-input:hover input ~ .checkmark-one {
+    background-color: red;
+}
+
+.container-input:hover input ~ .checkmark-two {
+    background-color: blue;
+}
+
+.container-input:hover input ~ .checkmark-three {
+    background-color: orange;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container-input input:checked ~ .checkmark {
-    background-color: #2196F3;
+.container-input input:checked ~ .checkmark-one {
+    background-color: red;
+}
+
+.container-input input:checked ~ .checkmark-two {
+    background-color: blue;
+}
+
+.container-input input:checked ~ .checkmark-three {
+    background-color: orange;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmark-one:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkmark-two:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkmark-three:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the checkmark when checked */
-.container-input input:checked ~ .checkmark:after {
+.container-input input:checked ~ .checkmark-one:after {
+    display: block;
+}
+
+.container-input input:checked ~ .checkmark-two:after {
+    display: block;
+}
+
+.container-input input:checked ~ .checkmark-three:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.container-input .checkmark:after {
+.container-input .checkmark-one:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -182,8 +218,29 @@ Faults formatation
     transform: rotate(45deg);
 }
 
+.container-input .checkmark-two:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
-
+.container-input .checkmark-three:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
 
 

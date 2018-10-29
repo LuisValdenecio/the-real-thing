@@ -846,8 +846,6 @@ socket.on('faltas', function(data) {
                 content :  ` ${subjectUtf[`${data[index].nome_disciplina}`]}`
               }
             ]
-
-            //content : ` ${subjectUtf[`${data[index].nome_disciplina}`]}`
           }
         }));
     }
