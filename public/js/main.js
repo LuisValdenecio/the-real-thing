@@ -818,8 +818,6 @@ const subjectUtf = {
 /********************************************************
 Helpers end here
 ********************************************************/
-
-
 socket.on('faltas', function(data) {
   for (var index = 0; index < data.length; index++) {
         //run the subject array and place each of them at the right place
@@ -850,6 +848,8 @@ socket.on('faltas', function(data) {
         }));
     }
 });
+
+
 
 /*******************************************************************************
 Extra code goes here

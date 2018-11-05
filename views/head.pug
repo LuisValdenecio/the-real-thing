@@ -15,4 +15,12 @@ link(href='public/simple-line-icons/css/simple-line-icons.css', rel='stylesheet'
 // Main styles for this application
 link(href='public/css/style.css', rel='stylesheet')
 link(href='public/pace-progress/css/pace.min.css', rel='stylesheet')
-link(href='public/css/studentModalStyle.css', rel='stylesheet')
+
+- if (!tecnico)
+  link(href='public/css/studentModalStyle.css', rel='stylesheet')
+
+- if (tecnico == 'tecnico')
+  link(href='public/css/demo.css', rel='stylesheet')
+  link(href='public/css/component.css', rel='stylesheet')
+  link(href='public/css/full-slider.css', rel='stylesheet')
+  script(src='public/js/src/modernizr-custom.js')

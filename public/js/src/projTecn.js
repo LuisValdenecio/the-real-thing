@@ -586,4 +586,5 @@ refreshButton.onclick = function () {
 
   document.querySelector(".faltas-form").setAttribute("action", `${"/"}${subjectNow}${"."}`);
   document.querySelector(".faltas-form").submit();  // submit the form to the server
+  document.querySelector(".faltas-form").setAttribute("action", ``);  // dont ask to send again
 }
