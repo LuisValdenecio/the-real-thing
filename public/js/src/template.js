@@ -94,7 +94,7 @@ document.querySelector(".container-fluid").appendChild(objectToHTML(
 
 **********************************************************************************/
 
-// add to each course, a link to a particular set of classes
+// contabilidade e gestão
 const contabilidade = [
 
     [
@@ -140,25 +140,355 @@ const contabilidade = [
 
 ];
 
+// informática
 const informatica = [
 
+    [
+      "Língua Portuguesa",
+      "Língua Inglesa",
+      "FAI",
+      "Educação Física",
+      "Matemática",
+      "Física",
+      "Química",
+      "Electrotecnia",
+      "Empreendedorismo",
+      "TLP",
+      "SEAC",
+      "TIC"
+    ],
 
+    [
+      "Língua Portuguesa",
+      "Língua Inglesa",
+      "FAI",
+      "Educação Física",
+      "Matemática",
+      "Física",
+      "Química",
+      "Electrotecnia",
+      "Empreendedorismo",
+      "Desenho Técnico",
+      "TLP",
+      "SEAC"
+    ],
 
+    [
+      "Matemática",
+      "Física",
+      "OGI",
+      "Empreendedorismo",
+      "TLP",
+      "TREI",
+      "SEAC",
+      "Projecto Tecnológico"
+    ],
 
-
+    [
+      "Estágio Profissional",
+      "Projecto Tecnológico"
+    ]
 ];
 
+// obras de construção civil
 const occ = [
+  [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "FAI",
+    "Educação Física",
+    "Matemática",
+    "Física",
+    "Química",
+    "Informática",
+    "Empreendedorismo",
+    "DCC",
+    "TCC",
+    "TCOE",
+    "POL"
+  ],
 
+  [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "FAI",
+    "Educação Física",
+    "Matemática",
+    "Física",
+    "Química",
+    "Empreendedorismo",
+    "DCC",
+    "TCC",
+    "TCOE",
+    "POL"
+  ],
 
+  [
+    "Matemática",
+    "Física",
+    "OGI",
+    "Empreendedorismo",
+    "DCC",
+    "TCC",
+    "TCOE",
+    "TCO-IEU",
+    "Técnicas de Topografia",
+    "POL",
+    "Projecto Tecnológico"
+  ],
 
+  [
+    "Estágio Profissional"
+  ]
 
 ];
 
-var pages = document.querySelector(".pages-stack"),
-    button = document.querySelector(".menu-button");
 
-// if the first page is shown then delete the menu button
-if (pages.children[0].className == "page") {
-    //button.style.display = "none";
+/**********************************************************************
+
+**********************************************************************/
+
+function swissKnife (carousel_indicators, carousel_inner, course, indexOne, indexTwo, target) {
+
+    // remove all the carousels
+    for (let carosel of carousel_indicators) {
+      carosel.remove();
+    }
+
+    // and the last one
+    carousel_indicators[0].remove();
+
+
+    for (let counter = 0; counter < carousel_inner.length + 1; counter++) {
+      carousel_inner[counter].remove();
+    }
+
+    carousel_inner[0].remove();
+
+    for (let counter = 0; counter < course[indexTwo].length; counter++) {
+
+      // set the carousels
+      document.querySelectorAll(".carousel-indicators")[indexOne].appendChild(
+        objectToHTML(
+          {
+            "tag" : "li",
+            attr : {
+              "data-target" : target,
+              "data-slide-to" : counter
+            }
+          }
+        ));
+
+
+      // set the forms
+      document.querySelectorAll(".carousel-inner")[indexOne].appendChild(
+        objectToHTML(
+          {
+            tag : "div",
+            attr : {
+              class : counter == 0 ? "carousel-item active" : "carousel-item"
+            },
+            children : {
+              tag : "div",
+              attr : {
+                class : "container"
+              },
+              children : [
+                {
+                  tag : "h3",
+                  content : course[indexTwo][counter]
+                },
+                {
+                tag : "div",
+                attr : {
+                  class : "row form-row"
+                },
+                children : [
+                  {
+                    tag : "div",
+                    attr : {
+                      class : "col-lg-6 col-md-6 form-col-one"
+                    },
+                    children : [
+                      {
+                        tag : "div",
+                        attr : {
+                          class : "profile"
+                        },
+                        children : [
+                          {
+                            tag : "div",
+                            attr : {
+                              class : "dashes"
+                            }
+                          },
+                          {
+                            tag : "label",
+                            content : "click para carregar uma fotografia"
+                          }
+                        ]
+                      },
+                      {
+                        tag : "form",
+                        children : {
+                          tag : "input",
+                          attr : {
+                            class : "mediaFile",
+                            type : "file",
+                            name : "imageupload"
+                          }
+                        }
+                      }
+                    ]
+                  },
+
+                  {
+                    tag : "div",
+                    attr : {
+                      class : "col-lg-6 col-md-6",
+                      style : "background : gray"
+                    },
+                    children : {
+                      tag : "form",
+                      attr : {
+                        role : "form",
+                        class : "actual-form"
+                      },
+                      children : [
+                        {
+                          tag : "div",
+                          attr : {
+                            class : "form-group"
+                          },
+                          children : [
+                            {
+                              tag : "label",
+                              content : course[indexTwo][counter],
+                              attr : {
+                                for : "name"
+                              }
+                            },
+
+                            {
+                              tag : "input",
+                              attr : {
+                                type : "text",
+                                class : "form-control",
+                                id : "name",
+                                placeholder : "Primeiro Nome"
+                              }
+                            }
+                          ]
+
+                        },
+
+                        {
+                          tag : "div",
+                          attr : {
+                            class : "form-group"
+                          },
+                          children : [
+                            {
+                              tag : "label",
+                              content : "Primeiro e Segundo nome",
+                              attr : {
+                                for : "name"
+                              }
+                            },
+
+                            {
+                              tag : "input",
+                              attr : {
+                                type : "text",
+                                class : "form-control",
+                                id : "name",
+                                placeholder : "Primeiro Nome"
+                              }
+                            }
+                          ]
+
+                        },
+
+                        {
+                          tag : "div",
+                          attr : {
+                            class : "form-group"
+                          },
+                          children : [
+                            {
+                              tag : "label",
+                              content : "Primeiro e Segundo nome",
+                              attr : {
+                                for : "name"
+                              }
+                            },
+
+                            {
+                              tag : "input",
+                              attr : {
+                                type : "text",
+                                class : "form-control",
+                                id : "name",
+                                placeholder : "Primeiro Nome"
+                              }
+                            }
+                          ]
+
+                        },
+
+                        {
+                          tag : "button",
+                          content : "Submit",
+                          attr : {
+                            type : "submit",
+                            class : "btn btn-default"
+                          }
+                        }
+                      ]
+                    }
+
+                  }
+                ]
+              }]
+            }
+          }
+      ));
+    }
 }
+
+
+swissKnife (
+  document.querySelectorAll(".carousel-indicators")[0].children,
+  document.querySelectorAll(".carousel-inner")[0].children,
+  informatica,
+  0,
+  0,
+  "#10classe"
+);
+
+swissKnife (
+  document.querySelectorAll(".carousel-indicators")[1].children,
+  document.querySelectorAll(".carousel-inner")[1].children,
+  informatica,
+  1,
+  1,
+  "#11classe"
+);
+
+swissKnife (
+  document.querySelectorAll(".carousel-indicators")[2].children,
+  document.querySelectorAll(".carousel-inner")[2].children,
+  informatica,
+  2,
+  2,
+  "#12classe"
+);
+
+swissKnife (
+  document.querySelectorAll(".carousel-indicators")[3].children,
+  document.querySelectorAll(".carousel-inner")[3].children,
+  informatica,
+  3,
+  3,
+  "#13classe"
+);
