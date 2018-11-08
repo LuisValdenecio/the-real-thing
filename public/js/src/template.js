@@ -247,23 +247,18 @@ const occ = [
 /**********************************************************************
 
 **********************************************************************/
+function deleteHtmlArray(htmlArray) {
+  for (let counter = 0; counter < htmlArray.length; counter++) {
+    htmlArray[counter].remove();
+  }
+
+  if (htmlArray.length > 0) deleteHtmlArray(htmlArray);
+}
 
 function swissKnife (carousel_indicators, carousel_inner, course, indexOne, indexTwo, target) {
 
-    // remove all the carousels
-    for (let carosel of carousel_indicators) {
-      carosel.remove();
-    }
-
-    // and the last one
-    carousel_indicators[0].remove();
-
-
-    for (let counter = 0; counter < carousel_inner.length + 1; counter++) {
-      carousel_inner[counter].remove();
-    }
-
-    carousel_inner[0].remove();
+    deleteHtmlArray(carousel_indicators);
+    deleteHtmlArray(carousel_inner);
 
     for (let counter = 0; counter < course[indexTwo].length; counter++) {
 
@@ -363,7 +358,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                           children : [
                             {
                               tag : "label",
-                              content : course[indexTwo][counter],
+                              content : "Nome e sobrenome",
                               attr : {
                                 for : "name"
                               }
@@ -375,7 +370,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                                 type : "text",
                                 class : "form-control",
                                 id : "name",
-                                placeholder : "Primeiro Nome"
+                                placeholder : "Nome e sobrenome"
                               }
                             }
                           ]
@@ -390,7 +385,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                           children : [
                             {
                               tag : "label",
-                              content : "Primeiro e Segundo nome",
+                              content : "Email",
                               attr : {
                                 for : "name"
                               }
@@ -402,7 +397,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                                 type : "text",
                                 class : "form-control",
                                 id : "name",
-                                placeholder : "Primeiro Nome"
+                                placeholder : "Correio Electrónico"
                               }
                             }
                           ]
@@ -417,7 +412,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                           children : [
                             {
                               tag : "label",
-                              content : "Primeiro e Segundo nome",
+                              content : "Bilhete de Identidade",
                               attr : {
                                 for : "name"
                               }
@@ -429,7 +424,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
                                 type : "text",
                                 class : "form-control",
                                 id : "name",
-                                placeholder : "Primeiro Nome"
+                                placeholder : "nº do Bilhete de Identidade"
                               }
                             }
                           ]
@@ -457,38 +452,69 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
 }
 
 
-swissKnife (
-  document.querySelectorAll(".carousel-indicators")[0].children,
-  document.querySelectorAll(".carousel-inner")[0].children,
-  informatica,
-  0,
-  0,
-  "#10classe"
-);
+/*
+  based on the course the different grades are going to automatically
+  set themselves up
+*/
+var cont = document.querySelector("#curso-contabilidade"),
+    inf  = document.querySelector("#curso-informatica"),
+    o_c_c  = document.querySelector("#curso-occ");
 
-swissKnife (
-  document.querySelectorAll(".carousel-indicators")[1].children,
-  document.querySelectorAll(".carousel-inner")[1].children,
-  informatica,
-  1,
-  1,
-  "#11classe"
-);
+function subjectPlacer(curso) {
 
-swissKnife (
-  document.querySelectorAll(".carousel-indicators")[2].children,
-  document.querySelectorAll(".carousel-inner")[2].children,
-  informatica,
-  2,
-  2,
-  "#12classe"
-);
+  // set up the subjects for 10ª
+  swissKnife (
+    document.querySelectorAll(".carousel-indicators")[0].children,
+    document.querySelectorAll(".carousel-inner")[0].children,
+    curso,
+    0,
+    0,
+    "#10classe"
+  );
 
-swissKnife (
-  document.querySelectorAll(".carousel-indicators")[3].children,
-  document.querySelectorAll(".carousel-inner")[3].children,
-  informatica,
-  3,
-  3,
-  "#13classe"
-);
+  // set up the subjects for 11ª
+  swissKnife (
+    document.querySelectorAll(".carousel-indicators")[1].children,
+    document.querySelectorAll(".carousel-inner")[1].children,
+    curso,
+    1,
+    1,
+    "#11classe"
+  );
+
+  // set up the subjects for 12ª
+  swissKnife (
+    document.querySelectorAll(".carousel-indicators")[2].children,
+    document.querySelectorAll(".carousel-inner")[2].children,
+    curso,
+    2,
+    2,
+    "#12classe"
+  );
+
+  // set up the subjets for 13ª
+  swissKnife (
+    document.querySelectorAll(".carousel-indicators")[3].children,
+    document.querySelectorAll(".carousel-inner")[3].children,
+    curso,
+    3,
+    3,
+    "#13classe"
+  );
+
+}
+
+// para as disciplinas do curso de informática
+inf.addEventListener('click', function() {
+  subjectPlacer(informatica);
+},false);
+
+// para as disciplinas do curso de occ
+o_c_c.addEventListener('click', function() {
+  subjectPlacer(occ);
+}, false);
+
+// para as disciplinas do curso de contabilidade
+cont.addEventListener('click', function(){
+  subjectPlacer(contabilidade);
+}, false);
