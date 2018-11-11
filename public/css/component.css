@@ -328,12 +328,12 @@
   }
 }
 
-.mediaFile {
+.mediaFile_two {
   position: absolute;
   top: -1000px;
 }
 
-.profile {
+.profile_two {
   border-radius: 100%;
   width: 200px;
   height: 200px;
@@ -348,7 +348,7 @@
   background-position: center center;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
 }
-.profile .dashes {
+.profile_two .dashes {
   position: absolute;
   top: 0;
   left: 0;
@@ -358,7 +358,7 @@
   border: 4px dashed #ddd;
   opacity: 1;
 }
-.profile label {
+.profile_two label {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -366,10 +366,10 @@
   color: grey;
   opacity: 1;
 }
-.profile.dragging {
+.profile_two.dragging {
   background-image: none !important;
 }
-.profile.dragging .dashes {
+.profile_two.dragging .dashes {
   -webkit-animation-duration: 10s;
           animation-duration: 10s;
   -webkit-animation-name: spin;
@@ -381,10 +381,10 @@
   opacity: 1 !important;
 }
 
-.profile.dragging label {
+.profile_two.dragging label {
   opacity: 0.5 !important;
 }
-.profile.hasImage .dashes, .profile.hasImage label {
+.profile_two.hasImage .dashes, .profile_two.hasImage label {
   opacity: 0;
   pointer-events: none;
   -webkit-user-select: none;

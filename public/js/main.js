@@ -344,8 +344,6 @@ const modalUI = function(name, photoSrc) {
 /*****************************************************************
 All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
-const socket = io();
-
 nacionalidade = {
   Angolana : "flag-icon-ao",
   Portuguesa : "",
@@ -357,42 +355,6 @@ nacionalidade = {
   Holandesa : "",
   Checa : ""
 };
-
-const objectToHTML = function(obj) {
-  const element = document.createElement(obj.tag)
-  if (obj.content) element.innerHTML = obj.content
-
-  if (obj.attr) {
-      for (const name in obj.attr) {
-      const value = obj.attr[name]
-      element.setAttribute(name, value)
-    }
-  }
-
-  if (obj.events) {
-    for (const name in obj.events) {
-      const listener = new Function(obj.events[name]).bind(element)
-      element.addEventListener(name, listener)
-    }
-  }
-
-  if (obj.style) {
-    for (const property in obj.style) {
-      const value = obj.style[property]
-      element.style[property] = value
-    }
-  }
-
-  if (obj.children) {
-      if (obj.children.length > 1) {
-        for (var x = 0; x < obj.children.length; x++) {
-          element.appendChild(objectToHTML(obj.children[x]));
-        }
-      } else element.appendChild(objectToHTML(obj.children));
-  }
-
-  return element
-}
 
 var table = document.querySelector("table"),
     app = document.querySelector(".app-body");
@@ -480,7 +442,7 @@ socket.on('students', function(data) {
                       },
                       children : {
                         tag : "strong",
-                        content : `${Math.floor(Math.random(1,10)*100)}`
+                        content : `${Math.floor(Math.random(1,10)*100)}%`
                       }
                     },
                     {
@@ -506,7 +468,9 @@ socket.on('students', function(data) {
                   children : {
                     tag : "div",
                     attr : {
-                      class : "progress-bar bg-success",
+                      class : (Math.floor(Math.random(1,10)*100) < 50)
+                        ? ((Math.floor(Math.random(1,10)*100) < 25) ? "progress-bar bg-danger" : "progress-bar bg-warning")
+                        : ("progress-bar bg-success"),
                       role : "progressbar",
                       style : `width : ${Math.floor(Math.random(1,10)*100)}%`,
                       "aria-valuenow" : "50",
@@ -782,9 +746,6 @@ app.appendChild(objectToHTML(
 
 var ulList = document.querySelector(".subjectList");
 
-/******************************************************
-Helper Methods and constants
-*******************************************************/
 const subjectUtf = {
   "A.E.F" : "AEF",
   "Cont.Analitica":"Cont Analítica",
@@ -815,9 +776,6 @@ const subjectUtf = {
   "Ad.Empresas" : "Adm. Empresas"
 };
 
-/********************************************************
-Helpers end here
-********************************************************/
 socket.on('faltas', function(data) {
   for (var index = 0; index < data.length; index++) {
         //run the subject array and place each of them at the right place
@@ -848,32 +806,3 @@ socket.on('faltas', function(data) {
         }));
     }
 });
-
-
-
-/*******************************************************************************
-Extra code goes here
-********************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*******************************************************************************
-
-*******************************************************************************/

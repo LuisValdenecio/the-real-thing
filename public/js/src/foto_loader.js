@@ -1,20 +1,19 @@
 // ----- On render -----
 
+var test = "what's in it";
 
-function insertPhotoIntoHolder(id1, id2) {
-    //'.profile'
-    //.mediaFile
+document.querySelector("body").load = function () {
 
     $(function () {
-        $(id1).addClass('dragging').removeClass('dragging');
+        $(".profile_two")[0].addClass('dragging').removeClass('dragging');
     });
 
-    $(id1).on('dragover', function () {
-        $(id1).addClass('dragging')
-    }).on('dragleave', function () {
-        $(id1).removeClass('dragging')
-    }).on('drop', function (e) {
-        $(id).removeClass('dragging hasImage');
+    $(".profile_two")[0].addEventListener('dragover', function () {
+        $(".profile_two")[0].addClass('dragging')
+    }).addEventListener('dragleave', function () {
+        $(".profile_two")[0].removeClass('dragging')
+    }).addEventListener('drop', function (e) {
+        $(".profile_two")[0].removeClass('dragging hasImage');
 
         if (e.originalEvent) {
             var file = e.originalEvent.dataTransfer.files[0];
@@ -26,14 +25,13 @@ function insertPhotoIntoHolder(id1, id2) {
             reader.readAsDataURL(file);
             reader.onload = function (e) {
                 console.log(reader.result);
-                $(id1).css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
-
+                $(".profile_two")[0].css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
             }
         }
     })
-    $(id1).on('click', function (e) {
-        console.log('clicked')
-        $(id2).click();
+    $(".profile_two")[0].addEventListener('click', function (e) {
+        alert('clicked')
+        $(".mediaFile_two")[0].click();
     });
     window.addEventListener("dragover", function (e) {
         e = e || event;
@@ -43,7 +41,7 @@ function insertPhotoIntoHolder(id1, id2) {
         e = e || event;
         e.preventDefault();
     }, false);
-    $(id2).change(function (e) {
+    $(".mediaFile_two")[0].change(function (e) {
 
         var input = e.target;
         if (input.files && input.files[0]) {
@@ -54,10 +52,10 @@ function insertPhotoIntoHolder(id1, id2) {
             reader.readAsDataURL(file);
             reader.onload = function (e) {
                 console.log(reader.result);
-                $(id1).css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
+                $(".profile_two")[0].css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
             }
         }
     })
 }
 
-insertPhotoIntoHolder('.profile', '.mediaFile');
+alert(test);
