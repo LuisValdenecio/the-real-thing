@@ -9,6 +9,9 @@
  * --------------------------------------------------------------------------
  */
 
+'use scrict';
+
+
 /* eslint-disable no-magic-numbers */
 // Disable the on-canvas tooltip
 Chart.defaults.global.pointHitDetectionRadius = 1;
@@ -336,7 +339,8 @@ Important resources in JSON-like format
 const modalUI = function(name, photoSrc) {
   return {
 
-    tag:"div","attr":{"class":"modal fade studentModal","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true"},"children":{"tag":"div","attr":{"class":"modal-dialog modal-lg"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"student-report"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12","style":"text-align:center"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"photo_holder"},"children":{"tag":"img","attr":{"src":"5.png","alt":"student photo"}}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"name-holder"},"children":{"tag":"h3","content":"1 | Marta dos Passos Santos"}}}}]}},{"tag":"div","attr":{"class":"rowOne"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-success","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-warning","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}}]}}]},{"tag":"div","attr":{"class":"whole-class"},"children":{"tag":"div","content":"\n                            \n                        ","attr":{"class":"container"}}}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"turma-modal"},"children":[{"tag":"i","attr":{"class":"icon-people"}},{"tag":"span","content":" Turma"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"relatorio-modal"},"children":[{"tag":"i","attr":{"class":"icon-envelope-letter"}},{"tag":"span","content":" Envie este relatório"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"resumo-global"},"children":[{"tag":"i","attr":{"class":"icon-globe"}},{"tag":"span","content":" Resumo global"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"next-criterious"},"children":[{"tag":"i","attr":{"class":"icon-arrow-right"}},{"tag":"span","content":"Próximo critério"}]}}]}}}]}}
+    tag:"div","attr":{"class":"modal fade studentModal","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog modal-lg"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"student-report"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12","style":"text-align:center"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"photo_holder"},"children":{"tag":"img","attr":{"src":"5.png","alt":"student photo"}}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12 "},"children":{"tag":"div","attr":{"class":"name-holder"},"children":{"tag":"h3","content":"1 | Marta dos Passos Santos"}}}}]}},{"tag":"div","attr":{"class":"rowOne"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-success","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","attr":{"class":"text-value fault-holder"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}},{"tag":"div","attr":{"class":"col-md-4"},"children":{"tag":"table","attr":{"class":"table table-condensed wow fadeInLeftBig","data-wow-duration":"700ms","data-wow-delay":"800ms"},"children":[{"tag":"thead","children":{"tag":"tr","children":{"tag":"th","content":"Desempenho ao nível de notas","attr":{"class":"text-center"}}}},{"tag":"tbody","children":{"tag":"tr","children":{"tag":"td","children":{"tag":"div","attr":{"class":"card text-white bg-warning","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"card-chart4","height":"70"}}}]}}}}]}}]}}]},{"tag":"div","attr":{"class":"whole-class"},"children":{"tag":"div","content":"\n                            \n                        ","attr":{"class":"container"}}}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"turma-modal"},"children":[{"tag":"i","attr":{"class":"icon-people"}},{"tag":"span","content":" Turma"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"relatorio-modal"},"children":[{"tag":"i","attr":{"class":"icon-envelope-letter"}},{"tag":"span","content":" Envie este relatório"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"resumo-global"},"children":[{"tag":"i","attr":{"class":"icon-globe"}},{"tag":"span","content":" Resumo global"}]}},{"tag":"div","attr":{"class":"col-md-3 col-md-3 modal-option-icon"},"children":{"tag":"a","attr":{"id":"next-criterious"},"children":[{"tag":"i","attr":{"class":"icon-arrow-right"}},{"tag":"span","content":"Próximo critério"}]}}]}}}]}}
+
 
   };
 }
@@ -344,22 +348,13 @@ const modalUI = function(name, photoSrc) {
 /*****************************************************************
 All the javascript written bellows deals with dynamic manipulation
 ******************************************************************/
-nacionalidade = {
-  Angolana : "flag-icon-ao",
-  Portuguesa : "",
-  Francesa : "",
-  Americana : "",
-  Brasileira : "",
-  "Moçambicana" : "",
-  "Alemã" : "",
-  Holandesa : "",
-  Checa : ""
-};
 
 var table = document.querySelector("table"),
     app = document.querySelector(".app-body");
 
 socket.on('students', function(data) {
+
+  studentNumber = data.length;
 
   for (var x = 0; Number(table.attributes[1].value) > x; x++) {
       table.children[1].appendChild(objectToHTML(
@@ -652,92 +647,6 @@ socket.on('students', function(data) {
 
   }, false);
 
-$('.studentModal').on('shown.bs.modal',function(event){
-
-  // graph one
-  var chartOne = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[0], {
-    type: 'bar',
-    data: {
-      labels: ['January', 'February', 'March', 'April'],
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [108, 81, 80, 45]
-      }]
-    },
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          display: false,
-          barPercentage: 0.6
-        }],
-        yAxes: [{
-          display: false
-        }]
-      }
-    }
-  });
-
-  var chartTwo = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[1], {
-    type: 'line',
-    data: {
-      labels: brandBoxChartLabels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.1)',
-        borderColor: 'rgba(255,255,255,.55)',
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [35, 23, 56, 22, 97, 23, 64]
-      }]
-    },
-    options: brandBoxChartOptions
-  });
-
-  // graph three
-  var chartThree = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[2], {
-    type: 'line',
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40]
-      }]
-    },
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          display: false
-        }],
-        yAxes: [{
-          display: false
-        }]
-      },
-      elements: {
-        line: {
-          borderWidth: 2
-        },
-        point: {
-          radius: 0,
-          hitRadius: 10,
-          hoverRadius: 4
-        }
-      }
-    }
-  }); // eslint-disable-next-line no-unused-vars
-
-  });
 });
 
 app.appendChild(objectToHTML(
@@ -746,35 +655,98 @@ app.appendChild(objectToHTML(
 
 var ulList = document.querySelector(".subjectList");
 
-const subjectUtf = {
-  "A.E.F" : "AEF",
-  "Cont.Analitica":"Cont Analítica",
-  "Cont.Financeira":"Cont Financeira",
-  "D.C.C":"DCC",
-  "D.L.F":"",
-  "Empreend":"Empreend",
-  "Fisica":"Física",
-  "Mat":"Matemática",
-  "O.G.I":"OGI",
-  "P.O.L":"POL",
-  "Proj.Tecn":"Proj Técn",
-  "S.E.A.C":"SEAC",
-  "Socio":"Sociologia",
-  "T.C.C":"TCC",
-  "T.C.O-I.E.U":"TCO - IEU",
-  "T.C.O.E":"TCOE",
-  "T.L.P":"TLP",
-  "T.R.E.I":"TREI",
-  "Tec-de-Topografia":"Téc de Topografia",
-  "Ed.Fisica": "Ed. Física",
-  "T.C.E" : "TCE",
-  "I.A.C" : "IAC",
-  "L.Inglesa" : "Ingles",
-  "Economia" : "Economia",
-  "FAI" : "FAI",
-  "L.Portuguesa" : "L.Portuguesa",
-  "Ad.Empresas" : "Adm. Empresas"
-};
+socket.on('allFaults', function(data) {
+
+  if (data[0].length > 0) {
+    document.querySelector(".fault-holder").innerText = faultsDataManipulation(data[0], data[1])[1][0];
+  } else document.querySelector("#fault-holder").innerText = 0;
+
+
+  $('.studentModal').on('shown.bs.modal',function(event){
+      // graph one
+      var chartOne = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[0], {
+        type: 'bar',
+        data: {
+          labels: ['January', 'February', 'March', 'April'],
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgba(255,255,255,.2)',
+            borderColor: 'rgba(255,255,255,.55)',
+            data: [108, 81, 80, 45]
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: false,
+              barPercentage: 0.6
+            }],
+            yAxes: [{
+              display: false
+            }]
+          }
+        }
+      });
+
+      var chartTwo = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[1], {
+        type: 'line',
+        data: {
+          labels: brandBoxChartLabels,
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgba(255,255,255,.1)',
+            borderColor: 'rgba(255,255,255,.55)',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: [35, 23, 56, 22, 97, 23, 64]
+          }]
+        },
+        options: brandBoxChartOptions
+      });
+
+      // graph three
+      var chartThree = new Chart(document.querySelectorAll('.studentModal .modal-body canvas')[2], {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgba(255,255,255,.2)',
+            borderColor: 'rgba(255,255,255,.55)',
+            data: [78, 81, 80, 45, 34, 12, 40]
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: false
+            }],
+            yAxes: [{
+              display: false
+            }]
+          },
+          elements: {
+            line: {
+              borderWidth: 2
+            },
+            point: {
+              radius: 0,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    });
+});
 
 socket.on('faltas', function(data) {
   for (var index = 0; index < data.length; index++) {

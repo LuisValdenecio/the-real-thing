@@ -34,7 +34,8 @@ app.set('view options', { layout: false });
 var first,
     second,
     third,
-    fourth;
+    fourth,
+    fifth;
 
 const server = app.listen(PORT, ()=> {
 });
@@ -42,4 +43,4 @@ const server = app.listen(PORT, ()=> {
 const io = require("socket.io").listen(server);
 
 var application = require('./lib/routes.js');
-application.app(app,io, first, second, third, fourth);
+application.app(app,io, first, second, third, fourth, fifth);

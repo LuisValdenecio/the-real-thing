@@ -6,8 +6,47 @@
 
 const socket = io();
 
+const nacionalidade = {
+  Angolana : "flag-icon-ao",
+  Portuguesa : "",
+  Francesa : "",
+  Americana : "",
+  Brasileira : "",
+  "Moçambicana" : "",
+  "Alemã" : "",
+  Holandesa : "",
+  Checa : ""
+};
 
-
+const subjectUtf = {
+  "A.E.F" : "AEF",
+  "Cont.Analitica":"Cont Analítica",
+  "Cont.Financeira":"Cont Financeira",
+  "D.C.C":"DCC",
+  "D.L.F":"",
+  "Empreend":"Empreend",
+  "Fisica":"Física",
+  "Mat":"Matemática",
+  "O.G.I":"OGI",
+  "P.O.L":"POL",
+  "Proj.Tecn":"Proj Técn",
+  "S.E.A.C":"SEAC",
+  "Socio":"Sociologia",
+  "T.C.C":"TCC",
+  "T.C.O-I.E.U":"TCO - IEU",
+  "T.C.O.E":"TCOE",
+  "T.L.P":"TLP",
+  "T.R.E.I":"TREI",
+  "Tec-de-Topografia":"Téc de Topografia",
+  "Ed.Fisica": "Ed. Física",
+  "T.C.E" : "TCE",
+  "I.A.C" : "IAC",
+  "L.Inglesa" : "Ingles",
+  "Economia" : "Economia",
+  "FAI" : "FAI",
+  "L.Portuguesa" : "L.Portuguesa",
+  "Ad.Empresas" : "Adm. Empresas"
+};
 
 // this function convert html into JSON like database
 function htmlToObject(htmlElement, objectToReturn) {
@@ -91,5 +130,73 @@ function deleteHtmlArray(htmlArray) {
 
   if (htmlArray.length > 0) {
     deleteHtmlArray(htmlArray);
+  }
+}
+
+// this function is pivotal when it comes to faultsData manipulation
+function faultsDataManipulation(arrOfObj, numberOfStud) {
+
+  var discMaisFaltosas = [];
+  var faltasAluno = [];
+  var x = 0;
+
+  var addCounter = 0,
+      innerCounter = numberOfStud[0]["studentNumber"];
+
+  for (let counter = 0; counter < arrOfObj.length / numberOfStud[0]["studentNumber"]; counter++) {
+
+    for (let inner = addCounter; inner < innerCounter; inner++) {
+      if (faltasAluno[indexMirror(addCounter, innerCounter, inner)] || faltasAluno[indexMirror(addCounter, innerCounter, inner)] == 0) {
+        faltasAluno[indexMirror(addCounter, innerCounter, inner)] += sum(
+          [
+            arrOfObj[inner]["falta_indisciplinada"],
+            arrOfObj[inner]["falta_ausencia"],
+            arrOfObj[inner]["falta_material"]
+          ]
+        );
+      } else {
+        faltasAluno[indexMirror(addCounter, innerCounter, inner)] = sum(
+          [
+            arrOfObj[inner]["falta_indisciplinada"],
+            arrOfObj[inner]["falta_ausencia"],
+            arrOfObj[inner]["falta_material"]
+          ]
+        );
+      }
+    }
+
+    addCounter += numberOfStud[0]["studentNumber"];
+    innerCounter += numberOfStud[0]["studentNumber"];
+
+  }
+
+  return [
+    discMaisFaltosas,
+    faltasAluno
+  ];
+}
+
+// this function sums a set of elements in a set
+function sum(arr) {
+  var sum = 0;
+  for (let counter = 0; counter < arr.length; counter++) {
+    sum += arr[counter];
+  }
+  return sum;
+}
+
+// this function is useful with indexes
+function indexMirror(start, end, ele) {
+  var eleIndex = start,
+      plusCounter = 0;
+
+  for (let counter = start; counter < end; counter++) {
+    // return the ele index exactly when the element matches
+    if (eleIndex == ele) {
+      return plusCounter;
+    }
+    // increment the index so that it matches the ele
+    eleIndex++;
+    plusCounter++;
   }
 }
