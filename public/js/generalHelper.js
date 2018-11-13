@@ -134,45 +134,56 @@ function deleteHtmlArray(htmlArray) {
 }
 
 // this function is pivotal when it comes to faultsData manipulation
-function faultsDataManipulation(arrOfObj, numberOfStud) {
+function faultsDataManipulation(arrOfObj, studList) {
 
-  var discMaisFaltosas = [];
-  var faltasAluno = [];
-  var x = 0;
+  // if data faults are non-existent, then do not continue
+  if (arrOfObj.length == 0 ||  studList[0]["studentNumber"] == 0) return;
 
-  var addCounter = 0,
-      innerCounter = numberOfStud[0]["studentNumber"];
+  // gather the estudante_cod of every student
+  var arrayOfCods = [],
+      studentFaults = [];
 
-  for (let counter = 0; counter < arrOfObj.length / numberOfStud[0]["studentNumber"]; counter++) {
+  // iterate over the number of students and fill in the arrayOfCods
+  for (let counter = 0; counter < studList[0]["studentNumber"]; counter++) {
+    arrayOfCods.push(arrOfObj[counter]["estudante_cod"]);
+  }
 
-    for (let inner = addCounter; inner < innerCounter; inner++) {
-      if (faltasAluno[indexMirror(addCounter, innerCounter, inner)] || faltasAluno[indexMirror(addCounter, innerCounter, inner)] == 0) {
-        faltasAluno[indexMirror(addCounter, innerCounter, inner)] += sum(
-          [
-            arrOfObj[inner]["falta_indisciplinada"],
-            arrOfObj[inner]["falta_ausencia"],
-            arrOfObj[inner]["falta_material"]
-          ]
-        );
-      } else {
-        faltasAluno[indexMirror(addCounter, innerCounter, inner)] = sum(
-          [
-            arrOfObj[inner]["falta_indisciplinada"],
-            arrOfObj[inner]["falta_ausencia"],
-            arrOfObj[inner]["falta_material"]
-          ]
-        );
+  // for each particular "estudante_cod" associate a set of faults
+  for (let counter = 0; counter < arrOfObj.length; counter++) {
+    for (let innerCounter = 0; innerCounter < studList[0]["studentNumber"]; innerCounter++) {
+
+      if (arrOfObj[counter]["estudante_cod"] == arrayOfCods[innerCounter]) {
+
+          // first insertion
+          if (studentFaults[innerCounter] || studentFaults[innerCounter] == 0) {
+            studentFaults[innerCounter][arrayOfCods[innerCounter]] += sum(
+              [
+                arrOfObj[counter]["falta_indisciplinada"],
+                arrOfObj[counter]["falta_ausencia"],
+                arrOfObj[counter]["falta_material"]
+              ]
+            );
+          }
+
+          // non-first insertion
+          else {
+            studentFaults[innerCounter] = {};
+            studentFaults[innerCounter][arrayOfCods[innerCounter]] = sum(
+              [
+                arrOfObj[counter]["falta_indisciplinada"],
+                arrOfObj[counter]["falta_ausencia"],
+                arrOfObj[counter]["falta_material"]
+              ]
+            );
+
+          }
       }
+
     }
-
-    addCounter += numberOfStud[0]["studentNumber"];
-    innerCounter += numberOfStud[0]["studentNumber"];
-
   }
 
   return [
-    discMaisFaltosas,
-    faltasAluno
+    studentFaults
   ];
 }
 
