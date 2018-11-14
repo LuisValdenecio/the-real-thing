@@ -678,7 +678,6 @@ socket.on('allFaults', function(data) {
 
               for (let InnerCounter = 0; InnerCounter < allFaults.length; InnerCounter++) {
                 if (allFaults[InnerCounter].hasOwnProperty(student_report.getAttribute("estudante_cod"))) {
-                  console.log("im right");
                   fault_holder.innerText =
                     faultsDataManipulation(data[0], data[1])[0][InnerCounter][student_report.getAttribute("estudante_cod")];
                 }

@@ -61,6 +61,7 @@ const contabilidade = [
     ],
 
     [
+
       "Estágio Profissional"
     ]
 
@@ -174,7 +175,7 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
     deleteHtmlArray(carousel_indicators);
     deleteHtmlArray(carousel_inner);
 
-    for (let counter = 0; counter < course[indexTwo].length; counter++) {
+    for (let counter = 0; counter < course[indexOne].length; counter++) {
 
       // set the carousels
       document.querySelectorAll(".carousel-indicators")[indexOne].appendChild(
@@ -420,14 +421,35 @@ function subjectPlacer(curso) {
 // para as disciplinas do curso de informática
 inf.addEventListener('click', function() {
   subjectPlacer(informatica);
+
+  var formToSubmitOne = dynamicForm(informatica, "tecnico", "Informatica");
+  document.querySelector("body").appendChild(
+    formToSubmitOne
+  );
+
+  document.querySelector("body .course-form").submit();
 },false);
 
 // para as disciplinas do curso de occ
 o_c_c.addEventListener('click', function() {
-  subjectPlacer(occ);
+  //subjectPlacer(occ);
+
+  var formToSubmitOne = dynamicForm(occ, "tecnico", "occ");
+  document.querySelector("body").appendChild(
+    formToSubmitOne
+  );
+
+  document.querySelector("body .course-form").submit();
 }, false);
 
 // para as disciplinas do curso de contabilidade
 cont.addEventListener('click', function(){
-  subjectPlacer(contabilidade);
+  //subjectPlacer(contabilidade);
+
+  var formToSubmitOne = dynamicForm(contabilidade, "tecnico", "Contabilidade");
+  document.querySelector("body").appendChild(
+    formToSubmitOne
+  );
+
+  document.querySelector("body .course-form").submit();
 }, false);

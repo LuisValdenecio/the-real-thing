@@ -211,3 +211,115 @@ function indexMirror(start, end, ele) {
     plusCounter++;
   }
 }
+
+/*
+  this function creates a form and sends to the server the information it
+  receives as an argument
+*/
+function dynamicForm(toSend, route, course) {
+
+  var cg  = ["10ªCG", "11ªCG", "12ªCG", "13ªCG"],
+      inf = ["10ªInf", "11ªInf", "12ªInf", "13ªInf"],
+      occ = ["10ªOCC", "11ªOCC", "12ªOCC", "13ªOCC"],
+      theActualCourse;
+
+  if (course == "Informatica") theActualCourse = inf;
+  if (course == "Contabilidade") theActualCourse = cg;
+  if (course == "occ") theActualCourse = occ;
+
+  // create the form
+  var formToSend = objectToHTML({
+    tag : "form",
+    attr : {
+      "method" : "POST",
+      "class" : "course-form",
+      "style" : "display : none",
+      "action" : `${'/'}${route}`
+    }
+  });
+
+  // 10ª Classe
+  if (toSend[0].length > 0 && typeof toSend[0] != "string") {
+
+    for (let innerCounter = 0; innerCounter < toSend[0].length; innerCounter++) {
+      formToSend.appendChild(objectToHTML({
+        tag : "input",
+        attr : {
+          type : "text",
+          name : theActualCourse[0],
+          value : toSend[0][innerCounter]
+        }
+      }));
+    }
+
+  }
+
+  // 11ª classe
+  if (toSend[1].length > 0 && typeof toSend[1] != "string") {
+
+    for (let innerCounter = 0; innerCounter < toSend[1].length; innerCounter++) {
+
+      formToSend.appendChild(objectToHTML({
+        tag : "input",
+        attr : {
+          type : "text",
+          name : theActualCourse[1],
+          value : toSend[1][innerCounter]
+        }
+      }));
+    }
+
+  }
+
+  // 11ª classe
+  if (toSend[2].length > 0 && typeof toSend[1] != "string") {
+
+    for (let innerCounter = 0; innerCounter < toSend[2].length; innerCounter++) {
+
+      formToSend.appendChild(objectToHTML({
+        tag : "input",
+        attr : {
+          type : "text",
+          name : theActualCourse[2],
+          value : toSend[2][innerCounter]
+        }
+      }));
+    }
+
+  }
+
+  // 11ª classe
+  if (toSend[3].length > 0 && typeof toSend[1] != "string") {
+
+    for (let innerCounter = 0; innerCounter < toSend[3].length; innerCounter++) {
+
+      formToSend.appendChild(objectToHTML({
+        tag : "input",
+        attr : {
+          type : "text",
+          name : theActualCourse[3],
+          value : toSend[3][innerCounter]
+        }
+      }));
+
+    }
+
+  }
+
+  if (toSend[0].length > 0 && typeof toSend[0] == "string" ) {
+    // register regardless of what happens
+      for (let counter = 0; counter < toSend.length; counter++) {
+        formToSend.appendChild(objectToHTML({
+          tag : "input",
+          attr : {
+            type : "text",
+            name : `subject${counter}`,
+            value : toSend[counter]
+          }
+        }));
+      }
+  }
+
+  return formToSend;
+
+}
