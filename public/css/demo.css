@@ -31,14 +31,14 @@
     color: #fff;
 }
 
-.fa-exclamation-triangle {
-    color: orange;
-}
-
-.alert-warning {
-	color: red;
-}
-
 .outer-container {
 	padding-top: 10px;
+}
+
+.alert-warning h4 {
+  color : red;
+}
+
+.fa-warning{
+  color : orange;
 }
