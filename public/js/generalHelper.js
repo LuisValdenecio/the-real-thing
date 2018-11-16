@@ -232,9 +232,8 @@ function dynamicForm(toSend, route, course) {
     tag : "form",
     attr : {
       "method" : "POST",
-      "class" : "course-form",
-      "style" : "display : none",
-      "action" : `${'/'}${route}`
+      "style" : "display : none"
+      //"action" : `${'/'}${route}`
     }
   });
 

@@ -478,18 +478,53 @@ wells.forEach((each) => {
 
 home_button.addEventListener('click', function() {
 
-  wells.forEach((each)=> {
-    if (each.style.background == "rgb(39, 101, 82)") {
-
-      // create and send a form that contains every subject for a particular course
-      var formToSubmitOne = dynamicForm(mapper[each.getAttribute("id")], "tecnico", each.getAttribute("id"));
-      document.querySelector("body").appendChild(
-        formToSubmitOne
-      );
-
-      document.querySelector("body .course-form").submit();
+  var clicked = [];
+  var parentForm = objectToHTML({
+    tag : "form",
+    attr : {
+      "method" : "POST",
+      "style" : "display : none",
+      "action" : `${'/'}${"tecnico"}`
     }
-
   });
 
+  var inputs = [];
+
+  wells.forEach((each)=> {
+    if (each.style.background == "rgb(39, 101, 82)")
+      clicked.push(each.getAttribute("id"));
+  });
+
+  // create a major form from the minor elements
+  clicked.forEach((each)=> {
+    inputs.push(
+      getTheInput(dynamicForm(mapper[each], "tecnico", each))
+    );
+  });
+
+  // append the parent form in the body
+  document.querySelector("body").appendChild(parentForm);
+
+  for (let x = 0; x < inputs.length; x++) {
+    for (let y = 0; y < inputs[x].length; y++) {
+      parentForm.appendChild(
+        inputs[x][y]
+      );
+    }
+  }
+  
+  // submit the form to the server
+  parentForm.submit();
 });
+
+// this helper function helps to get rid of the header of a form and leave only
+// the input tags
+function getTheInput(form) {
+  var inputs = [];
+
+  for (let counter = 0; counter < form.children.length; counter++) {
+    inputs.push(form.children[counter]);
+  }
+
+  return inputs;
+}
