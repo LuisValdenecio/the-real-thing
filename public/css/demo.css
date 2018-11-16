@@ -15,7 +15,7 @@
     background: rgba(39, 102, 85, .80);
     cursor: pointer;
     transition: 1s;
-		height: 160px;
+    height: 160px;
 }
 
 .well:hover {
@@ -25,20 +25,56 @@
 .course-title {
     font-weight: bold;
     color: #fff;
+    padding: 0px;
 }
 
 .fa {
     color: #fff;
 }
 
+.course-icon i {
+    font-size: 250%;
+    padding: 0px;
+}
+
+.course-icon  {
+    padding: 0px;
+}
+
+
+.fa-exclamation-triangle {
+    color: orange;
+}
+
 .outer-container {
-	padding-top: 10px;
+  padding-top: 20px;
 }
 
-.alert-warning h4 {
-  color : red;
+.home_button {
+    width : 225px;
+    height: 43px;
+    background: #276552;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 40px;
 }
 
-.fa-warning{
-  color : orange;
+.home_button:hover {
+    box-shadow: 0px 10px 40px rgba(0,0,0,0.3);
+}
+
+.trans_400 {
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+.home_button a {
+    text-decoration: none;
+    -webkit-font-smoothing : antialiased;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 43px;
+    letter-spacing: 0.3em;
 }

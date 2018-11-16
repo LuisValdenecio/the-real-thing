@@ -223,8 +223,8 @@ function dynamicForm(toSend, route, course) {
       occ = ["10ªOCC", "11ªOCC", "12ªOCC", "13ªOCC"],
       theActualCourse;
 
-  if (course == "Informatica") theActualCourse = inf;
-  if (course == "Contabilidade") theActualCourse = cg;
+  if (course == "informatica") theActualCourse = inf;
+  if (course == "contabilidade") theActualCourse = cg;
   if (course == "occ") theActualCourse = occ;
 
   // create the form
