@@ -1,0 +1,36 @@
+extends /pages.pug
+
+block view
+  .container
+    .row.justify-content-center
+      .col-md-6
+        .card.mx-4
+          .card-body.p-4
+            h1 Registe-se como professor
+            p.text-muted Crie uma conta
+            form(action='/registoProfessor', method='POST')
+              .input-group.mb-3
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-user
+                input.form-control(type='text', placeholder='Primeiro e último nome', name="firstName",required)
+              .input-group.mb-3
+                .input-group-prepend
+                  span.input-group-text @
+                input.form-control(type='text', placeholder='Email', name="email",required)
+              .input-group.mb-3
+                .input-group-prepend
+                  span.input-group-text @
+                input.form-control(type='text', placeholder='Nomes das escolas que leciona separadas por vírgula', name="escola",required)
+              .input-group.mb-3
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-lock
+                input.form-control(type='text', placeholder='Nome de Usuario (eg. Francisco100)', name="username", required)
+              .input-group.mb-4
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-lock
+                input.form-control(type='password', placeholder='Palavra passe', name="password", required)
+
+              button.btn.btn-block.btn-success(type='submit') Criar Professor

@@ -1,6 +1,6 @@
 var express = require('express');
 require('dotenv').config();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
 var flash = require('connect-flash');
 
@@ -10,7 +10,7 @@ var request = require('request');
 var session = require("express-session");
 var app = express();
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var path = require('path');
 
 app.use(require('cookie-parser')());
@@ -35,7 +35,8 @@ var first,
     second,
     third,
     fourth,
-    fifth;
+    fifth,  
+    sixth;
 
 const server = app.listen(PORT, ()=> {
 });
@@ -43,4 +44,4 @@ const server = app.listen(PORT, ()=> {
 const io = require("socket.io").listen(server);
 
 var application = require('./lib/routes.js');
-application.app(app,io, first, second, third, fourth, fifth);
+application.app(app,io, first, second, third, fourth, fifth, sixth);
