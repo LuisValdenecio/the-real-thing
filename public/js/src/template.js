@@ -6,7 +6,8 @@ const UIelements = [
 
     {
 
-      tag:"div","attr":{"class":"outer-container"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12"},"children":{"tag":"div","attr":{"class":"alert alert-warning"},"children":[{"tag":"h4","children":{"tag":"i","attr":{"class":"fa fa-warning"}}},{"tag":"a","content":"report an issue with Adblock Plus","attr":{"class":"alert-link","href":"#"}}]}}},{"tag":"div","attr":{"class":"row mainRow"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"contabilidade"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-calculator"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Contabilidade","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"financ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-money"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Finanças","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"gest-emp"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-building-o"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Gestão Empresarial","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"tec-est"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-line-chart"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Técninas de cálculo e Estatística","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"rec-hum"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-group"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Recursos Humanos","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"informatica"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-desktop"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Informática","attr":{"class":"course-title"}}}}]}}}]}}},{"tag":"div","attr":{"class":"row","style":"padding-top: 20px"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"electr"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-flash"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Instalações Eletricas","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"mecanica"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-wrench"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Mecânica e Reparação automovel","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"occ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon"},"children":{"tag":"i","attr":{"class":"fa fa-road"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Obras de construção civíl","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"adic-curso"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-plus"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Adicionar Curso","attr":{"class":"course-title"}}}}]}}}]}}},{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"home_button trans_400"},"children":{"tag":"a","content":"Salvar","attr":{"href":"#"}}}}}]}
+      tag:"div","attr":{"class":"outer-container"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12 col-lg-12"},"children":{"tag":"div","attr":{"class":"alert alert-warning"},"children":[{"tag":"h4","children":[{"tag":"i","attr":{"class":"fa fa-warning"}},{"tag":"span","content":"\"Aviso!\""}]},{"tag":"h6","content":"Clique em um dos retângulos para criar uma turma de tal curso."}]}}},{"tag":"div","attr":{"class":"row mainRow"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"contabilidade"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-calculator"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Contabilidade","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"financ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-money"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Finanças","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"gest-emp"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-building-o"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Gestão Empresarial","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"tec-est"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-line-chart"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Técninas de cálculo e Estatística","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"rec-hum"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-group"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Recursos Humanos","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"informatica"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-desktop"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Informática","attr":{"class":"course-title"}}}}]}}}]}}},{"tag":"div","attr":{"class":"row","style":"padding-top: 20px"},"children":{"tag":"div","attr":{"class":"container"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"electr"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-flash"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Instalações Eletricas","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"mecanica"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12  course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-wrench"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Mecânica e Reparação automovel","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"occ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon"},"children":{"tag":"i","attr":{"class":"fa fa-road"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Obras de construção civíl","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"occ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon"},"children":{"tag":"i","attr":{"class":"fa fa-heartbeat"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Emfermagem e cuidados gerais","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"occ"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon"},"children":{"tag":"i","attr":{"class":"fa fa-hotel"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Hotelaria e Restauração","attr":{"class":"course-title"}}}}]}}},{"tag":"div","attr":{"class":"col-md-2 col-lg-2"},"children":{"tag":"div","attr":{"class":"well","id":"adic-curso"},"children":{"tag":"div","children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12 course-icon","style":"padding: 0px"},"children":{"tag":"i","attr":{"class":"fa fa-plus"}}}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12 col-md-12","style":"padding: 0px"},"children":{"tag":"span","content":"Adicionar Curso","attr":{"class":"course-title"}}}}]}}}]}}}]}
+
 
     }
 
@@ -110,12 +111,12 @@ const informatica = [
       "TLP",
       "TREI",
       "SEAC",
-      "Projecto Tecnológico"
+      "Projécto Tecnológico"
     ],
 
     [
       "Estágio Profissional",
-      "Projecto Tecnológico"
+      "Projécto Tecnológico"
     ]
 ];
 
@@ -163,7 +164,7 @@ const occ = [
     "TCO-IEU",
     "Técnicas de Topografia",
     "POL",
-    "Projecto Tecnológico"
+    "Projécto Tecnológico"
   ],
 
   [
@@ -375,107 +376,56 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
     }
 }
 
-
-
-  //based on the course the different grades are going to automatically
-  //set themselves up
-
-/*
-var cont = document.querySelector("#curso-contabilidade"),
-    inf  = document.querySelector("#curso-informatica"),
-    o_c_c  = document.querySelector("#curso-occ");
-
-function subjectPlacer(curso) {
-
-  // set up the subjects for 10ª
-  swissKnife (
-    document.querySelectorAll(".carousel-indicators")[0].children,
-    document.querySelectorAll(".carousel-inner")[0].children,
-    curso,
-    0,
-    0,
-    "#10classe"
-  );
-
-  // set up the subjects for 11ª
-  swissKnife (
-    document.querySelectorAll(".carousel-indicators")[1].children,
-    document.querySelectorAll(".carousel-inner")[1].children,
-    curso,
-    1,
-    1,
-    "#11classe"
-  );
-
-  // set up the subjects for 12ª
-  swissKnife (
-    document.querySelectorAll(".carousel-indicators")[2].children,
-    document.querySelectorAll(".carousel-inner")[2].children,
-    curso,
-    2,
-    2,
-    "#12classe"
-  );
-
-  // set up the subjets for 13ª
-  swissKnife (
-    document.querySelectorAll(".carousel-indicators")[3].children,
-    document.querySelectorAll(".carousel-inner")[3].children,
-    curso,
-    3,
-    3,
-    "#13classe"
-  );
-}
-
-// para as disciplinas do curso de informática
-inf.addEventListener('click', function() {
-
-  var formToSubmitOne = dynamicForm(informatica, "tecnico", "Informatica");
-  document.querySelector("body").appendChild(
-    formToSubmitOne
-  );
-
-  document.querySelector("body .course-form").submit();
-
-  subjectPlacer(informatica);
-
-},false);
-
-// para as disciplinas do curso de occ
-o_c_c.addEventListener('click', function() {
-  subjectPlacer(occ);
-
-  var formToSubmitOne = dynamicForm(occ, "tecnico", "occ");
-  document.querySelector("body").appendChild(
-    formToSubmitOne
-  );
-
-  document.querySelector("body .course-form").submit();
-}, false);
-
-// para as disciplinas do curso de contabilidade
-cont.addEventListener('click', function(){
-  subjectPlacer(contabilidade);
-
-  var formToSubmitOne = dynamicForm(contabilidade, "tecnico", "Contabilidade");
-  document.querySelector("body").appendChild(
-    formToSubmitOne
-  );
-
-  document.querySelector("body .course-form").submit();
-}, false);
-*/
-
 var wells = document.querySelectorAll(".well"),
     home_button = document.querySelector(".home_button");
 
 wells.forEach((each) => {
     each.addEventListener('click', () => {
-        each.style.background = "#276552";
+        var classRegs = objectToHTML({
+          tag : "button",
+          attr : {
+            class : "btn btn-primary btn-lg",
+            "data-toggle" : "modal",
+            "data-target" : "#myModal",
+            style : "display:none"
+          }
+        });
+
+        // class registration modal
+        var theModal = objectToHTML({
+
+          tag:"div","attr":{"class":"modal fade","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog","role":"document"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"},"children":{"tag":"div","children":[{"tag":"h4","content":"Crie uma turma","attr":{"class":"modal-title"}},{"tag":"span","content":"selecione uma classe para criar uma turma do curso técnico de"},{"tag":"span","attr":{"class":"modal-title course-holder"}}]}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"form","attr":{"role":"form","method":"post","action":"/tecnico"},"children":[{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"div","attr":{"class":"alert alert-warning"},"children":[{"tag":"h4","children":[{"tag":"i","attr":{"class":"fa fa-warning"}},{"tag":"span","content":"\"Aviso!\""}]},{"tag":"h6","content":"\n                                        As turmas da mesma classe e curso, serão\n                                        nomeadas por ordem de criação.\"\n                                    "}]}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","content":"Selecione uma classe","attr":{"for":"name","class":"classe"}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox1","value":"option1","name":"10ªClasse"}},{"tag":"span","content":"10ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox2","value":"option2","name":"11ªClasse"}},{"tag":"span","content":"11ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"12ªClasse"}},{"tag":"span","content":"12ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"10ªClasse"}},{"tag":"span","content":"13ª Classe"}]}]},{"tag":"div","attr":{"class":"form-group hidden-form"},"children":[{"tag":"input","attr":{"type":"text","value":"option1","name":"classe"}},{"tag":"input","attr":{"type":"text","value":"option1","name":"curso"}}]}]}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":[{"tag":"button","content":"Cancelar","attr":{"class":"btn btn-secondary","type":"button","data-dismiss":"modal"}},{"tag":"button","content":"Criar turma","attr":{"class":"btn btn-primary","type":"button"}}]}]}}
+
+        });
+
+        document.querySelector("body").appendChild(theModal);
+        document.querySelector("body").appendChild(classRegs);
+
+        // seta o valor do input nome do curso
+        document.querySelectorAll(".hidden-form input")[1].value = each.innerText;
+        // seta o valor do input nome da classes
+
+        var checks = document.querySelectorAll(".checkbox-inline input");
+        var classes = ["10ªClasse", "11ªClasse", "12ªClasse", "13ªClasse"];
+
+        if (checks[0].checked) {
+          document.querySelectorAll(".hidden-form input")[0].value = "10ªClasse";
+        } else document.querySelectorAll(".hidden-form input")[0].value = "10ª";
+
+        document.querySelector(".course-holder").innerText = " "+each.innerText;
+        classRegs.click();
+
+        // when the main button is clicked, send the form to the server
+        document.querySelector(".btn-primary").onclick = function() {
+          document.querySelector("form").submit();
+        }
+
     });
 });
 
+
+
+/*
 home_button.addEventListener('click', function() {
 
   var clicked = [];
@@ -512,10 +462,12 @@ home_button.addEventListener('click', function() {
       );
     }
   }
-  
+
   // submit the form to the server
   parentForm.submit();
+  //console.log(parentForm);
 });
+*/
 
 // this helper function helps to get rid of the header of a form and leave only
 // the input tags

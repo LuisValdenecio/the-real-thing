@@ -32,6 +32,10 @@
 	left : -185px;
 }
 
+::-webkit-scrollbar {
+display: none;
+}
+
 thead tr th {
     font-weight : bold;
     color : gray;

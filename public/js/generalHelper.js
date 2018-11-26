@@ -216,16 +216,9 @@ function indexMirror(start, end, ele) {
   this function creates a form and sends to the server the information it
   receives as an argument
 */
-function dynamicForm(toSend, route, course) {
+function dynamicForm(toSend, route) {
 
-  var cg  = ["10ªCG", "11ªCG", "12ªCG", "13ªCG"],
-      inf = ["10ªInf", "11ªInf", "12ªInf", "13ªInf"],
-      occ = ["10ªOCC", "11ªOCC", "12ªOCC", "13ªOCC"],
-      theActualCourse;
-
-  if (course == "informatica") theActualCourse = inf;
-  if (course == "contabilidade") theActualCourse = cg;
-  if (course == "occ") theActualCourse = occ;
+  var classes  = ["10ª", "11ª", "12ª", "13ª"];
 
   // create the form
   var formToSend = objectToHTML({
@@ -245,7 +238,7 @@ function dynamicForm(toSend, route, course) {
         tag : "input",
         attr : {
           type : "text",
-          name : theActualCourse[0],
+          name : classes[0],
           value : toSend[0][innerCounter]
         }
       }));
@@ -262,7 +255,7 @@ function dynamicForm(toSend, route, course) {
         tag : "input",
         attr : {
           type : "text",
-          name : theActualCourse[1],
+          name : classes[1],
           value : toSend[1][innerCounter]
         }
       }));
@@ -279,7 +272,7 @@ function dynamicForm(toSend, route, course) {
         tag : "input",
         attr : {
           type : "text",
-          name : theActualCourse[2],
+          name : classes[2],
           value : toSend[2][innerCounter]
         }
       }));
@@ -287,7 +280,7 @@ function dynamicForm(toSend, route, course) {
 
   }
 
-  // 11ª classe
+  // 12ª classe
   if (toSend[3].length > 0 && typeof toSend[1] != "string") {
 
     for (let innerCounter = 0; innerCounter < toSend[3].length; innerCounter++) {
@@ -296,7 +289,7 @@ function dynamicForm(toSend, route, course) {
         tag : "input",
         attr : {
           type : "text",
-          name : theActualCourse[3],
+          name : classes[3],
           value : toSend[3][innerCounter]
         }
       }));

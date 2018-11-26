@@ -12,14 +12,10 @@
 
 .well {
     padding: 40px;
-    background: rgba(39, 102, 85, .80);
+    background: #276552;
     cursor: pointer;
     transition: 1s;
     height: 160px;
-}
-
-.well:hover {
-    background: #276552;
 }
 
 .course-title {
@@ -77,4 +73,52 @@
     font-weight: 800;
     line-height: 43px;
     letter-spacing: 0.1em;
+}
+
+/*
+  course regisitration modal
+*/
+.modal-content {
+    border-radius: 0%;
+    border: none;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    border: none;
+}
+
+.btn-secondary , .btn-primary {
+   background: #276552;
+   border: solid 1px #276552;
+   transition: 1s;
+   border-radius: 0%;
+   color : #fff;
+}
+
+.btn-secondary:hover , .btn-primary:hover {
+   background: #3a866f;
+   border: solid 1px #276552;
+   color: #fff;
+}
+
+.classNameHolder {
+    padding: 0px;
+    border: none;
+}
+
+.modal-title, .classe {
+    font-weight: bold;
+}
+
+.alert-warning {
+  background: #276552;
+  border: solid #276552;
+  color : #fff;
+}
+
+/*
+  form para registrar disciplinas
+*/
+.hidden-form {
+  display: none;
 }
