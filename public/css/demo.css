@@ -19,9 +19,13 @@
 }
 
 .course-title {
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: #fff;
     padding: 0px;
+}
+
+i {
+    color: #fff;
 }
 
 .fa {
@@ -121,4 +125,21 @@
 */
 .hidden-form {
   display: none;
+}
+
+.corner-icon-option {
+  position:absolute;
+  padding: 0px 3px 0px 3px;
+  top:-30px;
+  right:-15px;
+  display: none;
+}
+
+.corner-icon-option:hover {
+  background: rgba(51, 142, 117, 0.80);
+  border-radius: 5px;
+}
+
+.well:hover .corner-icon-option {
+  display: block;
 }

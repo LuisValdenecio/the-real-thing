@@ -35,8 +35,9 @@ var first,
     second,
     third,
     fourth,
-    fifth,  
-    sixth;
+    fifth,
+    sixth,
+    seventh;
 
 const server = app.listen(PORT, ()=> {
 });
@@ -44,4 +45,4 @@ const server = app.listen(PORT, ()=> {
 const io = require("socket.io").listen(server);
 
 var application = require('./lib/routes.js');
-application.app(app,io, first, second, third, fourth, fifth, sixth);
+application.app(app,io, first, second, third, fourth, fifth, sixth, seventh);
