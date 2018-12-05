@@ -22,164 +22,6 @@ document.querySelector(".container-fluid").appendChild(objectToHTML(
 
 **********************************************************************************/
 
-
-// contabilidade e gestão
-const contabilidade = [
-
-    [
-      "Língua Portuguesa",
-      "Língua Inglesa",
-      "FAI",
-      "Contabilidade Financeira",
-      "Economia",
-      "Matemática",
-      "IAC",
-      "DLC",
-      "TCE",
-      "Administração de Empresas",
-      "Educação Física"
-    ],
-
-    [
-      "Língua Portuguesa",
-      "Língua Inglesa",
-      "FAI",
-      "Educação Física",
-      "Matemática",
-      "IAC",
-      "Contabilidade Financeira",
-      "TCE",
-      "Administração de Empresas",
-      "DLF"
-    ],
-
-    [
-      "Matemática",
-      "Direito",
-      "Sociologia",
-      "Contabilidade Financeira",
-      "Contabilidade Analítica",
-      "AEF",
-      "Projécto Tecnológico"
-    ],
-
-    [
-
-      "Estágio Profissional"
-    ]
-
-];
-
-// informática
-const informatica = [
-
-    [
-      "Língua Portuguesa",
-      "Língua Inglesa",
-      "FAI",
-      "Educação Física",
-      "Matemática",
-      "Física",
-      "Química",
-      "Electrotecnia",
-      "Empreendedorismo",
-      "TLP",
-      "SEAC",
-      "TIC"
-    ],
-
-    [
-      "Língua Portuguesa",
-      "Língua Inglesa",
-      "FAI",
-      "Educação Física",
-      "Matemática",
-      "Física",
-      "Química",
-      "Electrotecnia",
-      "Empreendedorismo",
-      "Desenho Técnico",
-      "TLP",
-      "SEAC"
-    ],
-
-    [
-      "Matemática",
-      "Física",
-      "OGI",
-      "Empreendedorismo",
-      "TLP",
-      "TREI",
-      "SEAC",
-      "Projécto Tecnológico"
-    ],
-
-    [
-      "Estágio Profissional",
-      "Projécto Tecnológico"
-    ]
-];
-
-// obras de construção civil
-const occ = [
-  [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "FAI",
-    "Educação Física",
-    "Matemática",
-    "Física",
-    "Química",
-    "Informática",
-    "Empreendedorismo",
-    "DCC",
-    "TCC",
-    "TCOE",
-    "POL"
-  ],
-
-  [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "FAI",
-    "Educação Física",
-    "Matemática",
-    "Física",
-    "Química",
-    "Empreendedorismo",
-    "DCC",
-    "TCC",
-    "TCOE",
-    "POL"
-  ],
-
-  [
-    "Matemática",
-    "Física",
-    "OGI",
-    "Empreendedorismo",
-    "DCC",
-    "TCC",
-    "TCOE",
-    "TCO-IEU",
-    "Técnicas de Topografia",
-    "POL",
-    "Projécto Tecnológico"
-  ],
-
-  [
-    "Estágio Profissional"
-  ]
-
-];
-
-// mapps course names to actual vectors
-const mapper = {
-    "contabilidade" : contabilidade,
-    "occ" : occ,
-    "informatica" : informatica
-}
-
 function swissKnife (carousel_indicators, carousel_inner, course, indexOne, indexTwo, target) {
 
     deleteHtmlArray(carousel_indicators);
@@ -379,8 +221,9 @@ function swissKnife (carousel_indicators, carousel_inner, course, indexOne, inde
 var wells = document.querySelectorAll(".well"),
     home_button = document.querySelector(".home_button");
 
-wells.forEach((each) => {
-    each.addEventListener('click', () => {
+for (let counter = 0; counter < wells.length; counter++) {
+//wells.forEach((each) => {
+    wells[counter].addEventListener('click', () => {
         var classRegs = objectToHTML({
           tag : "button",
           attr : {
@@ -402,7 +245,7 @@ wells.forEach((each) => {
         document.querySelector("body").appendChild(classRegs);
 
         // seta o valor do input nome do curso
-        document.querySelectorAll(".hidden-form input")[1].value = each.innerText;
+        document.querySelectorAll(".hidden-form input")[1].value = wells[counter].innerText;
         // seta o valor do input nome da classes
 
         var checks = document.querySelectorAll(".checkbox-inline input");
@@ -412,62 +255,51 @@ wells.forEach((each) => {
           document.querySelectorAll(".hidden-form input")[0].value = "10ªClasse";
         } else document.querySelectorAll(".hidden-form input")[0].value = "10ª";
 
-        document.querySelector(".course-holder").innerText = " "+each.innerText;
+        document.querySelector(".course-holder").innerText = " "+wells[counter].innerText;
         classRegs.click();
+
+        // esse formGroup é para os inputs dos nomes das disciplinas
+        var hiddenInputs = objectToHTML({
+          tag : "div",
+          attr : {
+            class : "form-group",
+            style : "display:none"
+          }
+        });
+
+        getTheInput(
+          dynamicForm(
+            [
+              cursos[document.querySelectorAll(".course-title")[counter].innerText][mapper[document.querySelectorAll(".hidden-form input")[0].value]],
+              [],
+              [],
+              []
+            ],
+            'null'
+          )
+        ).forEach((each)=>{
+          hiddenInputs.appendChild(each);
+        })
+
+        document.querySelector("form").appendChild(
+          hiddenInputs
+        );
+
+        console.log(document.querySelector("form"));
 
         // when the main button is clicked, send the form to the server
         document.querySelector(".btn-primary").onclick = function() {
           document.querySelector("form").submit();
         }
-
     });
-});
+}
 
-
-
-/*
-home_button.addEventListener('click', function() {
-
-  var clicked = [];
-  var parentForm = objectToHTML({
-    tag : "form",
-    attr : {
-      "method" : "POST",
-      "style" : "display : none",
-      "action" : `${'/'}${"tecnico"}`
-    }
-  });
-
-  var inputs = [];
-
-  wells.forEach((each)=> {
-    if (each.style.background == "rgb(39, 101, 82)")
-      clicked.push(each.getAttribute("id"));
-  });
-
-  // create a major form from the minor elements
-  clicked.forEach((each)=> {
-    inputs.push(
-      getTheInput(dynamicForm(mapper[each], "tecnico", each))
-    );
-  });
-
-  // append the parent form in the body
-  document.querySelector("body").appendChild(parentForm);
-
-  for (let x = 0; x < inputs.length; x++) {
-    for (let y = 0; y < inputs[x].length; y++) {
-      parentForm.appendChild(
-        inputs[x][y]
-      );
-    }
-  }
-
-  // submit the form to the server
-  parentForm.submit();
-  //console.log(parentForm);
-});
-*/
+const mapper = {
+  "10ª" : 0,
+  "11ª" : 1,
+  "12ª" : 2,
+  "13ª" : 3
+};
 
 // this helper function helps to get rid of the header of a form and leave only
 // the input tags

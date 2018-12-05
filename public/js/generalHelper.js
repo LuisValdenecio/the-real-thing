@@ -6,6 +6,158 @@
 
 const socket = io();
 
+// contabilidade e gestão
+const cursos = {
+
+    "Contabilidade" : [
+
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Contabilidade Financeira",
+        "Economia",
+        "Matemática",
+        "IAC",
+        "DLC",
+        "TCE",
+        "Administração de Empresas",
+        "Educação Física"
+      ],
+
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Educação Física",
+        "Matemática",
+        "IAC",
+        "Contabilidade Financeira",
+        "TCE",
+        "Administração de Empresas",
+        "DLF"
+      ],
+
+      [
+        "Matemática",
+        "Direito",
+        "Sociologia",
+        "Contabilidade Financeira",
+        "Contabilidade Analítica",
+        "AEF",
+        "Projécto Tecnológico"
+      ],
+
+      [
+
+        "Estágio Profissional"
+      ]
+
+    ],
+
+    "Informática" : [
+
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Educação Física",
+        "Matemática",
+        "Física",
+        "Química",
+        "Electrotecnia",
+        "Empreendedorismo",
+        "TLP",
+        "SEAC",
+        "TIC"
+      ],
+
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Educação Física",
+        "Matemática",
+        "Física",
+        "Química",
+        "Electrotecnia",
+        "Empreendedorismo",
+        "Desenho Técnico",
+        "TLP",
+        "SEAC"
+      ],
+
+      [
+        "Matemática",
+        "Física",
+        "OGI",
+        "Empreendedorismo",
+        "TLP",
+        "TREI",
+        "SEAC",
+        "Projécto Tecnológico"
+      ],
+
+      [
+        "Estágio Profissional",
+        "Projécto Tecnológico"
+      ]
+  ],
+
+  "OCC" : [
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Educação Física",
+        "Matemática",
+        "Física",
+        "Química",
+        "Informática",
+        "Empreendedorismo",
+        "DCC",
+        "TCC",
+        "TCOE",
+        "POL"
+      ],
+
+      [
+        "Língua Portuguesa",
+        "Língua Inglesa",
+        "FAI",
+        "Educação Física",
+        "Matemática",
+        "Física",
+        "Química",
+        "Empreendedorismo",
+        "DCC",
+        "TCC",
+        "TCOE",
+        "POL"
+      ],
+
+      [
+        "Matemática",
+        "Física",
+        "OGI",
+        "Empreendedorismo",
+        "DCC",
+        "TCC",
+        "TCOE",
+        "TCO-IEU",
+        "Técnicas de Topografia",
+        "POL",
+        "Projécto Tecnológico"
+      ],
+
+      [
+        "Estágio Profissional"
+      ]
+  ]
+
+};
+
+
 const nacionalidade = {
   Angolana : "flag-icon-ao",
   Portuguesa : "",
