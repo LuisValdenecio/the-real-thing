@@ -22,7 +22,8 @@ const cursos = {
         "DLC",
         "TCE",
         "Administração de Empresas",
-        "Educação Física"
+        "Educação Física",
+        "Empreendedorismo"
       ],
 
       [
@@ -104,7 +105,7 @@ const cursos = {
       ]
   ],
 
-  "OCC" : [
+  "Obras de construção civíl" : [
       [
         "Língua Portuguesa",
         "Língua Inglesa",
@@ -450,7 +451,7 @@ function dynamicForm(toSend, route) {
 
   }
 
-  if (toSend[0].length > 0 && typeof toSend[0] == "string" ) {
+  if (toSend[0].length > 0 && typeof toSend[0] == "string") {
     // register regardless of what happens
       for (let counter = 0; counter < toSend.length; counter++) {
         formToSend.appendChild(objectToHTML({

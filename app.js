@@ -9,6 +9,8 @@ var request = require('request');
 
 var session = require("express-session");
 var app = express();
+var serveStatic = require('serve-static');
+var path = require('path')
 
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -21,7 +23,8 @@ app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/public', express.static(__dirname + '/public'));
+//app.use('/public', express.static(__dirname + '/public'));
+app.use(serveStatic(path.join(__dirname, '/')));
 
 app.locals.basedir = path.join(__dirname, 'views');
 
