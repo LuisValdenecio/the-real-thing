@@ -1,0 +1,8 @@
+.table tr {
+  cursor: pointer;
+  border: solid 1px lightgray;
+}
+
+.table tr:hover {
+  background: lightgray;
+}

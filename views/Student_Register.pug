@@ -8,22 +8,23 @@ html(lang='en')
     include ./ExclusiveStyle.pug
 
     block styles
+
   body
 
-  .table
-    .table-cell
-      .modal
-        #profile
-          .dashes
-          label Click para carregar uma fotografia
-        .editable
-          i.fa.fa-pencil
-          form(action="/Estudante", method="POST", enctype='multipart/form-data')
-            input(type='text', placeholder='Primeiro nome', name='firstName', required)
-            input(type='text', placeholder='Apelido', name='lastName', required)
-            input(type='text', placeholder='Nome da Turma', name='classname', required)
-            input#mediaFile(type='file', name='imageupload')
-            button.btn.btn-primary.px-4(type='submit', name='uploadimage', value='Upload Image') Salvar
+    .table
+      .table-cell
+        .modal
+          #profile
+            .dashes
+            label Click para carregar uma fotografia
+          .editable
+            i.fa.fa-pencil
+            form(action="/Estudante", method="POST", enctype='multipart/form-data')
+              input(type='text', placeholder='Primeiro nome', name='firstName', required)
+              input(type='text', placeholder='Apelido', name='lastName', required)
+              input(type='text', placeholder='Nome da Turma', name='classname', required)
+              input#mediaFile(type='file', name='imageupload')
+              button.btn.btn-primary.px-4(type='submit', name='uploadimage', value='Upload Image') Salvar
 
 
 

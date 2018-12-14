@@ -12,7 +12,7 @@ const cursos = {
     "Contabilidade" : [
 
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Contabilidade Financeira",
@@ -27,7 +27,7 @@ const cursos = {
       ],
 
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Educação Física",
@@ -59,7 +59,7 @@ const cursos = {
     "Informática" : [
 
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Educação Física",
@@ -74,7 +74,7 @@ const cursos = {
       ],
 
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Educação Física",
@@ -107,7 +107,7 @@ const cursos = {
 
   "Obras de construção civíl" : [
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Educação Física",
@@ -123,7 +123,7 @@ const cursos = {
       ],
 
       [
-        "Língua Portuguesa",
+        "Língua Portuguêsa",
         "Língua Inglesa",
         "FAI",
         "Educação Física",
