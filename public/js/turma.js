@@ -22,6 +22,7 @@ document.querySelector(".container-fluid").appendChild(objectToHTML(
   UIelements[0]
 ));
 
+// mostrar as disciplinas sem professor
 socket.on('turmaInfo', function(data){
   for (let subjectData = 0; subjectData < data.length; subjectData++) {
 
@@ -91,6 +92,33 @@ socket.on('turmaInfo', function(data){
   }
 });
 
+// mostrar as disciplinas ja registadas
+socket.on('teacherDetails', function(data){
+
+  // iterate over the data and retrieve the values
+  for (let counter = 0; counter < data.length; counter++) {
+
+    // get all the titles of all subjects
+    var titles = document.querySelectorAll(".teacher_title");
+
+    // set the photo and the name of the teahcer
+    for (let twoCounter = 0; twoCounter < titles.length; twoCounter++) {
+
+      if (titles[twoCounter].innerText == data[counter]["disciplina_nome"]) {
+        titles[twoCounter].parentElement.querySelector(".formMOdal").innerText = data[counter]["nome"];
+        titles[twoCounter].parentElement.parentElement.querySelector("img").src = `public/photo-storage/${data[counter]["foto"]}`;
+
+        // delete link to the modal
+        titles[twoCounter].parentElement.parentElement.querySelector(".formMOdal").setAttribute("class","");
+
+      }
+
+    }
+
+  }
+
+});
+
 // atach the modal button
 document.querySelector(".teachers_row").appendChild(objectToHTML(
   {
@@ -105,7 +133,6 @@ document.querySelector(".teachers_row").appendChild(objectToHTML(
 ));
 
 var subject_name;
-
 
 document.querySelector("body").onload = function() {
 
@@ -125,7 +152,6 @@ document.querySelector(".teachers_row").appendChild(objectToHTML(
 
     tag:"div","attr":{"class":"modal fade","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"div","attr":{"class":"container-fluid"},"children":[{"tag":"div","attr":{"class":"row photo-stuff"},"children":{"tag":"div","attr":{"class":"col-lg-12"},"children":[{"tag":"div","attr":{"id":"profile","class":""},"children":{"tag":"label","content":"Click para carregar uma fotografia"}},{"tag":"div","attr":{"class":"subject_name"},"children":{"tag":"span"}}]}},{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-lg-12"},"children":{"tag":"div","attr":{"class":"editable"},"children":{"tag":"form","attr":{"class":"form-horizontal","role":"form","action":"/","method":"post","enctype":"multipart/form-data"},"children":[{"tag":"div","attr":{"class":"input-group mb-3"},"children":[{"tag":"div","attr":{"class":"input-group-prepend"},"children":{"tag":"span","attr":{"class":"input-group-text"},"children":{"tag":"i","content":"\n                                                    ","attr":{"class":"icon-credit-card"}}}},{"tag":"input","attr":{"type":"text","class":"form-control","placeholder":"primeiro e último nome","name":"name"}}]},{"tag":"div","attr":{"class":"input-group mb-3"},"children":[{"tag":"div","attr":{"class":"input-group-prepend"},"children":{"tag":"span","attr":{"class":"input-group-text"},"children":{"tag":"i","content":"\n                                                        @\n                                                    ","attr":{"class":""}}}},{"tag":"input","attr":{"type":"text","class":"form-control","placeholder":"correio electrónico","name":"email"}}]},{"tag":"div","attr":{"class":"input-group mb-3"},"children":[{"tag":"div","attr":{"class":"input-group-prepend"},"children":{"tag":"span","attr":{"class":"input-group-text"},"children":{"tag":"i","content":"\n                                                    ","attr":{"class":"icon-user"}}}},{"tag":"input","attr":{"type":"text","class":"form-control","placeholder":"eg. Luis200","name":"username"}}]},{"tag":"div","attr":{"class":"input-group mb-3"},"children":[{"tag":"div","attr":{"class":"input-group-prepend"},"children":{"tag":"span","attr":{"class":"input-group-text"},"children":{"tag":"i","content":"\n                                                    ","attr":{"class":"icon-lock"}}}},{"tag":"input","attr":{"type":"password","class":"form-control","placeholder":"Insira a palavra passe","name":"password"}}]},{"tag":"div","attr":{"class":"form-group hidden-group"},"children":[{"tag":"input","attr":{"type":"text","class":"form-control","name":"subjectName"}},{"tag":"input","attr":{"type":"text","class":"form-control","name":"courseName"}},{"tag":"input","attr":{"type":"text","class":"form-control","name":"classCod"}},{"tag":"input","attr":{"type":"text","class":"form-control","name":"className"}}]},{"tag":"button","content":"Salvar professor","attr":{"type":"submit","class":"btn"}},{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"input","attr":{"id":"mediaFile","type":"file","name":"imageupload"}}}]}}}}]}}}}
 
-
   }
 ));
 
@@ -135,12 +161,11 @@ socket.on('classesInfo', function(data){
       return each["turma_id"] == windows.location.pathname.split("_")[1]
   });
 
-  console.log(thisClass[0]);
-
   // setar os restantes valores dos hidden inputs
   document.querySelectorAll(".hidden-group input")[1].value = thisClass[0]["curso_nome"];
   document.querySelectorAll(".hidden-group input")[2].value = thisClass[0]["turma_id"];
   document.querySelectorAll(".hidden-group input")[3].value = thisClass[0]["nome_class"];
 
   document.querySelector(".form-horizontal").setAttribute("action", "/turma_"+data[0]["turma_id"]);
+
 });
