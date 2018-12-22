@@ -22,6 +22,14 @@ link(href='public/pace-progress/css/pace.min.css', rel='stylesheet')
 - if (searchCursos == 'searchCursos')
   link(href='public/css/searchTurmas.css', rel='stylesheet')
 
+- if (from == 'students' || from == 'NovoEstudents')
+  link(href='public/css/estudantes.css', rel='stylesheet')
+
+- if (from == 'NovoEstudents')
+  link(href='public/css/material-design-iconic-font.min.css', rel='stylesheet')
+  link(href='public/css/icon-font.min.css', rel='stylesheet')
+  link(href='public/css/estudanteForm.css', rel='stylesheet')
+
 - if (from == "specificClass")
   link(href='public/css/turma.css', rel='stylesheet')
 

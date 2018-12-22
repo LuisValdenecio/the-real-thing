@@ -16,6 +16,8 @@ html(lang='en' class="no-js")
           include ./breadcrumb.pug
         - if (from == "specificClass")
           include ./breadcrumbClass.pug
+        - if (from == "students" || from == "NovoEstudents")
+          include ./breadcrumbClass.pug
         - if (path && path != "account")
           include ./breadcrumbSubject.pug
         .container-fluid

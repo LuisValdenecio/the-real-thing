@@ -168,4 +168,12 @@ socket.on('classesInfo', function(data){
 
   document.querySelector(".form-horizontal").setAttribute("action", "/turma_"+data[0]["turma_id"]);
 
+  // set the link for the estudante route
+  document.querySelector(".breadcrumb").querySelectorAll("li")[0].querySelector("a").href = "/turma_"+data[0]["turma_id"];
+  document.querySelector(".breadcrumb").querySelectorAll("li")[1].querySelector("a").href = "/turma_"+data[0]["turma_id"]+"_estudantes";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[2].querySelector("a").href = "/turma_"+data[0]["turma_id"]+"_livrodeponto";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[3].querySelector("a").href = "/turma_"+data[0]["turma_id"]+"_horario";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[4].querySelector("a").href = "/turma_"+data[0]["turma_id"]+"_estatistica";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[5].querySelector("a").href = "/turma_"+data[0]["turma_id"]+"_relatorio";
+
 });

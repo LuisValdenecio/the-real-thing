@@ -1,0 +1,47 @@
+/*
+    General formation
+*/
+
+.upperCard .text-muted {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.upperCard .callout-info {
+    border-left-color: #fff;
+    border-radius: 0%;
+}
+
+
+.upperCard .callout-danger {
+    border-left-color: #fff;
+    border-radius: 0%;
+}
+
+.middleCard .callout-danger {
+    border-left-color: #276552;
+    border-radius: 0%;
+    color: #276552;
+}
+
+.middleCard .callout-info {
+    border-left-color: #276552;
+    border-radius: 0%;
+    color: #276552;
+}
+
+.middleCard {
+    border-radius: 0%;
+}
+
+.alert-warning {
+  background: #276552;
+  border: solid #276552;
+  color : #fff;
+  border-radius: 0%;
+}
+
+.option-card {
+    cursor: pointer;
+}

@@ -1,5 +1,7 @@
 /*
   template format logic
+  author: Luís Valdenêncio
+  Date : 08/12/2018
 */
 
 const UIelements = [
