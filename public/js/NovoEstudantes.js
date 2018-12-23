@@ -5,7 +5,7 @@
   Date : 20/12/2018
 
 */
-
+/*
 const UIelements = [
 
     {
@@ -15,13 +15,14 @@ const UIelements = [
     }
 
 ];
-
+*/
 const windows = this;
 const linkURL = windows.location.pathname.split("_")[1];
-
+/*
 document.querySelector(".container-fluid").appendChild(objectToHTML(
   UIelements[0]
 ));
+*/
 
 var actualLinks = document.querySelectorAll(".option-card-link");
 
@@ -37,7 +38,7 @@ for (let counter = 0; counter < actualLinks.length; counter++) {
   if (counter == 2)
     actualLinks[counter].href = "/turma_"+linkURL+"_estudanteTransferido";
 }
-
+/*
 // coloca os elementos visiveis dentro de bg-container-contact100 para efeitos do modal
 document.querySelector("body").prepend(objectToHTML({
     tag : "div",
@@ -50,15 +51,172 @@ document.querySelector("body").prepend(objectToHTML({
 for (let counter = 0; counter < 4; counter++) {
     document.querySelector("body").children[0].appendChild(document.querySelector("body").children[1]);
 }
+*/
 
-document.querySelector("body").appendChild(objectToHTML(
+document.querySelector(".container-fluid").appendChild(objectToHTML(
 
   {
 
-    tag:"div","attr":{"class":"container-contact100"},"children":{"tag":"div","attr":{"class":"wrap-contact100"},"children":[{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(https://defendernetwork.com/wp-content/uploads/2017/07/GroupOfStudents-e1359494542702.jpg);"},"children":{"tag":"span","content":"REGISTE UM ESTUDANTE"}},{"tag":"form","attr":{"class":"contact100-form validate-form","role":"form","action":"/","method":"post"},"children":[{"tag":"div","attr":{"id":"profile","class":""},"children":{"tag":"label","content":"Click para carregar uma fotografia"}},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"name","class":"input100","type":"text","name":"name","placeholder":"Nome completo"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"name"},"children":{"tag":"span","attr":{"class":"lnr lnr-user m-b-2"}}}]},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"email","class":"input100","type":"text","name":"email","placeholder":"Eg. examplo@email.com"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"email"},"children":{"tag":"span","attr":{"class":"lnr lnr-envelope m-b-5"}}}]},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"phone","class":"input100","type":"password","name":"phone","placeholder":"Palavra passe"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"phone"},"children":{"tag":"span","attr":{"class":"lnr lnr-lock m-b-2"}}}]},{"tag":"div","attr":{"class":"container-contact100-form-btn"},"children":{"tag":"button","content":"SALVAR","attr":{"class":"contact100-form-btn"}}},{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"input","attr":{"id":"mediaFile","type":"file","name":"imageupload"}}}]}]}
+    tag:"div","attr":{"class":"container-contact100"},"children":{"tag":"div","attr":{"class":"wrap-contact100"},"children":[{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(https://defendernetwork.com/wp-content/uploads/2017/07/GroupOfStudents-e1359494542702.jpg);"},"children":{"tag":"span","content":"REGISTE UM ESTUDANTE"}},{"tag":"form","attr":{"class":"contact100-form validate-form","action":"/","method":"post","enctype":"multipart/form-data"},"children":[{"tag":"div","attr":{"id":"profile","class":""},"children":{"tag":"label","content":"Click para carregar uma fotografia"}},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"name","class":"input100","type":"text","name":"name","placeholder":"Nome completo"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"name"},"children":{"tag":"span","attr":{"class":"icon-user m-b-2"}}}]},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"email","class":"input100","type":"text","name":"email","placeholder":"Eg. examplo@email.com"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"email"},"children":{"tag":"span","attr":{"class":"icon-envelope-letter m-b-5"}}}]},{"tag":"div","attr":{"class":"wrap-input100 validate-input"},"children":[{"tag":"input","attr":{"id":"phone","class":"input100","type":"password","name":"password","placeholder":"Palavra passe"}},{"tag":"span","attr":{"class":"focus-input100"}},{"tag":"label","attr":{"class":"label-input100","for":"phone"},"children":{"tag":"span","attr":{"class":"icon-lock m-b-2"}}}]},{"tag":"div","attr":{"class":"container-contact100-form-btn"},"children":{"tag":"button","content":"SALVAR","attr":{"class":"contact100-form-btn"}}},{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"input","attr":{"id":"mediaFile","type":"file","name":"imageupload"}}}]}]}
 
   }
 
 ));
 
 document.querySelector(".contact100-form").setAttribute("action", "/turma_"+linkURL+"_novoEstudante");
+
+
+/*
+socket.on('allStudents', function(data){
+
+  // caso existam estudantes registados, elimine o Aviso
+  if (data.length) {
+    document.querySelector(".warning-row").remove();
+
+    // adciona o cabeçalho da tabela dos Estudantes
+    document.querySelector(".upperContainer").appendChild(objectToHTML(
+
+      {
+
+        tag:"div","attr":{"class":"container tableContainer"},"children":{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"table","attr":{"class":"table table-responsive-sm table-hover table-outline mb-0"},"children":[{"tag":"thead","attr":{"class":"thead-light"},"children":{"tag":"tr","children":[{"tag":"th","attr":{"class":"text-center"},"children":{"tag":"i","attr":{"class":"icon-people"}}},{"tag":"th","content":"Nome"},{"tag":"th","content":"Nº de Ordem","attr":{"class":"text-center"}},{"tag":"th","content":"Percentagem de Desempenho"},{"tag":"th","content":"Total de Faltas","attr":{"class":"text-center"}},{"tag":"th","content":"Relatório académico"}]}},{"tag":"tbody"}]}}}}
+
+
+      }
+
+    ));
+
+  }
+
+  // para cada estudante nesta turma registado adicione uma alinha na tabela
+  for (let counter = 0; counter < data.length; counter++) {
+
+    document.querySelector(".table").appendChild(objectToHTML(
+
+      {
+
+        tag:"tr",
+        "attr": {"class":"theRow"},
+        "children":[
+          {
+            "tag":"td",
+            "attr":{"class":"text-center"},
+            "children":{
+              "tag":"div",
+              "attr":{"class":"avatar"},
+              "children":[
+                {
+                  "tag":"img",
+                  "attr":{"class":"img-avatar","src":`public/photo-storage/${data[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
+                },
+                {
+                  "tag":"span",
+                  "attr":{"class":"avatar-status badge-success"}
+                }
+              ]}
+            },
+            {
+              "tag":"td",
+              "children":[
+                {
+                  "tag":"div",
+                  "content":`${data[counter].nome}`
+                },
+                {
+                  "tag":"div",
+                  "attr":{"class":"small text-muted"},
+                  "children":{
+                    "tag":"span",
+                    "content":"New"
+                  }
+                }
+              ]
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"i",
+                "content" : `${counter}`
+              }
+            },
+            {
+              "tag":"td",
+              "children":[
+                {
+                  "tag":"div",
+                  "attr":{"class":"clearfix"},
+                  "children":[
+                    {
+                      "tag":"div",
+                      "attr":{"class":"float-left"},
+                      "children":{"tag":"strong","content":"50%"}
+                    },
+                    {
+                      "tag":"div",
+                      "attr":{"class":"float-right"},
+                      "children":{
+                        "tag":"small",
+                        "content":"Desde Jun 11, 2015 - Jul 10, 2015","attr":{"class":"text-muted"}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag":"div",
+                  "attr":{"class":"progress progress-xs"},
+                  "children":
+                  {
+                    "tag":"div",
+                    "attr":{
+                      "class":"progress-bar bg-success",
+                      "role":"progressbar",
+                      "style":"width: 50%",
+                      "aria-valuenow":"50",
+                      "aria-valuemin":"0",
+                      "aria-valuemax":"100"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "tag":"td",
+              "attr":
+              {
+                "class":"text-center"
+              },
+              "children":{
+                "tag":"i",
+                "attr":{
+                  "class":"fa fa-cc-mastercard",
+                  "style":"font-size:24px"}
+                }
+              },
+              {
+                "tag":"td",
+                "children":[
+                  {
+                    "tag":"div",
+                    "content":"Last login",
+                    "attr":{
+                      "class":"small text-muted"
+                    }
+                  },
+                  {
+                    "tag":"strong",
+                    "content":"10 sec ago"
+                  }
+                ]
+              }
+            ]
+
+      }
+
+    ));
+
+  }
+
+
+  console.log(data);
+});
+*/

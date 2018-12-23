@@ -38,3 +38,159 @@ for (let counter = 0; counter < actualLinks.length; counter++) {
     actualLinks[counter].href = "/turma_"+linkURL+"_estudanteTransferido";
 
 }
+
+
+socket.on('allStudents', function(data){
+
+  var estaTurma = data.filter((aluno)=>{
+    return aluno["turma_id"] == linkURL;
+  });
+
+  if (estaTurma.length) {
+
+    // caso existam estudantes registados, elimine o Aviso
+
+    document.querySelector(".warning-row").remove();
+
+    // adciona o cabeçalho da tabela dos Estudantes
+    document.querySelector(".upperContainer").appendChild(objectToHTML(
+
+      {
+        tag:"div","attr":{"class":"container tableContainer"},"children":{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"table","attr":{"class":"table table-responsive-sm table-hover table-outline mb-0"},"children":[{"tag":"thead","attr":{"class":"thead-light"},"children":{"tag":"tr","children":[{"tag":"th","attr":{"class":"text-center"},"children":{"tag":"i","attr":{"class":"icon-people"}}},{"tag":"th","content":"Nome"},{"tag":"th","content":"Nº de Ordem","attr":{"class":"text-center"}},{"tag":"th","content":"Percentagem de Desempenho"},{"tag":"th","content":"Total de Faltas","attr":{"class":"text-center"}},{"tag":"th","content":"Relatório académico"}]}},{"tag":"tbody"}]}}}}
+      }
+
+    ));
+
+  }
+
+  // para cada estudante registado adicione uma alinha na tabela
+  for (let counter = 0; counter < estaTurma.length; counter++) {
+
+    document.querySelector(".table").appendChild(objectToHTML(
+
+      {
+
+        tag:"tr",
+        "attr": {"class":"theRow"},
+        "children":[
+          {
+            "tag":"td",
+            "attr":{"class":"text-center"},
+            "children":{
+              "tag":"div",
+              "attr":{"class":"avatar"},
+              "children":[
+                {
+                  "tag":"img",
+                  "attr":{"class":"img-avatar","src":`public/photo-storage/${estaTurma[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
+                },
+                {
+                  "tag":"span",
+                  "attr":{"class":"avatar-status badge-success"}
+                }
+              ]}
+            },
+            {
+              "tag":"td",
+              "children":[
+                {
+                  "tag":"div",
+                  "content":`${estaTurma[counter].nome}`
+                },
+                {
+                  "tag":"div",
+                  "attr":{"class":"small text-muted"},
+                  "children":{
+                    "tag":"span",
+                    "content":"New"
+                  }
+                }
+              ]
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"span",
+                "content" : `${counter+1}`
+              }
+            },
+            {
+              "tag":"td",
+              "children":[
+                {
+                  "tag":"div",
+                  "attr":{"class":"clearfix"},
+                  "children":[
+                    {
+                      "tag":"div",
+                      "attr":{"class":"float-left"},
+                      "children":{"tag":"strong","content":"50%"}
+                    },
+                    {
+                      "tag":"div",
+                      "attr":{"class":"float-right"},
+                      "children":{
+                        "tag":"small",
+                        "content":"Desde Jun 11, 2015 - Jul 10, 2015","attr":{"class":"text-muted"}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag":"div",
+                  "attr":{"class":"progress progress-xs"},
+                  "children":
+                  {
+                    "tag":"div",
+                    "attr":{
+                      "class":"progress-bar bg-success",
+                      "role":"progressbar",
+                      "style":"width: 50%",
+                      "aria-valuenow":"50",
+                      "aria-valuemin":"0",
+                      "aria-valuemax":"100"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "tag":"td",
+              "attr":
+              {
+                "class":"text-center"
+              },
+              "children":{
+                "tag":"i",
+                "attr":{
+                  "class":"fa fa-cc-mastercard",
+                  "style":"font-size:24px"}
+                }
+              },
+              {
+                "tag":"td",
+                "children":[
+                  {
+                    "tag":"div",
+                    "content":"Last login",
+                    "attr":{
+                      "class":"small text-muted"
+                    }
+                  },
+                  {
+                    "tag":"strong",
+                    "content":"10 sec ago"
+                  }
+                ]
+              }
+            ]
+
+      }
+
+    ));
+
+  }
+
+  console.log(data);
+});
