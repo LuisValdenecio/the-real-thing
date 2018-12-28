@@ -66,7 +66,7 @@ socket.on('allStudents', function(data){
   // para cada estudante registado adicione uma alinha na tabela
   for (let counter = 0; counter < estaTurma.length; counter++) {
 
-    document.querySelector(".table").appendChild(objectToHTML(
+    document.querySelector(".table tbody").appendChild(objectToHTML(
 
       {
 
@@ -111,8 +111,8 @@ socket.on('allStudents', function(data){
               "tag":"td",
               "attr":{"class":"text-center"},
               "children":{
-                "tag":"span",
-                "content" : `${counter+1}`
+                "tag":"strong",
+                "content":`${counter+1}`
               }
             },
             {
@@ -125,7 +125,7 @@ socket.on('allStudents', function(data){
                     {
                       "tag":"div",
                       "attr":{"class":"float-left"},
-                      "children":{"tag":"strong","content":"50%"}
+                      "children":{"tag":"strong","content":"0%"}
                     },
                     {
                       "tag":"div",
@@ -146,7 +146,7 @@ socket.on('allStudents', function(data){
                     "attr":{
                       "class":"progress-bar bg-success",
                       "role":"progressbar",
-                      "style":"width: 50%",
+                      "style":"width: 0%",
                       "aria-valuenow":"50",
                       "aria-valuemin":"0",
                       "aria-valuemax":"100"
@@ -157,32 +157,32 @@ socket.on('allStudents', function(data){
             },
             {
               "tag":"td",
-              "attr":
-              {
-                "class":"text-center"
-              },
+              "attr":{"class":"text-center"},
               "children":{
-                "tag":"i",
-                "attr":{
-                  "class":"fa fa-cc-mastercard",
-                  "style":"font-size:24px"}
-                }
+                "tag":"strong",
+                "content":`${0}`
+              }
               },
               {
                 "tag":"td",
-                "children":[
+                "attr" : {
+                  "class":"text-center"
+                },
+                "children":
                   {
                     "tag":"div",
-                    "content":"Last login",
-                    "attr":{
-                      "class":"small text-muted"
+                    "attr" : {
+                      "class" : "modal-btn-holder"
+                    },
+                    "children" : {
+                        "tag" : "a",
+                        "content" : "ver relatório",
+                        "attr" : {
+                          "class" : "modal-btn"
+                        }
                     }
-                  },
-                  {
-                    "tag":"strong",
-                    "content":"10 sec ago"
+
                   }
-                ]
               }
             ]
 
@@ -194,3 +194,27 @@ socket.on('allStudents', function(data){
 
   console.log(data);
 });
+
+// coloca os elementos visiveis dentro de bg-container-contact100 para efeitos do modal
+document.querySelector("body").prepend(objectToHTML({
+    tag : "div",
+    attr : {
+        class : "bg-container-contact100 app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show"
+    }
+}));
+
+// coloca todos os primeiros sete elementos dentro de bg-container-contact100
+for (let counter = 0; counter < 4; counter++) {
+    document.querySelector("body").children[0].appendChild(document.querySelector("body").children[1]);
+}
+
+
+document.querySelector("body").appendChild(objectToHTML(
+
+  {
+
+    tag:"div","attr":{"class":"container-contact100","style":"display: none;"},"children":{"tag":"div","attr":{"class":"wrap-contact100 row"},"children":[{"tag":"button","attr":{"class":"btn-hide-contact100"},"children":{"tag":"i","attr":{"class":"zmdi zmdi-close"}}},{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(https://defendernetwork.com/wp-content/uploads/2017/07/GroupOfStudents-e1359494542702.jpg);"},"children":{"tag":"span","content":"Relatório académico"}},{"tag":"div","attr":{"class":"swiper-container testimonial-slider"},"children":{"tag":"div","attr":{"class":"swiper-wrapper"},"children":[{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-12 col-md-6 col-lg-12"},"children":{"tag":"div","attr":{"class":"team-member"},"children":[{"tag":"img","attr":{"src":"","alt":"fotografia do Estudante","class":"student_photo"}},{"tag":"h3","content":"1 | Bernadeth Constância Tchitue"}]}}},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-3"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-bell bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"Desempenho ao nível de notas","attr":{"class":"text-muted text-uppercase font-weight-bold small"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-3"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-bell bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"Grau de participação nas Aulas","attr":{"class":"text-muted text-uppercase font-weight-bold small"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-3"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-bell bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"Situação das Faltas","attr":{"class":"text-muted text-uppercase font-weight-bold small"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-3"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-bell bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"Avaliação Disciplinar","attr":{"class":"text-muted text-uppercase font-weight-bold small"}}}]}}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-3"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart1","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-3"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-3"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-3"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}},{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","content":"\n\n\n\n                            \n\n\n\n                        ","attr":{"class":"col-lg-12"}}},{"tag":"div","content":"\n\n\n\n\n\n                    ","attr":{"class":"swiper-slide"}}]}}]}
+
+  }
+
+));

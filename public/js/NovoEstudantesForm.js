@@ -1,77 +1,10 @@
 
-(function ($) {
+
+
+$(window).bind("load", function() {
+    // code goes here
+
     "use strict";
-
-    /*==================================================================
-    [ Validate after type ]*/
-    $('.validate-input .input100').each(function(){
-        $(this).on('blur', function(){
-            if(validate(this) == false){
-                showValidate(this);
-            }
-            else {
-                $(this).parent().addClass('true-validate');
-            }
-        })
-    })
-
-
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        return check;
-    });
-
-
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-           $(this).parent().removeClass('true-validate');
-        });
-    });
-
-     function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-
-        $(thisAlert).append('<span class="btn-hide-validate">&#xf136;</span>')
-        $('.btn-hide-validate').each(function(){
-            $(this).on('click',function(){
-               hideValidate(this);
-            });
-        });
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-        $(thisAlert).removeClass('alert-validate');
-        $(thisAlert).find('.btn-hide-validate').remove();
-    }
 
 
     /*==================================================================
@@ -80,8 +13,65 @@
         $('.container-contact100').fadeOut(300);
     });
 
-    $('.btn-show-contact100').on('click', function(){
+    $('.modal-btn-holder .modal-btn').on('click', (event)=> {
         $('.container-contact100').fadeIn(300);
+
+        var studentRow = event.target.parentElement.parentElement.parentElement;
+
+        document.querySelector(".student_photo").setAttribute("src", studentRow.querySelector(".img-avatar").src);
+
+        // Testimonial Slider
+        var swiper = new Swiper('.testimonial-slider', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            //effect: 'fade',
+            speed: 800,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        });
+
+        // the graph for the student modal
+        var chartOne = new Chart(document.querySelectorAll('#chart1')[0], {
+          type: 'bar',
+          data: {
+            labels: ['Matemática', 'Matemática'],
+            datasets: [
+              {
+                label: 'Iº Trimestre',
+                backgroundColor: 'blue',
+                borderColor: 'rgba(255,255,255,.55)',
+                data: [17,0]
+              },
+
+              {
+                label: 'IIº Trimestre',
+                backgroundColor: 'yellow',
+                borderColor: 'rgba(255,255,255,.55)',
+                data: [17, 15]
+              }
+            ]
+          },
+          options: {
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            scales: {
+              xAxes: [{
+                display: false,
+                barPercentage: 0.6
+              }],
+              yAxes: [{
+                display: false
+              }]
+            }
+          }
+        });
+
     });
 
-})(jQuery);
+
+});

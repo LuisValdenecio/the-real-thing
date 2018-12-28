@@ -38,7 +38,7 @@ for (let counter = 0; counter < actualLinks.length; counter++) {
   if (counter == 2)
     actualLinks[counter].href = "/turma_"+linkURL+"_estudanteTransferido";
 }
-/*
+
 // coloca os elementos visiveis dentro de bg-container-contact100 para efeitos do modal
 document.querySelector("body").prepend(objectToHTML({
     tag : "div",
@@ -51,9 +51,9 @@ document.querySelector("body").prepend(objectToHTML({
 for (let counter = 0; counter < 4; counter++) {
     document.querySelector("body").children[0].appendChild(document.querySelector("body").children[1]);
 }
-*/
 
-document.querySelector(".container-fluid").appendChild(objectToHTML(
+
+document.querySelector("body").appendChild(objectToHTML(
 
   {
 
