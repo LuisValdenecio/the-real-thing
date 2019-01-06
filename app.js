@@ -43,7 +43,8 @@ var first,
     seventh,
     eighth,
     ninth,
-    tenth;
+    tenth,
+    eleventh;
 
 const server = app.listen(PORT, ()=> {
 });
@@ -64,5 +65,6 @@ application.app(
     seventh,
     eighth,
     ninth,
-    tenth
+    tenth,
+    eleventh
   );

@@ -34,25 +34,16 @@ $(window).bind("load", function() {
         });
 
         // the graph for the student modal
-        var chartOne = new Chart(document.querySelectorAll('#chart1')[0], {
+        var chartOne = new Chart(document.querySelector('#chart1'), {
           type: 'bar',
           data: {
-            labels: ['Matemática', 'Matemática'],
-            datasets: [
-              {
-                label: 'Iº Trimestre',
-                backgroundColor: 'blue',
-                borderColor: 'rgba(255,255,255,.55)',
-                data: [17,0]
-              },
-
-              {
-                label: 'IIº Trimestre',
-                backgroundColor: 'yellow',
-                borderColor: 'rgba(255,255,255,.55)',
-                data: [17, 15]
-              }
-            ]
+            labels: ['January', 'February', 'March', 'April'],
+            datasets: [{
+              label: 'My First dataset',
+              backgroundColor: 'rgba(255,255,255,.2)',
+              borderColor: 'rgba(255,255,255,.55)',
+              data: [108, 81, 80, 45]
+            }]
           },
           options: {
             maintainAspectRatio: false,
