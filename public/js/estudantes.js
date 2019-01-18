@@ -62,7 +62,7 @@ socket.on('allStudents', function(data){
               "children":[
                 {
                   "tag":"img",
-                  "attr":{"class":"img-avatar","src":`public/photo-storage/${estaTurma[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
+                  "attr":{"class":"img-avatar","src":`public/photo-storage/${estaTurma[counter].foto == 'indefinido' ? 'noPhoto.jpg' : estaTurma[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
                 },
                 {
                   "tag":"span",
