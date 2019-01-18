@@ -9,6 +9,8 @@ script(src='public/perfect-scrollbar/dist/perfect-scrollbar.min.js')
 script(src='public/@coreui/coreui/dist/js/coreui.min.js')
 script(src='public/js/src/socketJS.js')
 script(src='public/js/generalHelper.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js')
+script(src='public/js/angularJS.js')
 
 //script(src='public/js/src/studentModalJs.js')
 script(src='public/js/anime.js')
@@ -24,19 +26,23 @@ script(src='public/js/anime.js')
 
 - if (from == "students")
   script(src='public/js/estudantes.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js')
   script(src='public/js/NovoEstudantesForm.js')
   script(src='public/js/swiper.min.js')
 
 - if (from == "horario")
-  script(src='public/js/horarioRenderer.js')
-  script(src='public/js/angularJS.js')
-  //script(src='public/js/horario.js'
+  script(src='public/js/horario.js')
 
 - if (from == "NovoEstudents")
   script(src='public/js/NovoEstudantes.js')
   script(src='public/js/NovoEstudantesForm.js')
 
+- if (from == "excelUpload")
+  script(src='public/js/excelUpload.js')
+
+- if (from == "livroPonto")
+  script(src='public/js/livroDePontoApp.js')
+  script(src='public/js/livroDePontoService.js')
+  script(src='public/js/livroDePontoCtrl.js')
 
 script(src='public/js/src/userRegistrationJs.js')
 

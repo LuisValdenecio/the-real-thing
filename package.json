@@ -1,4 +1,4 @@
-{
+  {
   "author": "Tim Tamimi (http://www.ttamimi.co.uk)",
   "name": "Passport.js-Template",
   "description": "TBC",
@@ -29,7 +29,7 @@
     "pug": "^2.0.0-rc.3",
     "request": "^2.83.0",
     "serve-static": "^1.13.2",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.2.0",
     "uuid": "^3.2.1",
     "xls-to-json-lc": "^0.3.4",
     "xlsx-to-json-lc": "^0.5.0"

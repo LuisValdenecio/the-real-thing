@@ -1,0 +1,60 @@
+extends /default.pug
+
+block scripts
+
+  - if (path)
+    script(src='public/js/src/projTecn.js')
+
+block view
+  .app-container(ng-app='dateTimeApp', ng-controller='dateTimeCtrl as ctrl', ng-cloak='')
+    div(date-picker='', datepicker-title='Definição dos tempos de aula por disciplina', picktime='true', pickdate='true', pickpast='false', mondayfirst='false', custom-message='Voçê selecionou o', selecteddate='ctrl.selected_date', updatefn='ctrl.updateDate(newdate)')
+      .datepicker(ng-class="{\
+      'am': timeframe == 'am',\
+      'pm': timeframe == 'pm',\
+      'compact': compact\
+      }")
+        .datepicker-header
+          .datepicker-title(ng-if='datepicker_title') {{ datepickerTitle }}
+          .datepicker-subheader
+            | {{ customMessage }} {{ localdate.getDate() + "º" + " tempo" + " de " + selectedDay }}
+        .datepicker-calendar
+          .calendar-header
+            .goback(ng-click='moveBack()', ng-if='pickdate')
+              svg(width='30', height='30')
+                path(fill='none', stroke='#0DAD83', stroke-width='3', d='M19,6 l-9,9 l9,9')
+            .current-month-container {{ disciplinas }}
+            .goforward(ng-click='moveForward()', ng-if='pickdate')
+              svg(width='30', height='30')
+                path(fill='none', stroke='#0DAD83', stroke-width='3', d='M11,6 l9,9 l-9,9')
+          .calendar-day-header
+            span.day-label(ng-repeat='day in days') {{ day.short }}
+          .calendar-grid(ng-class="{false: 'no-hover'}[pickdate]")
+            .datecontainer(ng-class="{'no-hover': !day.showday}", ng-repeat='day in month')
+              .datenumber(ng-class="{'day-selected': day.selected, 'alreadyMarked' : day.alreadyMarked, 'hover-effect' : !day.alreadyMarked }", ng-click='selectDate(day)', style='font-weight:bold')
+                | {{ day.daydate + 'º'  }}
+        .timepicker(ng-if="picktime == 'true'")
+          div(ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }")
+            .timepicker-container-outer(selectedtime='time', timetravel='')
+              .timepicker-container-inner
+                .timeline-container(ng-mousedown='timeSelectStart($event)', sm-touchstart='timeSelectStart($event)')
+                  .current-time
+                    .actual-time {{ time }}
+                  .timeline
+                  .hours-container
+                    .hour-mark(ng-repeat='hour in getHours() track by $index')
+                .display-time
+                  .decrement-time(ng-click="adjustTime('decrease')")
+                    svg(width='24', height='24')
+                      path(stroke='white', stroke-width='2', d='M8,12 h8')
+                  .time(ng-class="{'time-active': edittime.active}")
+                    input.time-input(type='text', ng-model='edittime.input', ng-keydown='changeInputTime($event)', ng-focus='edittime.active = true; edittime.digits = [];', ng-blur='edittime.active = false')
+                    .formatted-time {{ edittime.formatted }}
+                  .increment-time(ng-click="adjustTime('increase')")
+                    svg(width='24', height='24')
+                      path(stroke='white', stroke-width='2', d='M12,7 v10 M7,12 h10')
+                .am-pm-container
+                  .am-pm-button(ng-click="changetime('am');") Manhã
+                  .am-pm-button(ng-click="changetime('pm');") Tarde
+        .buttons-container
+          .cancel-button CANCELAR
+          .save-button SALVAR

@@ -55,7 +55,8 @@ var application = require('./lib/routes.js');
 
 // run the routes
 application.app(
-    app,io,
+    app,
+    io,
     first,
     second,
     third,

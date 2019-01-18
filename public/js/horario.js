@@ -125,6 +125,10 @@ app.directive('datePicker', function ($timeout, $window) {
             //  Esta parece ser a função onde os objectos são inicializados           //
             ////////////////////////////////////////////////////////////////////////////
 
+						socket.on('turmaInfo', function(data){
+							console.log(data);
+						});
+
             function initializeDate() {
                 scope.currentViewDate = new Date(scope.localdate);
 
