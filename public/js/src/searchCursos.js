@@ -6,7 +6,8 @@ const UIelements = [
 
     {
 
-      tag:"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12"},"children":{"tag":"div","attr":{"class":"card-body"},"children":{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-sm-12"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-sm-6"},"children":{"tag":"div","attr":{"class":"callout callout-info"},"children":[{"tag":"small","content":"Turmas registadas","attr":{"class":"text-muted"}},{"tag":"br"},{"tag":"strong","content":"2","attr":{"class":"h4"}},{"tag":"div","attr":{"class":"chart-wrapper"},"children":{"tag":"canvas","attr":{"id":"sparkline-chart-1","width":"100","height":"30"}}}]}},{"tag":"div","attr":{"class":"col-sm-6"},"children":{"tag":"div","attr":{"class":"callout callout-danger"},"children":[{"tag":"small","content":"curso:","attr":{"class":"text-muted"}},{"tag":"br"},{"tag":"strong","content":"Obras de construção civíl","attr":{"class":"h4"}},{"tag":"div","attr":{"class":"chart-wrapper"},"children":{"tag":"canvas","attr":{"id":"sparkline-chart-2","width":"100","height":"30"}}}]}}]},{"tag":"br"},{"tag":"br"},{"tag":"table","attr":{"class":"table table-responsive-sm table-hover table-outline mb-0"},"children":{"tag":"tbody"}}]}}}}
+      tag:"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-md-12"},"children":{"tag":"div","attr":{"class":"card-body"},"children":{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-sm-12"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-sm-6"},"children":{"tag":"div","attr":{"class":"callout callout-info"},"children":[{"tag":"small","content":"Turmas registadas","attr":{"class":"text-muted"}},{"tag":"br"},{"tag":"strong","content":"2","attr":{"class":"h4"}},{"tag":"div","attr":{"class":"chart-wrapper"},"children":{"tag":"canvas","attr":{"id":"sparkline-chart-1","width":"100","height":"30"}}}]}}},{"tag":"br"},{"tag":"br"},{"tag":"table","attr":{"class":"table table-responsive-sm table-hover table-outline mb-0"},"children":{"tag":"tbody"}}]}}}}
+
     }
 
 ];
@@ -16,6 +17,8 @@ document.querySelector(".container-fluid").appendChild(objectToHTML(
 ));
 
 socket.on('classesInfo', function(data){
+
+  document.querySelector(".callout-info strong").innerText = data.length;
 
   for (let turmas = 0; turmas < data.length; turmas++) {
 
@@ -114,7 +117,7 @@ socket.on('classesInfo', function(data){
               "children":[
                 {
                   "tag":"div",
-                  "content":"Número de Estudantes"
+                  "content":"Nome do Curso"
                 },
                 {
                   "tag":"div",
@@ -124,7 +127,7 @@ socket.on('classesInfo', function(data){
                   "children":[
                     {
                       "tag":"span",
-                      "content":"New"
+                      "content":data[turmas]["curso_nome"]
                     },
                     {
                       "tag":"span"

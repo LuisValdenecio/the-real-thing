@@ -238,7 +238,7 @@ for (let counter = 0; counter < wells.length; counter++) {
         // class registration modal
         var theModal = objectToHTML({
 
-          tag:"div","attr":{"class":"modal fade","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog","role":"document"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"},"children":{"tag":"div","children":[{"tag":"h4","content":"Crie uma turma","attr":{"class":"modal-title"}},{"tag":"span","content":"selecione uma classe para criar uma turma do curso técnico de"},{"tag":"span","attr":{"class":"modal-title course-holder"}}]}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"form","attr":{"role":"form","method":"post","action":"/tecnico"},"children":[{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"div","attr":{"class":"alert alert-warning"},"children":[{"tag":"h4","children":[{"tag":"i","attr":{"class":"fa fa-warning"}},{"tag":"span","content":"\"Aviso!\""}]},{"tag":"h6","content":"\n                                        As turmas da mesma classe e curso, serão\n                                        nomeadas por ordem de criação.\"\n                                    "}]}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","content":"Selecione uma classe","attr":{"for":"name","class":"classe"}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox1","value":"option1","name":"10ªClasse"}},{"tag":"span","content":"10ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox2","value":"option2","name":"11ªClasse"}},{"tag":"span","content":"11ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"12ªClasse"}},{"tag":"span","content":"12ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"10ªClasse"}},{"tag":"span","content":"13ª Classe"}]}]},{"tag":"div","attr":{"class":"form-group hidden-form"},"children":[{"tag":"input","attr":{"type":"text","value":"option1","name":"classe"}},{"tag":"input","attr":{"type":"text","value":"option1","name":"curso"}}]}]}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":[{"tag":"button","content":"Cancelar","attr":{"class":"btn btn-secondary","type":"button","data-dismiss":"modal"}},{"tag":"button","content":"Criar turma","attr":{"class":"btn btn-primary","type":"button"}}]}]}}
+          tag:"div","attr":{"class":"modal fade","id":"myModal","tabindex":"-1","role":"dialog","aria-labelledby":"myModalLabel","aria-hidden":"true","style":"display: none;"},"children":{"tag":"div","attr":{"class":"modal-dialog","role":"document"},"children":{"tag":"div","attr":{"class":"modal-content"},"children":[{"tag":"div","attr":{"class":"modal-header"},"children":{"tag":"div","children":[{"tag":"h4","content":"Crie uma turma","attr":{"class":"modal-title"}},{"tag":"span","content":"selecione uma classe para criar uma turma do curso técnico de"},{"tag":"span","attr":{"class":"modal-title course-holder"}}]}},{"tag":"div","attr":{"class":"modal-body"},"children":{"tag":"form","attr":{"role":"form","method":"post","action":"/tecnico"},"children":[{"tag":"div","attr":{"class":"form-group"},"children":{"tag":"div","attr":{"class":"alert alert-warning"},"children":[{"tag":"h4","children":[{"tag":"i","attr":{"class":"fa fa-warning"}},{"tag":"span","content":"\"Aviso!\""}]},{"tag":"h6","content":"\n                                        As turmas da mesma classe e curso, serão\n                                        nomeadas por ordem de criação.\"\n                                    "}]}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","content":"Selecione uma classe","attr":{"for":"name","class":"classe"}},{"tag":"div","attr":{"class":"form-group"},"children":[{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox1","value":"option1","name":"10ªClasse"}},{"tag":"span","content":"10ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox2","value":"option2","name":"11ªClasse"}},{"tag":"span","content":"11ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"12ªClasse"}},{"tag":"span","content":"12ª Classe"}]},{"tag":"label","attr":{"class":"checkbox-inline"},"children":[{"tag":"input","attr":{"type":"checkbox","id":"inlineCheckbox3","value":"option3","name":"13ªClasse"}},{"tag":"span","content":"13ª Classe"}]}]},{"tag":"div","attr":{"class":"form-group hidden-form"},"children":[{"tag":"input","attr":{"type":"text","value":"option1","name":"classe"}},{"tag":"input","attr":{"type":"text","value":"option1","name":"curso"}}]}]}]}},{"tag":"div","attr":{"class":"modal-footer"},"children":[{"tag":"button","content":"Cancelar","attr":{"class":"btn btn-secondary","type":"button","data-dismiss":"modal"}},{"tag":"button","content":"Criar turma","attr":{"class":"btn btn-primary","type":"button"}}]}]}}
 
         });
 
@@ -252,12 +252,12 @@ for (let counter = 0; counter < wells.length; counter++) {
         var checks = document.querySelectorAll(".checkbox-inline input");
         var classes = ["10ªClasse", "11ªClasse", "12ªClasse", "13ªClasse"];
 
-        if (checks[0].checked) {
-          document.querySelectorAll(".hidden-form input")[0].value = "10ªClasse";
-        } else document.querySelectorAll(".hidden-form input")[0].value = "10ª";
-
-        document.querySelector(".course-holder").innerText = " "+wells[counter].innerText;
-        classRegs.click();
+        var classesMapp = {
+          "10ªClasse" : "10ª",
+          "11ªClasse" : "11ª",
+          "12ªClasse" : "12ª",
+          "13ªClasse" : "13ª",
+        }
 
         // esse formGroup é para os inputs dos nomes das disciplinas
         var hiddenInputs = objectToHTML({
@@ -268,30 +268,121 @@ for (let counter = 0; counter < wells.length; counter++) {
           }
         });
 
-        getTheInput(
-          dynamicForm(
-            [
-              cursos[document.querySelectorAll(".course-title")[counter].innerText][mapper[document.querySelectorAll(".hidden-form input")[0].value]],
-              [],
-              [],
-              []
-            ],
-            'null'
-          )
-        ).forEach((each)=>{
-          hiddenInputs.appendChild(each);
-        })
+        document.querySelector(".course-holder").innerText = ""+wells[counter].innerText;
+        classRegs.click();
+
+        var ACTUAL_COURSE = "Contabilidade";
+
+        for (let counter = 0; counter < checks.length; counter++) {
+          checks[counter].onclick = function() {
+            console.log(checks[counter]);
+            document.querySelectorAll(".hidden-form input")[0].value = classesMapp[checks[counter].name];
+
+            // comfirme qual das classes esta marcada e crie um form para cada uma #10ª
+            if (document.querySelectorAll(".hidden-form input")[0].value == '10ª') {
+              getTheInput(
+                dynamicForm(
+                  [
+                    cursos[document.querySelector(".course-holder").innerText.slice(0, document.querySelector(".course-holder").innerText.length - 1)][mapper[document.querySelectorAll(".hidden-form input")[0].value]],
+                    [],
+                    [],
+                    []
+                  ],
+                  'null'
+                )
+              ).forEach((each)=>{
+                hiddenInputs.appendChild(each);
+              })
+
+              console.log(document.querySelector("form"));
+
+            }
+
+            // comfirme qual das classes esta marcada e crie um form para cada uma #11ª
+            if (document.querySelectorAll(".hidden-form input")[0].value == '11ª') {
+              getTheInput(
+                dynamicForm(
+                  [
+                    [],
+                    cursos[document.querySelector(".course-holder").innerText.slice(0, document.querySelector(".course-holder").innerText.length - 1)][mapper[document.querySelectorAll(".hidden-form input")[0].value]],
+                    [],
+                    []
+                  ],
+                  'null'
+                )
+              ).forEach((each)=>{
+                hiddenInputs.appendChild(each);
+              })
+
+              console.log(document.querySelector("form"));
+
+            }
+
+            // comfirme qual das classes esta marcada e crie um form para cada uma #11ª
+            if (document.querySelectorAll(".hidden-form input")[0].value == '12ª') {
+              getTheInput(
+                dynamicForm(
+                  [
+                    [],
+                    [],
+                    cursos[document.querySelector(".course-holder").innerText.slice(0, document.querySelector(".course-holder").innerText.length - 1)][mapper[document.querySelectorAll(".hidden-form input")[0].value]],
+                    []
+                  ],
+                  'null'
+                )
+              ).forEach((each)=>{
+                hiddenInputs.appendChild(each);
+              })
+
+              console.log(document.querySelector("form"));
+
+            }
+
+            // comfirme qual das classes esta marcada e crie um form para cada uma #11ª
+            if (document.querySelectorAll(".hidden-form input")[0].value == '13ª') {
+              getTheInput(
+                dynamicForm(
+                  [
+                    [],
+                    [],
+                    [],
+                    cursos[document.querySelector(".course-holder").innerText.slice(0, document.querySelector(".course-holder").innerText.length - 1)][mapper[document.querySelectorAll(".hidden-form input")[0].value]]
+                  ],
+                  'null'
+                )
+              ).forEach((each)=>{
+                hiddenInputs.appendChild(each);
+              })
+
+              console.log(document.querySelector("form"));
+
+            }
+
+
+          }
+        }
+
+
+
+        /*
+        if (checks[0].checked) {
+          document.querySelectorAll(".hidden-form input")[0].value = "10ªClasse";
+        } else document.querySelectorAll(".hidden-form input")[0].value = "10ª";
+        */
+
 
         document.querySelector("form").appendChild(
           hiddenInputs
         );
 
-        console.log(document.querySelector("form"));
+
 
         // when the main button is clicked, send the form to the server
         document.querySelector(".btn-primary").onclick = function() {
           document.querySelector("form").submit();
+
         }
+
     });
 }
 
