@@ -32,18 +32,21 @@ link(href='public/pace-progress/css/pace.min.css', rel='stylesheet')
 - if (from == 'horario')
   link(href='public/css/horarioRenderer.css', rel='stylesheet')
 
-- if (from == 'NovoEstudents' || from == 'excelUpload' )
+- if (from == 'NovoEstudents' || from == 'excelUpload' || from == 'AlterarEstudante' )
   link(href='public/css/material-design-iconic-font.min.css', rel='stylesheet')
   link(href='public/css/icon-font.min.css', rel='stylesheet')
   link(href='public/css/estudanteForm.css', rel='stylesheet')
 
 - if (from == "livroPonto")
-  link(href='public/css/livroDePontoCss.css', rel='stylesheet')
 
 - if (from == "specificClass")
   link(href='public/css/turma.css', rel='stylesheet')
 
 - if (tecnico == 'tecnico')
+  link(href='public/css/demo.css', rel='stylesheet')
+  link(href='public/css/component.css', rel='stylesheet')
+
+- if (from == 'ensinoPrimario' || from == 'primeiroCiclo')
   link(href='public/css/demo.css', rel='stylesheet')
   link(href='public/css/component.css', rel='stylesheet')
 

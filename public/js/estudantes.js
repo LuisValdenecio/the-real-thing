@@ -61,9 +61,16 @@ socket.on('allStudents', function(data){
               "attr":{"class":"avatar"},
               "children":[
                 {
-                  "tag":"img",
-                  "attr":{"class":"img-avatar","src":`public/photo-storage/${estaTurma[counter].foto == 'indefinido' ? 'noPhoto.jpg' : estaTurma[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
+                  "tag" : "a",
+                  "attr" : {
+                    "href" : `/turma_${estaTurma[counter].estudantecod}_editarEstudante_${linkURL}`
+                  },
+                  "children" : {
+                    "tag":"img",
+                    "attr":{"class":"img-avatar","src":`public/photo-storage/${estaTurma[counter].foto == 'indefinido' ? 'noPhoto.jpg' : estaTurma[counter].foto}`,"alt":"admin@bootstrapmaster.com"}
+                  }
                 },
+
                 {
                   "tag":"span",
                   "attr":{"class":"avatar-status badge-success"}

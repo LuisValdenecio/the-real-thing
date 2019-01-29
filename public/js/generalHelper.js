@@ -105,7 +105,7 @@ const cursos = {
       ]
   ],
 
-  "Obras de construção civíl" : [
+  "OCC" : [
       [
         "Língua Portuguêsa",
         "Língua Inglesa",
@@ -154,7 +154,144 @@ const cursos = {
       [
         "Estágio Profissional"
       ]
-  ]
+  ],
+
+  "Iniciação" : [
+    "Comunicação Linguística",
+    "Representação Matemática",
+    "Culinária",
+    "Aulas de descoberta",
+    "Expressão Musical",
+    "Educação Manual e Plástica",
+    "Meio Físico e Social",
+    "Actividades Ludicas",
+    "Psicomotricidade"
+  ],
+
+  "1ª Classe" : [
+    "Língua Portuguesa",
+    "Matemática",
+    "Língua Inglesa",
+    "Estudo do Meio",
+    "Educação Musical",
+    "Educação Física",
+    "Educação Manual e Plástica",
+    "Culinária",
+    "Actividades Pedagógicas",
+    "Aulas de Descoberta",
+    "Iniciação à Informática"
+  ],
+
+  "2ª Classe": [
+    "Língua Portuguesa",
+    "Matemática",
+    "Língua Inglesa",
+    "Estudo do Meio",
+    "Educação Musical",
+    "Educação Física",
+    "Educação Manual e Plástica",
+    "Culinária",
+    "Actividades Pedagógicas",
+    "Aulas de Descoberta",
+    "Iniciação à Informática"
+  ],
+
+  "3ª Classe" : [
+    "Língua Portuguesa",
+    "Matemática",
+    "Língua Inglesa",
+    "Estudo do Meio",
+    "Educação Musical",
+    "Educação Física",
+    "Educação Manual e Plástica",
+    "Culinária",
+    "Actividades Pedagógicas",
+    "Aulas de Descoberta",
+    "Iniciação à Informática"
+  ],
+
+  "4ª Classe" : [
+    "Língua Portuguesa",
+    "Matemática",
+    "Língua Inglesa",
+    "Estudo do Meio",
+    "Educação Musical",
+    "Educação Física",
+    "Educação Manual e Plástica",
+    "Culinária",
+    "Actividades Pedagógicas",
+    "Aulas de Descoberta",
+    "Iniciação à Informática"
+  ],
+
+  "5ª Classe" : [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "Matemática",
+    "Ciências da Natureza",
+    "História",
+    "Geografia",
+    "Educação Moral e Cívica",
+    "Educação Manual e Plástica",
+    "Educação Musical",
+    "Educação Física"
+  ],
+
+  "6ª Classe" : [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "Matemática",
+    "Ciências da Natureza",
+    "História",
+    "Geografia",
+    "Educação Moral e Cívica",
+    "Educação Manual e Plástica",
+    "Educação Musical",
+    "Educação Física"
+  ],
+
+  "7ª Classe" : [
+    "Língua Portuguesa",
+    "Matemática",
+    "Ciências da Natureza",
+    "História",
+    "Geografia",
+    "Educação Moral e Cívica",
+    "Educação Manual e Plástica",
+    "Educação Musical",
+    "Educação Física"
+
+  ],
+
+  "8ª Classe" : [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "Matemática",
+    "Biologia",
+    "Física",
+    "Química",
+    "Geografia",
+    "História",
+    "Educação Física",
+    "Educação Moral e Cívica",
+    "Educação Visual e Plástica",
+    "Educação Laboral"
+  ],
+
+  "9ª Classe" : [
+    "Língua Portuguesa",
+    "Língua Inglesa",
+    "Matemática",
+    "Biologia",
+    "Física",
+    "Química",
+    "Geografia",
+    "História",
+    "Educação Física",
+    "Educação Moral e Cívica",
+    "Educação Visual e Plástica",
+    "Educação Laboral" 
+  ],
 
 };
 
@@ -383,6 +520,12 @@ function dynamicForm(toSend, route) {
     }
   });
 
+  //////////////////////////////////////////////
+  if (toSend == '') {
+
+
+  }
+
   // 10ª Classe
   if (toSend[0].length > 0 && typeof toSend[0] != "string") {
 
@@ -451,20 +594,55 @@ function dynamicForm(toSend, route) {
 
   }
 
-  if (toSend[0].length > 0 && typeof toSend[0] == "string") {
-    // register regardless of what happens
-      for (let counter = 0; counter < toSend.length; counter++) {
+  return formToSend;
+
+}
+
+
+/*******************************************************************************
+Esta função cria formulários do ensino primário e do primeiro ciclo
+*******************************************************************************/
+function otherForms(toSend, curso, route) {
+
+    // create the form
+    var formToSend = objectToHTML({
+      tag : "form",
+      attr : {
+        "method" : "POST",
+        "style" : "display : none",
+        "action" : `${'/'}${route}`
+      }
+    });
+
+    var classes  = [
+        "Iniciação",
+        "1ª Classe",
+        "2ª Classe",
+        "3ª Classe",
+        "4ª Classe",
+        "5ª Classe",
+        "6ª Classe",
+        "7ª Classe",
+        "8ª Classe",
+        "9ª Classe"
+      ];
+
+    if (toSend[0].length > 0 && typeof toSend[0] != "string") {
+
+      for (let innerCounter = 0; innerCounter < toSend[0].length; innerCounter++) {
+
         formToSend.appendChild(objectToHTML({
           tag : "input",
           attr : {
             type : "text",
-            name : `subject${counter}`,
-            value : toSend[counter]
+            name : curso,
+            value : toSend[0][innerCounter]
           }
         }));
+
       }
-  }
 
-  return formToSend;
+    }
 
+    return formToSend;
 }

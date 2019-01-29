@@ -132,6 +132,21 @@ document.querySelector(".teachers_row").appendChild(objectToHTML(
   }
 ));
 
+///////////////// equilibra as alturas de todos os elementos .teachers //////////////////////
+var maxHeight = 0;
+
+document.querySelectorAll(".teachers_row .col-lg-4 .teacher").forEach((each)=>{
+   if (maxHeight < each.clientHeight) {
+       maxHeight = each.clientHeight;
+   } else if (maxHeight > each.clientHeight) {
+       maxHeight = maxHeight;
+   }
+})
+
+document.querySelectorAll(".teachers_row .col-lg-4 .teacher").forEach((each)=>{
+    each.style.height = maxHeight+"px";
+});
+
 var subject_name;
 
 document.querySelector("body").onload = function() {

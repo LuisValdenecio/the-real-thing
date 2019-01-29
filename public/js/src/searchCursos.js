@@ -46,7 +46,7 @@ socket.on('classesInfo', function(data){
                   "children": [
                     {
                       "tag":"span",
-                      "content":data[turmas]["nome_class"]+"Classe"
+                      "content":(data[turmas]["nome_class"] == '10ª' || data[turmas]["nome_class"] == '11ª'|| data[turmas]["nome_class"] == '12ª' || data[turmas]["nome_class"] == '13ª') ? data[turmas]["nome_class"]+"Classe" : data[turmas]["nome_class"]
                     },
                     {
                       "tag":"span"
