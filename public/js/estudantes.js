@@ -144,7 +144,7 @@ socket.on('allStudents', function(data){
             },
             {
               "tag":"td",
-              "attr":{"class":"text-center"},
+              "attr":{"class":"text-center falta_container", "student_cod" : data[counter]["estudantecod"]},
               "children":{
                 "tag":"strong",
                 "content":`${0}`
@@ -226,5 +226,39 @@ socket.on('classesInfo', function(data){
   document.querySelector(".breadcrumb").querySelectorAll("li")[3].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_horario";
   document.querySelector(".breadcrumb").querySelectorAll("li")[4].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_estatistica";
   document.querySelector(".breadcrumb").querySelectorAll("li")[5].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_relatorio";
+
+});
+
+
+
+
+socket.on('dadosFaltas', function(data){
+
+  // filtra as faltas para somente os estudantes desta turma
+  var thisClass = data.filter((each)=>{
+      return each["turma_id"] == windows.location.pathname.split("_")[1]
+  });
+
+  console.log(thisClass);
+
+  // armazena os dados de todos os estudantes da turma nesta variavel
+  var ALL_STUDENTS = document.querySelectorAll(".falta_container");
+  var SUM_FAULTS = 0;
+
+  // para cada estudante com base no seu código adicione as suas faltas
+  for (let counter = 0; counter < ALL_STUDENTS.length; counter++) {
+
+    var sum = 0;
+    var thisStudent = thisClass.filter((each)=>{
+      return ALL_STUDENTS[counter].getAttribute("student_cod") == each['estudantecod'];
+    });
+
+    thisStudent.forEach((each)=>{
+      sum += each['ausencia'] + each['material'] + each['disciplinar'];
+    });
+
+    ALL_STUDENTS[counter].innerHTML = sum;
+
+  }
 
 });

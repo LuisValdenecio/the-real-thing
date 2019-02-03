@@ -6,4 +6,71 @@ block scripts
     script(src='public/js/src/projTecn.js')
 
 block view
-  
+  .upperContaine
+    .row
+      .col-md-12
+        .card
+          .card-body.upperCard(style='background:#276552;border-radius:0%;color:#fff;border:solid #276552')
+            .row
+              .col-sm-12
+                .row
+                  .col-sm-3
+                    .callout.callout-info
+                      small.text-muted Classe
+                      br
+                      strong.h4 10ª
+                      .chart-wrapper
+                        canvas#sparkline-chart-1(width='100', height='30')
+                  // /.col
+                  .col-sm-3
+                    .callout.callout-danger
+                      small.text-muted Curso
+                      br
+                      strong.h4 Informática
+                      .chart-wrapper
+                        canvas#sparkline-chart-2(width='100', height='30')
+                  // /.col
+                  // /.col
+                  .col-sm-3
+                    .callout.callout-danger
+                      small.text-muted Total de estudantes
+                      br
+                      strong.h4 0
+                      .chart-wrapper
+                        canvas#sparkline-chart-2(width='100', height='30')
+                  // /.col
+                  // /.col
+                  .col-sm-3
+                    .callout.callout-danger
+                      small.text-muted Média de idades
+                      br
+                      strong.h4 0.00
+                      .chart-wrapper
+                        canvas#sparkline-chart-2(width='100', height='30')
+                  // /.col
+      // /.col
+    .row.subject-list-container
+      .container
+        div.center-on-page.row
+
+  //
+    header of the turma page
+  .tableContainer
+    // /.row
+    .row
+      .col-md-12
+        .card
+          table.table.table-responsive-sm.table-hover.table-outline.mb-0
+            thead.thead-light
+              tr
+                th.text-center
+                  i.icon-people
+                th Nome
+                th.text-center Nº de Ordem
+                th.text-center Falta por Ausência
+                th.text-center Falta de Material
+                th.text-center Falta disciplinar
+                th.text-center Participação
+            tbody
+
+    button.btn.btn-block.btn-success.marcar(type='button') Marcar
