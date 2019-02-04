@@ -230,8 +230,6 @@ socket.on('classesInfo', function(data){
 });
 
 
-
-
 socket.on('dadosFaltas', function(data){
 
   if (data.length == 2 && data[1] == true) {
@@ -265,12 +263,7 @@ socket.on('dadosFaltas', function(data){
       // de 5 faltas injustificadas
       if (ALL_STUDENTS[counter].innerHTML > 5) {
         ALL_STUDENTS[counter].style.color = "red";
-      } else if (ALL_STUDENTS[counter].innerHTML > 0 && ALL_STUDENTS[counter].innerHTML < 5) {
-        ALL_STUDENTS[counter].style.color = "orange";
-      } else {
-        ALL_STUDENTS[counter].style.color = "green";
       }
-
       ALL_STUDENTS[counter].style.fontWeight = "bold";
     }
 
@@ -306,10 +299,6 @@ socket.on('dadosFaltas', function(data){
       // de 5 faltas injustificadas
       if (ALL_STUDENTS[counter].innerHTML > 5) {
         ALL_STUDENTS[counter].style.color = "red";
-      } else if (ALL_STUDENTS[counter].innerHTML > 0 && ALL_STUDENTS[counter].innerHTML < 5) {
-        ALL_STUDENTS[counter].style.color = "orange";
-      } else {
-        ALL_STUDENTS[counter].style.color = "green";
       }
 
       ALL_STUDENTS[counter].style.fontWeight = "bold";

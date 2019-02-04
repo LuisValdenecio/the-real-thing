@@ -166,7 +166,9 @@ socket.on('classesInfo', function(data){
 });
 
 
-socket.on('turmaInfo', function(data){
+socket.on('livroDPonto', function(data){
+
+  console.log(data);
 
   if (data.length == 2 && data[1] == true) {
 
@@ -263,6 +265,8 @@ socket.on('allStudents', function(data) {
     return aluno["turma_id"] == linkURL;
   });
 
+  console.log(estaTurma);
+
   // crie o form de faltas
   var FORM_FALTAS = objectToHTML(
     {
@@ -290,13 +294,20 @@ socket.on('allStudents', function(data) {
 
   });
 
-  // find among the first 12 inputs who is the one marked
-  const INPUTS = document.querySelectorAll(".subjectInputs");
+  // dados sobre as disciplinas são carregados com alguma demora
+  // porque o socket.io que os processa esta noutro arquivo, então
+  // o event body.onload é usado para esperar pelos dados
+  document.querySelector("body").onload = function() {
 
-  for (let counter = 0; counter < INPUTS.length; counter++) {
-    INPUTS[counter].onclick = function(event) {
-      onInputClick(event);
+    // find among the first 12 inputs who is the one marked
+    const INPUTS = document.querySelectorAll(".subjectInputs");
+
+    for (let counter = 0; counter < INPUTS.length; counter++) {
+      INPUTS[counter].onclick = function(event) {
+        onInputClick(event);
+      }
     }
+
   }
 
   function onInputClick(event) {
