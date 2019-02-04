@@ -144,7 +144,7 @@ socket.on('allStudents', function(data){
             },
             {
               "tag":"td",
-              "attr":{"class":"text-center falta_container", "student_cod" : data[counter]["estudantecod"]},
+              "attr":{"class":"text-center falta_container", "student_cod" : estaTurma[counter]["estudantecod"]},
               "children":{
                 "tag":"strong",
                 "content":`${0}`
@@ -179,7 +179,6 @@ socket.on('allStudents', function(data){
 
   }
 
-  console.log(data);
 });
 
 // coloca os elementos visiveis dentro de bg-container-contact100 para efeitos do modal
@@ -279,6 +278,7 @@ socket.on('dadosFaltas', function(data){
 
     // armazena os dados de todos os estudantes da turma nesta variavel
     var ALL_STUDENTS = document.querySelectorAll(".falta_container");
+    console.log(ALL_STUDENTS);
     var SUM_FAULTS = 0;
 
     // para cada estudante com base no seu código adicione as suas faltas

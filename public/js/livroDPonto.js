@@ -1,8 +1,8 @@
 /*
 
-  The logic behind estudantes.js
-  author : Luís Valdenêncio
-  Date : 20/12/2018
+The logic behind estudantes.js
+author : Luís Valdenêncio
+Date : 20/12/2018
 
 */
 
@@ -12,6 +12,7 @@ const linkURL = windows.location.pathname.split("_")[1];
 var actualLinks = document.querySelectorAll(".option-card-link");
 
 var theSubjectName;
+
 
 // seta os links das opcções de introdução de estudantes
 for (let counter = 0; counter < actualLinks.length; counter++) {
@@ -297,7 +298,9 @@ socket.on('allStudents', function(data) {
   // dados sobre as disciplinas são carregados com alguma demora
   // porque o socket.io que os processa esta noutro arquivo, então
   // o event body.onload é usado para esperar pelos dados
-  document.querySelector("body").onload = function() {
+  $(document).ready(function(){
+    
+    alert("I'm fully loaded");
 
     // find among the first 12 inputs who is the one marked
     const INPUTS = document.querySelectorAll(".subjectInputs");
@@ -308,7 +311,8 @@ socket.on('allStudents', function(data) {
       }
     }
 
-  }
+
+  })
 
   function onInputClick(event) {
     INPUT_SUBJECT.setAttribute('value', document.querySelectorAll("label")[Number(event.currentTarget.id.slice(2)) - 1].innerText);

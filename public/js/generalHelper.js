@@ -290,7 +290,7 @@ const cursos = {
     "Educação Física",
     "Educação Moral e Cívica",
     "Educação Visual e Plástica",
-    "Educação Laboral" 
+    "Educação Laboral"
   ],
 
 };
