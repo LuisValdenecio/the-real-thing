@@ -24,72 +24,151 @@ document.querySelector(".container-fluid").appendChild(objectToHTML(
 
 // mostrar as disciplinas sem professor
 socket.on('turmaInfo', function(data){
-  for (let subjectData = 0; subjectData < data.length; subjectData++) {
 
-    document.querySelector(".teachers_row").appendChild(objectToHTML(
+  if (data.length == 2 && data[1] == true) {
 
-      {
-        tag : "div",
-        attr : {
-          class : "col-lg-4 col-md-6"
-        },
-        children : {
+    for (let subjectData = 0; subjectData < data[0].length; subjectData++) {
+
+      document.querySelector(".teachers_row").appendChild(objectToHTML(
+
+        {
           tag : "div",
           attr : {
-            class : "teacher d-flex flex-row align-items-center justify-content-start"
+            class : "col-lg-4 col-md-6"
           },
-          children : [
-            {
-              tag : "div",
-              attr : {
-                class : "teacher_image"
-              },
-              children : {
-                tag : "div",
-                children : {
-                  tag : "img",
-                  attr : {
-                    src : "public/images/instructor_4.jpg"
-                  }
-                }
-              }
+          children : {
+            tag : "div",
+            attr : {
+              class : "teacher d-flex flex-row align-items-center justify-content-start"
             },
-            {
-              tag : "div",
-              attr : {
-                class : "teacher_content"
-              },
-              children: [
-                {
+            children : [
+              {
+                tag : "div",
+                attr : {
+                  class : "teacher_image"
+                },
+                children : {
                   tag : "div",
-                  attr : {
-                    class : "teacher_name",
-                  },
                   children : {
-                    tag : "a",
-                    content : `Professor/a de:`,
+                    tag : "img",
                     attr : {
-                      class : "formMOdal"
+                      src : "public/images/instructor_4.jpg"
                     }
                   }
-                },
-                {
-                  tag : "div",
-                  content : data[subjectData]["disciplina_nome"],
-                  attr : {
-                    class : "teacher_title"
-                  }
-
                 }
-              ]
-            }
-          ]
-        }
-      }
+              },
+              {
+                tag : "div",
+                attr : {
+                  class : "teacher_content"
+                },
+                children: [
+                  {
+                    tag : "div",
+                    attr : {
+                      class : "teacher_name",
+                    },
+                    children : {
+                      tag : "a",
+                      content : `Professor/a de:`,
+                      attr : {
+                        class : "formMOdal"
+                      }
+                    }
+                  },
+                  {
+                    tag : "div",
+                    content : data[0][subjectData]["disciplina_nome"],
+                    attr : {
+                      class : "teacher_title"
+                    }
 
-    ));
+                  }
+                ]
+              }
+            ]
+          }
+        }
+
+      ));
+
+    }
+
+
+
+
+
+  } else {
+
+    for (let subjectData = 0; subjectData < data.length; subjectData++) {
+
+      document.querySelector(".teachers_row").appendChild(objectToHTML(
+
+        {
+          tag : "div",
+          attr : {
+            class : "col-lg-4 col-md-6"
+          },
+          children : {
+            tag : "div",
+            attr : {
+              class : "teacher d-flex flex-row align-items-center justify-content-start"
+            },
+            children : [
+              {
+                tag : "div",
+                attr : {
+                  class : "teacher_image"
+                },
+                children : {
+                  tag : "div",
+                  children : {
+                    tag : "img",
+                    attr : {
+                      src : "public/images/instructor_4.jpg"
+                    }
+                  }
+                }
+              },
+              {
+                tag : "div",
+                attr : {
+                  class : "teacher_content"
+                },
+                children: [
+                  {
+                    tag : "div",
+                    attr : {
+                      class : "teacher_name",
+                    },
+                    children : {
+                      tag : "a",
+                      content : `Professor/a de:`,
+                      attr : {
+                        class : "formMOdal"
+                      }
+                    }
+                  },
+                  {
+                    tag : "div",
+                    content : data[subjectData]["disciplina_nome"],
+                    attr : {
+                      class : "teacher_title"
+                    }
+
+                  }
+                ]
+              }
+            ]
+          }
+        }
+
+      ));
+
+    }
 
   }
+
 });
 
 // mostrar as disciplinas ja registadas

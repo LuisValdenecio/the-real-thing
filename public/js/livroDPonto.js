@@ -168,42 +168,87 @@ socket.on('classesInfo', function(data){
 
 socket.on('turmaInfo', function(data){
 
-  for (let counter = 0; counter < data.length; counter++) {
+  if (data.length == 2 && data[1] == true) {
 
-    document.querySelector(".subject-list-container .center-on-page").appendChild(objectToHTML({
+    for (let counter = 0; counter < data[0].length; counter++) {
 
-      "tag" : "div",
-      "attr" : {
-        "class" : "col-lg-3"
-      },
-      "children" : [
+      document.querySelector(".subject-list-container .center-on-page").appendChild(objectToHTML({
 
-        {
-
-          "tag" : "input",
-          "attr" : {
-            "type" : "radio",
-            "class" : "subjectInputs",
-            "name" : "rb",
-            "id" : `rb${counter+1}`
-          }
-
+        "tag" : "div",
+        "attr" : {
+          "class" : "col-lg-3"
         },
+        "children" : [
 
-        {
+          {
 
-          "tag" : "label",
-          "content" : data[counter]["disciplina_nome"],
-          "class" : "subjectLabels",
-          "attr" : {
-            "for" : `rb${counter+1}`
+            "tag" : "input",
+            "attr" : {
+              "type" : "radio",
+              "class" : "subjectInputs",
+              "name" : "rb",
+              "id" : `rb${counter+1}`
+            }
+
+          },
+
+          {
+
+            "tag" : "label",
+            "content" : data[0][counter]["disciplina_nome"],
+            "class" : "subjectLabels",
+            "attr" : {
+              "for" : `rb${counter+1}`
+            }
+
           }
 
-        }
+        ]
 
-      ]
+      }));
 
-    }));
+    }
+
+  } else {
+
+    for (let counter = 0; counter < data.length; counter++) {
+
+      document.querySelector(".subject-list-container .center-on-page").appendChild(objectToHTML({
+
+        "tag" : "div",
+        "attr" : {
+          "class" : "col-lg-3"
+        },
+        "children" : [
+
+          {
+
+            "tag" : "input",
+            "attr" : {
+              "type" : "radio",
+              "class" : "subjectInputs",
+              "name" : "rb",
+              "id" : `rb${counter+1}`
+            }
+
+          },
+
+          {
+
+            "tag" : "label",
+            "content" : data[counter]["disciplina_nome"],
+            "class" : "subjectLabels",
+            "attr" : {
+              "for" : `rb${counter+1}`
+            }
+
+          }
+
+        ]
+
+      }));
+
+    }
 
   }
 
