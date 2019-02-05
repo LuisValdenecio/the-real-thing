@@ -11,8 +11,8 @@ header.app-header.navbar
       li.nav-item.px-3
         a.nav-link(href="#")
           | Olá
-          span    
-          b=   usuarioNome
+          span
+          b(style="padding:5px")=    usuarioNome
       li.nav-item.dropdown
         a.nav-link(data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false")
         .dropdown-menu.dropdown-menu-right
@@ -57,7 +57,3 @@ header.app-header.navbar
           a.dropdown-item(href="#")
             i.fa.fa-lock
             |  Logout
-  button.navbar-toggler.aside-menu-toggler.d-md-down-none(type="button" data-toggle="aside-menu-lg-show")
-    span.navbar-toggler-icon
-  button.navbar-toggler.aside-menu-toggler.d-lg-none(type="button" data-toggle="aside-menu-show")
-    span.navbar-toggler-icon

@@ -300,8 +300,6 @@ socket.on('allStudents', function(data) {
   // o event body.onload é usado para esperar pelos dados
   $(document).ready(function(){
     
-    alert("I'm fully loaded");
-
     // find among the first 12 inputs who is the one marked
     const INPUTS = document.querySelectorAll(".subjectInputs");
 

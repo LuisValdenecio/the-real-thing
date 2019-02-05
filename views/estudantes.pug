@@ -48,33 +48,35 @@ block view
                       .chart-wrapper
                         canvas#sparkline-chart-2(width='100', height='30')
                   // /.col
-    .row
-      .col-6.col-lg-4
-        .card.option-card
-          .card-body.p-3.d-flex.align-items-center
-            i.icon-user-follow.bg-primary.p-3.font-2xl.mr-3
-            div
-              .text-value-sm.text-primary
-                a.option-card-link(href='')
-                  | Adicionar um Estudante novo
-      // /.col
-      .col-6.col-lg-4
-        .card.option-card
-          .card-body.p-3.d-flex.align-items-center
-            i.icon-user-follow.bg-primary.p-3.font-2xl.mr-3
-            div
-              .text-value-sm.text-primary
-                a.option-card-link(href='')
-                  | Adicionar uma planilha do Excel
-      // /.col
-      .col-6.col-lg-4.option-card
-        .card
-          .card-body.p-3.d-flex.align-items-center
-            i.icon-arrow-left-circle.bg-info.p-3.font-2xl.mr-3
-            div
-              .text-value-sm.text-info
-                a.option-card-link(href='')
-                  | Adicionar um Estudante transferido
+
+    if (from == "ADMIN")
+      .row
+        .col-6.col-lg-4
+          .card.option-card
+            .card-body.p-3.d-flex.align-items-center
+              i.icon-user-follow.bg-primary.p-3.font-2xl.mr-3
+              div
+                .text-value-sm.text-primary
+                  a.option-card-link(href='')
+                    | Adicionar um Estudante novo
+        // /.col
+        .col-6.col-lg-4
+          .card.option-card
+            .card-body.p-3.d-flex.align-items-center
+              i.icon-user-follow.bg-primary.p-3.font-2xl.mr-3
+              div
+                .text-value-sm.text-primary
+                  a.option-card-link(href='')
+                    | Adicionar uma planilha do Excel
+        // /.col
+        .col-6.col-lg-4.option-card
+          .card
+            .card-body.p-3.d-flex.align-items-center
+              i.icon-arrow-left-circle.bg-info.p-3.font-2xl.mr-3
+              div
+                .text-value-sm.text-info
+                  a.option-card-link(href='')
+                    | Adicionar um Estudante transferido
       // /.col
     .row.warning-row
       .col-md-12.col-lg-12
