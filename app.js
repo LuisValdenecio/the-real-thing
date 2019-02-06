@@ -1,6 +1,6 @@
 var express = require('express');
 require('dotenv').config();
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
 
 var flash = require('connect-flash');
 
@@ -47,7 +47,7 @@ var first,
     eleventh,
     twelveth;
 
-const server = app.listen(PORT, ()=> {
+const server = app.listen(process.env.PORT || 5000, ()=> {
 });
 
 const io = require("socket.io").listen(server);
