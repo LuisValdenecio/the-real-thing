@@ -11,6 +11,7 @@
 
 'use scrict';
 
+
 /* eslint-disable no-magic-numbers */
 // Disable the on-canvas tooltip
 Chart.defaults.global.pointHitDetectionRadius = 1;
@@ -314,32 +315,8 @@ var brandBoxChart3 = new Chart($('#social-box-chart-3'), {
   options: brandBoxChartOptions
 }); // eslint-disable-next-line no-unused-vars
 
-socket.on('generalData', function(data) {
+socket.on('profilePhoto', function(data) {
 
-  // set the number of male and female students this particular school has...
-  document.querySelector(".alunos-number").innerHTML = data[0]["NumeroAlunos"];
-  document.querySelector(".alunas-number").innerHTML = data[1]["NumeroAlunas"];
-  document.querySelector(".teachers-number").innerHTML = data[3]["professoresNumber"];
-
-  // compute the percentage of male and female students
-  var totalStudent = data[0]["NumeroAlunos"] + data[1]["NumeroAlunas"];
-
-  document.querySelector(".alunosBar").style.width = ""+(data[0]["NumeroAlunos"] / totalStudent) * 100+"%";
-  document.querySelector(".alunasBar").style.width = ""+(data[1]["NumeroAlunas"] / totalStudent) * 100+"%";
-
-  console.log((data[0]["NumeroAlunos"] / totalStudent) * 100);
-
-  // accumulate all the ages from all the students in this school
-  var sum = 0;
-
-  // calcula a media de idades de todos os estudantes desta escola
-  for (let counter = 0; counter < data[2]["idadesStudents"].length; counter++) {
-    sum += data[2]["idadesStudents"][counter]["idade"];
-  }
-
-  // seta a média das idades de todos os estudantes desta escola
-  document.querySelector(".media-idades").innerHTML = Math.trunc(sum / data[2]["idadesStudents"].length);
-
-  console.log(data);
+  document.querySelector(".profile-picture").src = "public/photo-storage/"+data;
 
 });

@@ -9,297 +9,299 @@ const socket = io();
 // contabilidade e gestão
 const cursos = {
 
-    "Contabilidade" : [
+  "Contabilidade" : [
 
-      [
-        "FAI",
-        "Empreendedorismo",
-        "Língua Inglesa",
-        "Economia",
-        "OGE",
-        "IAC",
-        "Contabilidade Financeira",
-        "Matemática",
-        "Língua Portuguesa",
-        "TCE",
-        "Educação Física"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "FAI",
+       "Contabilidade Financeira",
+       "Economia",
+       "Matemática",
+       "IAC",
+       "DLC",
+       "TCE",
+       "OGE",
+       "Educação Física",
+       "Empreendedorismo"
+     ],
 
-      [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
-        "FAI",
-        "Educação Física",
-        "Matemática",
-        "IAC",
-        "Contabilidade Financeira",
-        "TCE",
-        "Administração de Empresas",
-        "DLF"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "Direito",
+       "FAI",
+       "Educação Física",
+       "Matemática",
+       "IAC",
+       "Contabilidade Financeira",
+       "Administração de Empresas",
+       "DLC"
+     ],
 
-      [
-        "Matemática",
-        "Direito",
-        "Sociologia",
-        "Contabilidade Financeira",
-        "Contabilidade Analítica",
-        "AEF",
-        "Projécto Tecnológico"
-      ],
+     [
+       "Matemática",
+       "Direito",
+       "Sociologia",
+       "Contabilidade Financeira",
+       "Contabilidade Analítica",
+       "AEF",
+       "Projécto Tecnológico",
+       "DLF"
+     ],
 
-      [
-        "Estágio Currícular Supervisionado",
-        "Matemática",
-        "História Económica e Social",
-        "Projecto Técnologico"
-      ]
+     [
 
-    ],
+       "História Económica e Social",
+       "Matemática",
+       "Projecto Tecnológico",
+       "Estágio Currícular Supervisionado"
+     ]
 
-    "Informática" : [
+   ],
 
-      [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
-        "FAI",
-        "Educação Física",
-        "Matemática",
-        "Física",
-        "Química",
-        "Electrotecnia",
-        "Empreendedorismo",
-        "TLP",
-        "SEAC",
-        "TIC"
-      ],
+   "Informática" : [
 
-      [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
-        "FAI",
-        "Educação Física",
-        "Matemática",
-        "Física",
-        "Química",
-        "Electrotecnia",
-        "Empreendedorismo",
-        "Desenho Técnico",
-        "TLP",
-        "SEAC"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "FAI",
+       "SEAC",
+       "TIC",
+       "Matemática",
+       "TLP",
+       "Electrotecnia",
+       "Física",
+       "Química",
+       "Educação Física",
+       "Empreendedorismo"
+     ],
 
-      [
-        "Matemática",
-        "Física",
-        "OGI",
-        "Empreendedorismo",
-        "TLP",
-        "TREI",
-        "SEAC",
-        "Projécto Tecnológico"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "FAI",
+       "Educação Física",
+       "Matemática",
+       "Física",
+       "Química",
+       "Electrotecnia",
+       "Empreendedorismo",
+       "Desenho Técnico",
+       "TLP",
+       "SEAC"
+     ],
 
-      [
-        "Estágio Currícular Supervisionado",
-        "Química",
-        "Física",
-        "Projécto Tecnológico"
-      ]
+     [
+       "Matemática",
+       "Física",
+       "OGI",
+       "Empreendedorismo",
+       "TLP",
+       "TREI",
+       "SEAC",
+       "Projécto Tecnológico"
+     ],
+
+     [
+       "Estágio Currícular Supervisionado",
+       "Projécto Tecnológico"
+     ]
   ],
 
   "OCC" : [
-      [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
-        "FAI",
-        "Educação Física",
-        "Matemática",
-        "Física",
-        "Química",
-        "Informática",
-        "Empreendedorismo",
-        "DCC",
-        "TCC",
-        "TCOE",
-        "POL"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "FAI",
+       "Educação Física",
+       "Matemática",
+       "Física",
+       "Química",
+       "Informática",
+       "Empreendedorismo",
+       "DCC",
+       "TCC",
+       "TCOE",
+       "POL"
+     ],
 
-      [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
-        "FAI",
-        "Educação Física",
-        "Matemática",
-        "Física",
-        "Química",
-        "Empreendedorismo",
-        "DCC",
-        "TCC",
-        "TCOE",
-        "POL"
-      ],
+     [
+       "Língua Portuguêsa",
+       "Língua Inglesa",
+       "FAI",
+       "Educação Física",
+       "Matemática",
+       "Física",
+       "Química",
+       "Empreendedorismo",
+       "DCC",
+       "TCC",
+       "TCOE",
+       "POL"
+     ],
 
-      [
-        "Matemática",
-        "Física",
-        "OGI",
-        "Empreendedorismo",
-        "DCC",
-        "TCC",
-        "TCOE",
-        "TCO-IEU",
-        "Técnicas de Topografia",
-        "POL",
-        "Projécto Tecnológico"
-      ],
+     [
+       "Matemática",
+       "Física",
+       "OGI",
+       "Empreendedorismo",
+       "DCC",
+       "TCC",
+       "TCOE",
+       "TCO-IEU",
+       "Técnicas de Topografia",
+       "POL",
+       "Projécto Tecnológico"
+     ],
 
-      [
-        "Estágio Currícular Supervisionado",
-        "Projecto Tecnológico",
-        "Química",
-        "Física"
-      ]
+     [
+       "Estágio Profissional"
+     ]
   ],
 
   "Iniciação" : [
-    "Comunicação Linguística",
-    "Representação Matemática",
-    "Culinária",
-    "Aulas de descobertas",
-    "Expressão Musical",
-    "Educação Manual e Plástica",
-    "Meio Físico e Social",
-    "Actividades Ludicas",
-    "Psicomotricidade",
-    "Língua Inglesa",
-    "Educação Física"
+   "Comunicação Linguística",
+   "Representação Matemática",
+   "Culinária",
+   "Expressão Musical",
+   "Educação Manual e Plástica",
+   "Meio Físico e Social",
+   "Actividades Ludicas",
+   "Psicomotricidade",
+   "Língua Inglesa"
   ],
 
   "1ª Classe" : [
-    "Língua Portuguesa",
-    "Matemática",
-    "Língua Inglesa",
-    "Estudo do Meio",
-    "Educação Musical",
-    "Educação Física",
-    "Educação Manual e Plástica",
-    "Culinária",
-    "Actividades Pedagógicas",
-    "Aulas de Descoberta",
-    "Iniciação à Informática"
+   "Língua Portuguesa",
+   "Matemática",
+   "Língua Inglesa",
+   "Estudo do Meio",
+   "Educação Musical",
+   "Educação Física",
+   "Educação Manual e Plástica",
+   "Culinária",
+   "Actividades Pedagógicas",
+   "Iniciação à Informática"
   ],
 
   "2ª Classe": [
-    "Língua Portuguesa",
-    "Matemática",
-    "Língua Inglesa",
-    "Estudo do Meio",
-    "Educação Musical",
-    "Educação Física",
-    "Educação Manual e Plástica",
-    "Culinária",
-    "Actividades Pedagógicas",
-    "Aulas de Descoberta",
-    "Iniciação à Informática"
+   "Língua Portuguesa",
+   "Matemática",
+   "Língua Inglesa",
+   "Estudo do Meio",
+   "Educação Musical",
+   "Educação Física",
+   "Educação Manual e Plástica",
+   "Culinária",
+   "Actividades Extracurrículares",
+   "Iniciação à Informática"
   ],
 
   "3ª Classe" : [
-    "Língua Portuguesa",
-    "Matemática",
-    "Língua Inglesa",
-    "Estudo do Meio",
-    "Educação Musical",
-    "Educação Física",
-    "Educação Manual e Plástica",
-    "Culinária",
-    "Actividades Pedagógicas",
-    "Aulas de Descoberta",
-    "Iniciação à Informática"
+   "Língua Portuguesa",
+   "Matemática",
+   "Língua Inglesa",
+   "Estudo do Meio",
+   "Educação Musical",
+   "Educação Física",
+   "Educação Manual e Plástica",
+   "Culinária",
+   "Actividades Extracurrículares",
+   "Iniciação à Informática"
   ],
 
   "4ª Classe" : [
-    "Língua Portuguesa",
-    "Matemática",
-    "Língua Inglesa",
-    "Estudo do Meio",
-    "Educação Musical",
-    "Educação Física",
-    "Educação Manual e Plástica",
-    "Culinária",
-    "Actividades Pedagógicas",
-    "Aulas de Descoberta",
-    "Iniciação à Informática"
+   "Língua Portuguesa",
+   "Matemática",
+   "Língua Inglesa",
+   "Estudo do Meio",
+   "Educação Musical",
+   "Educação Física",
+   "Educação Manual e Plástica",
+   "Culinária",
+   "Actividades Extracurrículares",
+   "Iniciação à Informática"
   ],
 
   "5ª Classe" : [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "Matemática",
-    "Ciências da Natureza",
-    "História",
-    "Geografia",
-    "Educação Moral e Cívica",
-    "Educação Manual e Plástica",
-    "Educação Musical",
-    "Educação Física"
+   "Língua Portuguesa",
+   "Língua Inglesa",
+   "Matemática",
+   "Ciências da Natureza",
+   "História",
+   "Geografia",
+   "Educação Moral e Cívica",
+   "Educação Manual e Plástica",
+   "Educação Musical",
+   "Educação Física",
+   "Informática"
   ],
 
   "6ª Classe" : [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "Matemática",
-    "Ciências da Natureza",
-    "História",
-    "Geografia",
-    "Educação Moral e Cívica",
-    "Educação Manual e Plástica",
-    "Educação Musical",
-    "Educação Física"
+   "Língua Portuguesa",
+   "Língua Inglesa",
+   "Matemática",
+   "Ciências da Natureza",
+   "História",
+   "Geografia",
+   "Educação Moral e Cívica",
+   "Educação Manual e Plástica",
+   "Educação Musical",
+   "Educação Física",
+   "Informática"
   ],
 
   "7ª Classe" : [
-    "Língua Portuguesa",
-    "Matemática",
-    "Ciências da Natureza",
-    "História",
-    "Geografia",
-    "Educação Moral e Cívica",
-    "Educação Manual e Plástica",
-    "Educação Musical",
-    "Educação Física"
-
+   "Língua Portuguesa",
+   "Língua Inglesa",
+   "Matemática",
+   "Biologia",
+   "Química",
+   "Física",
+   "História",
+   "Geografia",
+   "Educação Moral e Cívica",
+   "Educação Visual e Plástica",
+   "Educação Laboral",
+   "Educação Musical",
+   "Educação Física",
+   "Informática"
   ],
 
   "8ª Classe" : [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "Matemática",
-    "Biologia",
-    "Física",
-    "Química",
-    "Geografia",
-    "História",
-    "Educação Física",
-    "Educação Moral e Cívica",
-    "Educação Visual e Plástica",
-    "Educação Laboral"
+   "Língua Portuguesa",
+   "Língua Inglesa",
+   "Matemática",
+   "Biologia",
+   "Química",
+   "Física",
+   "História",
+   "Geografia",
+   "Educação Moral e Cívica",
+   "Educação Visual e Plástica",
+   "Educação Laboral",
+   "Educação Musical",
+   "Educação Física",
+   "Informática"
   ],
 
   "9ª Classe" : [
-    "Língua Portuguesa",
-    "Língua Inglesa",
-    "Matemática",
-    "Biologia",
-    "Física",
-    "Química",
-    "Geografia",
-    "História",
-    "Educação Física",
-    "Educação Moral e Cívica",
-    "Educação Visual e Plástica",
-    "Educação Laboral"
-  ],
+   "Língua Portuguesa",
+   "Língua Inglesa",
+   "Matemática",
+   "Biologia",
+   "Química",
+   "Física",
+   "História",
+   "Geografia",
+   "Educação Moral e Cívica",
+   "Educação Visual e Plástica",
+   "Educação Laboral",
+   "Educação Musical",
+   "Educação Física",
+   "Informática"
+  ]
 
 };
 
