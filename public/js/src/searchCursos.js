@@ -25,7 +25,6 @@ socket.on('classesInfo', function(data){
     document.querySelector(".table-responsive-sm").appendChild(objectToHTML(
 
       {
-
         tag:"tr",
         "attr":
           {
@@ -34,7 +33,12 @@ socket.on('classesInfo', function(data){
           },
           "children": [
             {
-              "tag":"td",
+              "tag" : "a",
+              "attr" : {
+                "href" : "/turma_"+data[turmas]["turma_id"]
+              },
+              "children" :
+              {"tag":"td",
               "children": [
                 {
                   "tag":"div",
@@ -53,7 +57,7 @@ socket.on('classesInfo', function(data){
                     }
                   ]
                 }
-              ]
+              ]}
             },
             {
               "tag":"td",
@@ -139,25 +143,33 @@ socket.on('classesInfo', function(data){
           ]
       }
 
+
     ));
   }
 });
 
 document.querySelector("body").onload = function() {
 
+  // inicialmente so para a criacao dos links
   document.querySelectorAll(".class-entry-row").forEach((each)=>{
-      each.addEventListener('click', function() {
+    // create a link fo each row on the table
+    document.querySelector(".container-fluid").appendChild(objectToHTML(
+      {
+        tag : "a",
+        attr : {
+          "href" : "/turma_"+each.getAttribute("turma-id"),
+          "class" : "linkToTurma"
+        }
+      }
+    ));
 
-        var linkToTurma = objectToHTML({
-          tag : "a",
-          attr : {
-            href : "/turma_"+each.getAttribute("turma-id")
-          }
-        });
-
-        linkToTurma.click();
-
-      });
   });
 
+  // ligar os links com as linhas da tabela
+  var rowsLenght = document.querySelectorAll(".class-entry-row");
+  for (let counter = 0; counter < rowsLenght.length; counter++) {
+    rowsLenght[counter].onclick = function() {
+      document.querySelectorAll(".linkToTurma")[counter].click();
+    }
+  }
 }

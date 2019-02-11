@@ -12,18 +12,17 @@ const cursos = {
     "Contabilidade" : [
 
       [
-        "Língua Portuguêsa",
-        "Língua Inglesa",
         "FAI",
-        "Contabilidade Financeira",
+        "Empreendedorismo",
+        "Língua Inglesa",
         "Economia",
-        "Matemática",
+        "OGE",
         "IAC",
-        "DLC",
+        "Contabilidade Financeira",
+        "Matemática",
+        "Língua Portuguesa",
         "TCE",
-        "Administração de Empresas",
-        "Educação Física",
-        "Empreendedorismo"
+        "Educação Física"
       ],
 
       [
@@ -50,8 +49,10 @@ const cursos = {
       ],
 
       [
-
-        "Estágio Profissional"
+        "Estágio Currícular Supervisionado",
+        "Matemática",
+        "História Económica e Social",
+        "Projecto Técnologico"
       ]
 
     ],
@@ -100,7 +101,9 @@ const cursos = {
       ],
 
       [
-        "Estágio Profissional",
+        "Estágio Currícular Supervisionado",
+        "Química",
+        "Física",
         "Projécto Tecnológico"
       ]
   ],
@@ -152,7 +155,10 @@ const cursos = {
       ],
 
       [
-        "Estágio Profissional"
+        "Estágio Currícular Supervisionado",
+        "Projecto Tecnológico",
+        "Química",
+        "Física"
       ]
   ],
 
@@ -160,12 +166,14 @@ const cursos = {
     "Comunicação Linguística",
     "Representação Matemática",
     "Culinária",
-    "Aulas de descoberta",
+    "Aulas de descobertas",
     "Expressão Musical",
     "Educação Manual e Plástica",
     "Meio Físico e Social",
     "Actividades Ludicas",
-    "Psicomotricidade"
+    "Psicomotricidade",
+    "Língua Inglesa",
+    "Educação Física"
   ],
 
   "1ª Classe" : [

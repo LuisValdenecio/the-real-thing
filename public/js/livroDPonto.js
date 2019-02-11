@@ -299,7 +299,7 @@ socket.on('allStudents', function(data) {
   // porque o socket.io que os processa esta noutro arquivo, então
   // o event body.onload é usado para esperar pelos dados
   $(document).ready(function(){
-    
+
     // find among the first 12 inputs who is the one marked
     const INPUTS = document.querySelectorAll(".subjectInputs");
 
@@ -452,5 +452,21 @@ socket.on('allStudents', function(data) {
   document.querySelector(".marcar").onclick = function() {
     document.querySelector("form").submit();
   }
+
+});
+
+socket.on('classesInfo', function(data){
+
+  var thisClass = data.filter((each)=>{
+      return each["turma_id"] == windows.location.pathname.split("_")[1]
+  });
+
+  // set the link for the estudante route
+  document.querySelector(".breadcrumb").querySelectorAll("li")[0].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"];
+  document.querySelector(".breadcrumb").querySelectorAll("li")[1].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_estudantes";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[2].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_livrodeponto";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[3].querySelector("a").href = "/turma_"+thisClass[0]["turma_id"]+"_minipautas";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[4].querySelector("a").href = "#";
+  document.querySelector(".breadcrumb").querySelectorAll("li")[5].querySelector("a").href = "#";
 
 });
