@@ -21,9 +21,9 @@ const cursos = {
        "IAC",
        "DLC",
        "TCE",
-       "OGE",
        "Educação Física",
-       "Empreendedorismo"
+       "Empreendedorismo",
+       "OGE"
      ],
 
      [
@@ -105,7 +105,10 @@ const cursos = {
 
      [
        "Estágio Currícular Supervisionado",
-       "Projécto Tecnológico"
+       "Projécto Tecnológico",
+       "Química",
+       "Física",
+       "Matemática"
      ]
   ],
 
@@ -156,86 +159,91 @@ const cursos = {
      ],
 
      [
-       "Estágio Profissional"
+       "Estágio Curricular Supervisionado",
+       "Química",
+       "Física",
+       "Matemática",
+       "Projecto Tecnológico",
+       "T.Medições O",
      ]
   ],
 
   "Iniciação" : [
    "Comunicação Linguística",
    "Representação Matemática",
-   "Culinária",
+   "Aulas Práticas",
+   "Psicomotricidade",
+   "Língua Inglesa",
    "Expressão Musical",
    "Educação Manual e Plástica",
    "Meio Físico e Social",
-   "Actividades Ludicas",
-   "Psicomotricidade",
-   "Língua Inglesa"
+   "Actividades Lúdicas"
   ],
 
   "1ª Classe" : [
    "Língua Portuguesa",
    "Matemática",
-   "Língua Inglesa",
-   "Estudo do Meio",
-   "Educação Musical",
    "Educação Física",
-   "Educação Manual e Plástica",
-   "Culinária",
-   "Actividades Pedagógicas",
-   "Iniciação à Informática"
+   "Actividades Extracurriculares",
+   "EMP",
+   "Estudo do Meio",
+   "Língua Inglesa",
+   "Iniciação à Informática",
+   "Aulas Práticas",
+   "Educação Musical"
   ],
 
   "2ª Classe": [
    "Língua Portuguesa",
-   "Matemática",
    "Língua Inglesa",
+   "Aulas Práticas",
+   "Matemática",
+   "Iniciação à Informática",
+   "EMP",
    "Estudo do Meio",
-   "Educação Musical",
+   "Actividades Extracurriculares",
    "Educação Física",
-   "Educação Manual e Plástica",
-   "Culinária",
-   "Actividades Extracurrículares",
-   "Iniciação à Informática"
+   "Educação Musical"
   ],
 
   "3ª Classe" : [
    "Língua Portuguesa",
    "Matemática",
-   "Língua Inglesa",
    "Estudo do Meio",
-   "Educação Musical",
+   "EMP",
    "Educação Física",
-   "Educação Manual e Plástica",
-   "Culinária",
-   "Actividades Extracurrículares",
-   "Iniciação à Informática"
+   "Educação Musical",
+   "Iniciação à Informática",
+   "Aulas Práticas",
+   "Actividades Extracurriculares",
+   "Língua Inglesa"
   ],
 
   "4ª Classe" : [
    "Língua Portuguesa",
    "Matemática",
-   "Língua Inglesa",
+   "Aulas Práticas",
    "Estudo do Meio",
-   "Educação Musical",
-   "Educação Física",
-   "Educação Manual e Plástica",
-   "Culinária",
-   "Actividades Extracurrículares",
-   "Iniciação à Informática"
+   "Actividades Extracurriculares",
+   "EMP",
+   "Ed. Musical",
+   "Língua Inglesa",
+   "Iniciação à Informática",
+   "Educação Física"
   ],
 
   "5ª Classe" : [
-   "Língua Portuguesa",
-   "Língua Inglesa",
-   "Matemática",
-   "Ciências da Natureza",
-   "História",
-   "Geografia",
-   "Educação Moral e Cívica",
-   "Educação Manual e Plástica",
-   "Educação Musical",
-   "Educação Física",
-   "Informática"
+    "Geografia",
+    "Historia",
+    "Língua Portuguesa",
+    "EMC",
+    "Língua Inglesa",
+    "Matemática",
+    "Ciências da Natureza",
+    "Ed. Musical",
+    "EMP",
+    "Informática",
+    "Educação Física"
   ],
 
   "6ª Classe" : [

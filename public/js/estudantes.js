@@ -185,7 +185,7 @@ socket.on('allStudents', function(data){
 document.querySelector("body").prepend(objectToHTML({
     tag : "div",
     attr : {
-        class : "bg-container-contact100 app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show"
+      class : "bg-container-contact100 app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show"
     }
 }));
 

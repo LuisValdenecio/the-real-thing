@@ -315,8 +315,22 @@ var brandBoxChart3 = new Chart($('#social-box-chart-3'), {
   options: brandBoxChartOptions
 }); // eslint-disable-next-line no-unused-vars
 
-socket.on('profilePhoto', function(data) {
+socket.on('generalData', function(data) {
 
-  document.querySelector(".profile-picture").src = "public/photo-storage/"+data;
+  // seta o número de alunos e de alundas
+  document.querySelector(".alunos-number").innerText = data[0]['NumeroAlunos'];
+  document.querySelector(".alunas-number").innerText = data[1]['NumeroAlunas'];
+
+  // seta a percentagem dos estudantes do sexo masculino e feminino
+  document.querySelector(".alunosBar").style.width = ((data[0]['NumeroAlunos'] / (data[1]['NumeroAlunas'] + data[0]['NumeroAlunos'])) * 100) + "%";
+  document.querySelector(".alunasBar").style.width = ((data[1]['NumeroAlunas'] / (data[1]['NumeroAlunas'] + data[0]['NumeroAlunos'])) * 100) + "%";
+
+  // calculo da média de idades
+  data[2]['idadesStudents'].forEach((aluno)=>{
+    console.log(aluno['nascimento'].split("-")[2]);
+  });
+
+  // seta a número de professores registados na escola
+  document.querySelector(".teachers-number").innerText = data[3]['professoresNumber'];
 
 });
