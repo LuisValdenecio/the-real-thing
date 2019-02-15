@@ -7,17 +7,7 @@
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf');
-}
-
-@font-face {
-  font-family: Montserrat-SemiBold;
-  src: url('../fonts/montserrat/Montserrat-SemiBold.ttf');
-}
-
-@font-face {
-  font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+  src: url('https://fonts.googleapis.com/css?family=Montserrat');
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -137,12 +127,12 @@ button:hover {
 /*==================================================================
 [ Title form ]*/
 .contact100-form-title {
-  font-family: Montserrat-Bold;
+  font-family: Arial;
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
-
+  font-weight: bold;
   width: 100%;
   min-height: 100px;
   position: relative;
