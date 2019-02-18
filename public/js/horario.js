@@ -176,126 +176,103 @@ socket.on('allStudents', function(data){
 							},
 							"children":
 								{
-									"tag":"input",
+									"tag":"select",
 									"attr" : {
-										"type" : "text",
-										"placeholder" : "digite o comportamento"
-									}
+										"class" : "form-control"
+									},
+                  "children" : [
+
+                    {
+                      "tag" : "option",
+                      "content" : "Mau"
+                    },
+                    {
+                      "tag" : "option",
+                      "content" : "Medíocre"
+                    },
+                    {
+                      "tag" : "option",
+                      "content" : "Suficiente"
+                    },
+                    {
+                      "tag" : "option",
+                      "content" : "Bom"
+                    },
+                    {
+                      "tag" : "option",
+                      "content" : "Muito bom"
+                    }
+                  ]
 								}
 						},
             {
               "tag":"td",
-              "attr":{"class":"text-center falta_container", "student_cod" : estaTurma[counter]["estudantecod"]},
+              "attr":{"class":"text-center"},
               "children":{
-                "tag":"strong",
-                "content":`${0}`
+                "tag":"input",
+                "attr" : {
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
               }
-              },
-              {
-                "tag":"td",
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"input",
                 "attr" : {
-                  "class":"text-center"
-                },
-                "children":
-                  {
-                    "tag":"div",
-                    "attr" : {
-                      "class" : "modal-btn-holder"
-                    },
-                    "children" : {
-                        "tag" : "a",
-                        "content" : "0",
-                        "attr" : {
-                          "class" : "modal-btn"
-                        }
-                    }
-
-                  }
-              },
-							{
-                "tag":"td",
-                "attr" : {
-                  "class":"text-center"
-                },
-                "children":
-                  {
-                    "tag":"div",
-                    "attr" : {
-                      "class" : "modal-btn-holder"
-                    },
-                    "children" : {
-                        "tag" : "a",
-                        "content" : "0",
-                        "attr" : {
-                          "class" : "modal-btn"
-                        }
-                    }
-
-                  }
-              },
-							{
-                "tag":"td",
-                "attr" : {
-                  "class":"text-center"
-                },
-                "children":
-                  {
-                    "tag":"div",
-                    "attr" : {
-                      "class" : "modal-btn-holder"
-                    },
-                    "children" : {
-                        "tag" : "a",
-                        "content" : "0",
-                        "attr" : {
-                          "class" : "modal-btn"
-                        }
-                    }
-
-                  }
-              },
-							{
-                "tag":"td",
-                "attr" : {
-                  "class":"text-center"
-                },
-                "children":
-                  {
-                    "tag":"div",
-                    "attr" : {
-                      "class" : "modal-btn-holder"
-                    },
-                    "children" : {
-                        "tag" : "a",
-                        "content" : "0",
-                        "attr" : {
-                          "class" : "modal-btn"
-                        }
-                    }
-
-                  }
-              },
-							{
-                "tag":"td",
-                "attr" : {
-                  "class":"text-center"
-                },
-                "children":
-                  {
-                    "tag":"div",
-                    "attr" : {
-                      "class" : "modal-btn-holder"
-                    },
-                    "children" : {
-                        "tag" : "a",
-                        "content" : "0",
-                        "attr" : {
-                          "class" : "modal-btn"
-                        }
-                    }
-
-                  }
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
               }
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"input",
+                "attr" : {
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
+              }
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"input",
+                "attr" : {
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
+              }
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"input",
+                "attr" : {
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
+              }
+            },
+            {
+              "tag":"td",
+              "attr":{"class":"text-center"},
+              "children":{
+                "tag":"input",
+                "attr" : {
+                  "type" : "text",
+                  "style" : "width:50px"
+                }
+              }
+
+            }
+
             ]
 
       }
