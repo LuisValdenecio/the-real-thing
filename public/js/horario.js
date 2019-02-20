@@ -369,7 +369,7 @@ socket.on('allStudents', function(data) {
           "type" : "text",
           "class" : "actual-grade-holder",
           "name" : estaTurma[cadaAluno].estudantecod,
-          "value" : ""
+          "value" : "0"
         }
 
       });
