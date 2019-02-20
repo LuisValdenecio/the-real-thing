@@ -178,7 +178,8 @@ socket.on('allStudents', function(data){
 								{
 									"tag":"select",
 									"attr" : {
-										"class" : "form-control"
+										"class" : "form-control comport_holder",
+                    "data-index" : counter
 									},
                   "children" : [
 
@@ -212,7 +213,8 @@ socket.on('allStudents', function(data){
                 "tag":"input",
                 "attr" : {
                   "type" : "text",
-                  "style" : "width:50px"
+                  "name" : estaTurma[counter].estudantecod,
+                  "class" : "grade-holder"
                 }
               }
             },
@@ -223,7 +225,8 @@ socket.on('allStudents', function(data){
                 "tag":"input",
                 "attr" : {
                   "type" : "text",
-                  "style" : "width:50px"
+                  "name" : estaTurma[counter].estudantecod,
+                  "class" : "grade-holder"
                 }
               }
             },
@@ -234,7 +237,8 @@ socket.on('allStudents', function(data){
                 "tag":"input",
                 "attr" : {
                   "type" : "text",
-                  "style" : "width:50px"
+                  "name" : estaTurma[counter].estudantecod,
+                  "class" : "grade-holder"
                 }
               }
             },
@@ -245,32 +249,10 @@ socket.on('allStudents', function(data){
                 "tag":"input",
                 "attr" : {
                   "type" : "text",
-                  "style" : "width:50px"
+                  "name" : estaTurma[counter].estudantecod,
+                  "class" : "grade-holder"
                 }
               }
-            },
-            {
-              "tag":"td",
-              "attr":{"class":"text-center"},
-              "children":{
-                "tag":"input",
-                "attr" : {
-                  "type" : "text",
-                  "style" : "width:50px"
-                }
-              }
-            },
-            {
-              "tag":"td",
-              "attr":{"class":"text-center"},
-              "children":{
-                "tag":"input",
-                "attr" : {
-                  "type" : "text",
-                  "style" : "width:50px"
-                }
-              }
-
             }
 
             ]
@@ -284,6 +266,151 @@ socket.on('allStudents', function(data){
 });
 
 
+/*///////////////////////////////////////////////////////////////////////
+  Crie o form de faltas com base em alguns dados dos estudantes
+*////////////////////////////////////////////////////////////////////////
+socket.on('allStudents', function(data) {
+
+  var estaTurma = data.filter((aluno)=>{
+    return aluno["turma_id"] == linkURL;
+  });
+
+  // crie o form para as notas dos alunos
+  var FORM_FALTAS = objectToHTML(
+    {
+      "tag" : "form",
+      "attr" : {
+        "method" : "post",
+        "action" : `/turma_${linkURL}_minipautas`,
+        "class" : "formFaults",
+      }
+    }
+  );
+
+  // adicione o form ao corpo do documento HTML
+  document.querySelector("body .container-fluid").appendChild(FORM_FALTAS);
+
+  // popular o form de faltas com dados de _estudantes
+  var INPUT_SUBJECT = objectToHTML({
+
+    "tag" : "input",
+    "attr" : {
+      "type" : "text",
+      "name" : "disciplina",
+      "value" : ""
+    }
+
+  });
+
+  // dados sobre as disciplinas são carregados com alguma demora
+  // porque o socket.io que os processa esta noutro arquivo, então
+  // o event body.onload é usado para esperar pelos dados
+  $(document).ready(function(){
+
+    // find among the first x inputs who is the one marked
+    const INPUTS = document.querySelectorAll(".subjectInputs");
+
+    for (let counter = 0; counter < INPUTS.length; counter++) {
+      INPUTS[counter].onclick = function(event) {
+        onInputClick(event);
+      }
+    }
+
+
+  })
+
+  function onInputClick(event) {
+    INPUT_SUBJECT.setAttribute('value', document.querySelectorAll("label")[Number(event.currentTarget.id.slice(2)) - 1].innerText);
+  }
+
+  // adicione o input de disciplina ao formFaults
+  FORM_FALTAS.appendChild(INPUT_SUBJECT);
+
+  // crie tantos inputs quanto o número de selects para mapeiarem o seu valor
+  for (let cadaAluno = 0; cadaAluno < estaTurma.length; cadaAluno++) {
+
+    // crie um input para cada select
+    var INPUT_MAPPERS = objectToHTML({
+
+      "tag" : "input",
+      "attr" : {
+        "type" : "text",
+        "class" : "selectMapper",
+        "name" : estaTurma[cadaAluno].estudantecod,
+        "value" : "Mau"
+      }
+
+    });
+
+    // insere no form cada input correspondendo a um select
+    FORM_FALTAS.appendChild(INPUT_MAPPERS);
+  }
+
+  // guarde numa variavel a referencia de todos os selects desta tabela
+  // no documento
+  var ALL_SELECTS = document.querySelectorAll(".comport_holder");
+  for (let counter = 0; counter < ALL_SELECTS.length; counter++) {
+    ALL_SELECTS[counter].oninput = function(event) {
+      // mapeia este valor para o correspondente inputmapper
+      setInputMapper(event, ALL_SELECTS[counter].value)
+    }
+  }
+
+  // crie tantos inputs quanto o número de inputs para mapeiarem o seu valor
+  for (let cadaAluno = 0; cadaAluno < estaTurma.length; cadaAluno++) {
+
+    for (let counter = 1; counter <= 4; counter++) {
+
+      // crie um input para cada select
+      var INPUT_GRADE = objectToHTML({
+
+        "tag" : "input",
+        "attr" : {
+          "type" : "text",
+          "class" : "actual-grade-holder",
+          "name" : estaTurma[cadaAluno].estudantecod,
+          "value" : ""
+        }
+
+      });
+
+      // insere no form cada input correspondendo a um select
+      FORM_FALTAS.appendChild(INPUT_GRADE);
+    }
+
+  }
+
+  // registe um evento para cada grade-holder
+  var ALL_GRADES = document.querySelectorAll(".grade-holder");
+  for (let counter = 0; counter < ALL_GRADES.length; counter++){
+
+    // seta o data-index deste elemento e depois registe o evento para ele
+    ALL_GRADES[counter].setAttribute("data-index", counter);
+
+    ALL_GRADES[counter].oninput = function(event) {
+      setInputGrader(event, ALL_GRADES[counter].value);
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// Esta função configura o valor de um select e o mapeia a de um input //////
+  function setInputMapper(event, finalValue) {
+    document.querySelector("form").querySelectorAll(".selectMapper")[event.srcElement.getAttribute("data-index")].setAttribute("value", finalValue);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// Esta função configura o valor do input e faz o mapeamento           /////
+  function setInputGrader(event, finalValue) {
+    document.querySelector("form").querySelectorAll(".actual-grade-holder")[event.srcElement.getAttribute("data-index")].setAttribute("value", finalValue);
+  }
+
+
+  // sumbeter o form das faltas
+  document.querySelector(".marcar").onclick = function() {
+    document.querySelector("form").submit();
+  }
+
+});
 
 
 socket.on('classesInfo', function(data){

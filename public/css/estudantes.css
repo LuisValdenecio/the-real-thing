@@ -97,3 +97,12 @@ body::-webkit-scrollbar {
   -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
   -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
 }
+
+.grade-holder {
+  width: 40px;
+  border: none;
+  text-align: center;
+  color: #157e81;
+  font-weight: bold;
+  border-bottom: 2px solid #157e81;
+}
