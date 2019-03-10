@@ -33,6 +33,8 @@ socket.on('allStudents', function(data){
     return aluno["turma_id"] == linkURL;
   });
 
+  console.log(estaTurma);
+
   if (estaTurma.length) {
 
     // número de estudantes registados para esta turma
@@ -99,7 +101,7 @@ socket.on('allStudents', function(data){
             },
             {
               "tag":"td",
-              "attr":{"class":"text-center"},
+              "attr":{"class":"text-center actual-number-holder"},
               "children":{
                 "tag":"strong",
                 "content":`${counter+1}`
@@ -197,13 +199,26 @@ for (let counter = 0; counter < 4; counter++) {
     document.querySelector("body").children[0].appendChild(document.querySelector("body").children[1]);
 }
 
-
-// modal para estudantes do ensino primário
+// modal para estudantes do ensino primario
 document.querySelector("body").appendChild(objectToHTML(
 
   {
 
-    tag:"div","attr":{"class":"container-contact100","style":"display: none;"},"children":{"tag":"div","attr":{"class":"wrap-contact100 row"},"children":[{"tag":"button","attr":{"class":"btn-hide-contact100"},"children":{"tag":"i","attr":{"class":"icon-close"}}},{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(https://defendernetwork.com/wp-content/uploads/2017/07/GroupOfStudents-e1359494542702.jpg);"},"children":{"tag":"span","content":"Relatório académico"}},{"tag":"div","attr":{"class":"swiper-container testimonial-slider"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-12 col-md-6 col-lg-12"},"children":{"tag":"div","attr":{"class":"team-member"},"children":{"tag":"img","attr":{"src":"","alt":"fotografia do Estudante","class":"student_photo"}}}}},{"tag":"div","attr":{"class":"row name-holder"},"children":{"tag":"div","attr":{"class":"col-lg-6 offset-lg-3"},"children":{"tag":"span","content":""}}},{"tag":"div","attr":{"class":"swiper-wrapper"},"children":[{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"icon-graph bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                    Desempenho ao nível de notas\n                                                ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-hand-stop-o bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                Grau de participação nas Aulas\n                                            ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-calendar-times-o bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                    Situação das Faltas\n                                                ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                                Action\n                                                            ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                                Another action\n                                                            ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                                Something else here\n                                                            ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}},{"tag":"div","attr":{"class":"swiper-slide"},"children":[{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"icon-graph bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                    Avaliação Disciplinar\n                                                ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-hand-stop-o bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                    Avaliação Global\n                                                ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"card"},"children":{"tag":"div","attr":{"class":"card-body p-0 d-flex align-items-center"},"children":[{"tag":"i","attr":{"class":"fa fa-calendar-times-o bg-danger p-4 px-5 font-2xl mr-3"}},{"tag":"div","children":{"tag":"div","content":"\n                                                   Em relação ao trimestre anterior\n                                                ","attr":{"class":"text-muted text-uppercase font-weight-bold small","style":"font-size:15px"}}}]}}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                        Action\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        Another action\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        Something else here\n                                                    ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-layers"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Another action","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"Something else here","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]},{"tag":"div","content":"\n\n                    ","attr":{"class":"swiper-slide"}}]}]}]}]}
+    tag:"div","attr":{"class":"container-contact100","id":"ens-pri","style":"display: none;"},"children":{"tag":"div","attr":{"class":"wrap-contact100 row"},"children":[{"tag":"button","attr":{"class":"btn-hide-contact100"},"children":{"tag":"i","attr":{"class":"icon-close"}}},{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(public/img/1.GIF);"},"children":{"tag":"span","content":"Relatório académico"}},{"tag":"div","attr":{"class":"swiper-container testimonial-slider"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-12 col-md-6 col-lg-12"},"children":{"tag":"div","attr":{"class":"team-member"},"children":{"tag":"img","attr":{"src":"","alt":"fotografia do Estudante","class":"student_photo"}}}}},{"tag":"div","attr":{"class":"row name-holder"},"children":{"tag":"div","attr":{"class":"col-lg-6 offset-lg-3"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-1","style":"background:#ffffff; position: absolute; right:550px; top: 4px ;border-radius: 50%; height:40px;width:40px"},"children":{"tag":"span","content":"20","attr":{"style":"position:absolute;top:10%;left:20%","class":"number-holder"}}},{"tag":"div","attr":{"class":"col-lg-11","style":"position:relative; left:50px"},"children":{"tag":"span","content":"Luís Valenêncio Tchitue Manuel Carlos Afonso","attr":{"class":"name-hold"}}}]}}},{"tag":"div","attr":{"class":"swiper-wrapper"},"children":[{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-note"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Desempenho ao nível de notas"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-trophy"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Actividades Extracurriculares"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-calendar"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Situação das faltas"}}]}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                        Iº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}},{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-ban"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Avaliação disciplinar"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-pencil"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Resolução de Tarefas"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-globe"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Avaliação global"}}]}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                        Iº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}}]}]},{"tag":"div","attr":{"class":"row","style":"position:relative;top:-60px; left:-60px ;margin-top:25px;margin-left:490px"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-0"},"children":{"tag":"i","attr":{"class":"icon-arrow-left arrow-dirc-icons-1","aria-hidden":"true"}}}},{"tag":"div","attr":{"class":"col-lg-4","style":"position:relative;left:10px"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-1"},"children":{"tag":"i","attr":{"class":"icon-layers arrow-dirc-icons-2","aria-hidden":"true"}}}},{"tag":"div","attr":{"class":"col-lg-4","style":"position:relative;left:20px"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-2"},"children":{"tag":"i","attr":{"class":"icon-arrow-right arrow-dirc-icons-3","aria-hidden":"true"}}}}]}]}
+
+  }
+
+
+));
+
+
+// modal para estudantes do ensino técnico
+document.querySelector("body").appendChild(objectToHTML(
+
+  {
+
+    tag:"div","attr":{"class":"container-contact100","id":"ens-tec","style":"display: none;"},"children":{"tag":"div","attr":{"class":"wrap-contact100 row"},"children":[{"tag":"button","attr":{"class":"btn-hide-contact100"},"children":{"tag":"i","attr":{"class":"icon-close"}}},{"tag":"div","attr":{"class":"contact100-form-title","style":"background-image: url(public/img/1.GIF);"},"children":{"tag":"span","content":"Relatório académico"}},{"tag":"div","attr":{"class":"swiper-container testimonial-slider"},"children":[{"tag":"div","attr":{"class":"row"},"children":{"tag":"div","attr":{"class":"col-12 col-md-6 col-lg-12"},"children":{"tag":"div","attr":{"class":"team-member"},"children":{"tag":"img","attr":{"src":"","alt":"fotografia do Estudante","class":"student_photo"}}}}},{"tag":"div","attr":{"class":"row name-holder"},"children":{"tag":"div","attr":{"class":"col-lg-6 offset-lg-3"},"children":{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-1","style":"background:#ffffff; position: absolute; right:550px; top: 4px ;border-radius: 50%; height:40px;width:40px"},"children":{"tag":"span","content":"20","attr":{"style":"position:absolute;top:10%;left:20%","class":"number-holder"}}},{"tag":"div","attr":{"class":"col-lg-11","style":"position:relative; left:50px"},"children":{"tag":"span","content":"Luís Valenêncio Tchitue Manuel Carlos Afonso","attr":{"class":"name-hold"}}}]}}},{"tag":"div","attr":{"class":"swiper-wrapper"},"children":[{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-note"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Desempenho ao nível de notas"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-pie-chart"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Grau de participação nas aulas"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-calendar"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Situação das faltas"}}]}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                                Iº Trimestre\n                                                            ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                                IIº Trimestre\n                                                            ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                                IIIº Trimestre\n                                                            ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}},{"tag":"div","attr":{"class":"swiper-slide"},"children":{"tag":"div","attr":{"class":"container"},"children":[{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-ban"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Avaliação disciplinar"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-globe"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Avaliação global"}}]}},{"tag":"div","attr":{"class":"col-6 col-lg-4"},"children":{"tag":"div","attr":{"class":"row","style":"padding:14px"},"children":[{"tag":"div","attr":{"class":"col-lg-2 rank-icon-class"},"children":{"tag":"span","attr":{"class":"icon-graph"}}},{"tag":"div","attr":{"class":"col-lg-10 rank-holder"},"children":{"tag":"span","content":"Em relação ao trimestre anterior"}}]}}]},{"tag":"div","attr":{"class":"row"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart2","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"\n                                                        Iº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"\n                                                        IIIº Trimestre\n                                                    ","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart3","height":"70"}}}]}},{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"div","attr":{"class":"card text-white bg-danger","style":"border: none"},"children":[{"tag":"div","attr":{"class":"card-body pb-0"},"children":[{"tag":"div","attr":{"class":"btn-group float-right"},"children":[{"tag":"button","attr":{"class":"btn btn-transparent dropdown-toggle p-0","type":"button","data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"},"children":{"tag":"i","attr":{"class":"icon-speedometer"}}},{"tag":"div","attr":{"class":"dropdown-menu dropdown-menu-right"},"children":[{"tag":"a","content":"Iº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIº Trimestre","attr":{"class":"dropdown-item","href":"#"}},{"tag":"a","content":"IIIº Trimestre","attr":{"class":"dropdown-item","href":"#"}}]}]},{"tag":"div","content":"9","attr":{"class":"text-value"}},{"tag":"div","content":"Total de Faltas"}]},{"tag":"div","attr":{"class":"chart-wrapper mt-3 mx-3","style":"height:70px;"},"children":{"tag":"canvas","attr":{"class":"chart","id":"chart4","height":"70"}}}]}}]}]}}]}]},{"tag":"div","attr":{"class":"row","style":"position:relative;top:-60px; left:-60px ;margin-top:25px;margin-left:490px"},"children":[{"tag":"div","attr":{"class":"col-lg-4"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-0"},"children":{"tag":"i","attr":{"class":"icon-arrow-left arrow-dirc-icons-1","aria-hidden":"true"}}}},{"tag":"div","attr":{"class":"col-lg-4","style":"position:relative;left:10px"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-1"},"children":{"tag":"i","attr":{"class":"icon-layers arrow-dirc-icons-2","aria-hidden":"true"}}}},{"tag":"div","attr":{"class":"col-lg-4","style":"position:relative;left:20px"},"children":{"tag":"button","attr":{"class":"contact100-btn-show btn-show-2"},"children":{"tag":"i","attr":{"class":"icon-arrow-right arrow-dirc-icons-3","aria-hidden":"true"}}}}]}]}
+
 
 
 
@@ -247,18 +262,218 @@ socket.on('dadosFaltas', function(data){
 
       $(document).ready(function(){
 
+        var turma_classe = document.querySelectorAll(".h4")[0].innerText;
+        var ensino_tecnico = false, ensino_primario = false;
+
+        if (turma_classe.slice(0,2) == '5ª' || turma_classe.slice(0,2) == '6ª' || turma_classe.slice(0,2) == '7ª'|| turma_classe.slice(0,2) == '8ª' || turma_classe.slice(0,2) == '9ª' || turma_classe.slice(0,3) == '10ª' || turma_classe.slice(0,3) == '11ª' || turma_classe.slice(0,3) == '12ª' || turma_classe.slice(0,3) == '13ª') {
+
+          ensino_tecnico = true;
+
+            $('.modal-btn').on('click', function () {
+                $('#ens-tec').fadeIn(300);
+
+                // Testimonial Slider
+                var swiper = new Swiper('.testimonial-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    loop: true,
+                    //effect: 'fade',
+                    speed: 800,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    }
+                });
+
+            });
+
+
+        } else  {
+
+          ensino_primario = true;
+
+            $('.modal-btn').on('click', function () {
+                $('#ens-pri').fadeIn(300);
+
+                // Testimonial Slider
+                var swiper = new Swiper('.testimonial-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    loop: true,
+                    //effect: 'fade',
+                    speed: 800,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    }
+                });
+
+            });
+
+        }
+
         document.querySelector(".table").querySelector("tbody").onclick = function(event) {
 
-          $('.container-contact100').fadeIn(300);
+          //$('.container-contact100').fadeIn(300);
+          document.querySelector('.modal-btn').click();
+
+          var clickCount = 1;
+
+          if (ensino_primario) {
+
+              document.querySelector(".student_photo").src = event.target.parentElement.parentElement.parentElement.querySelector("img").src;
+
+              document.querySelectorAll(".name-holder span")[1].innerText = event.target.parentElement.parentElement.parentElement.querySelector(".student_name_holder").innerText;
+
+              document.querySelector(".number-holder").innerText = event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText + "";
+              //actual-number-holder
+
+              var thisStudentCode = event.target.parentElement.parentElement.parentElement.querySelector(".falta_container").getAttribute("student_cod");
+
+              // align the Number
+              if (event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText < 10) {
+                document.querySelector(".number-holder").style.left = "35%"
+              } else {
+                document.querySelector(".number-holder").style.left = "20%"
+              }
+
+          } else if (ensino_tecnico) {
+
+              document.querySelectorAll(".student_photo")[1].src = event.target.parentElement.parentElement.parentElement.querySelector("img").src;
+
+              document.querySelectorAll(".name-holder span")[3].innerText = event.target.parentElement.parentElement.parentElement.querySelector(".student_name_holder").innerText;
+
+              document.querySelectorAll(".number-holder")[1].innerText = event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText + "";
+              //actual-number-holder
+
+              ///////////////////////////////////////////////////////////////////////////////////*
+              /* Representação dos dados dos estudantes atravéz de gráficos                     */
+              //////////////////////////////////////////////////////////////////////////////////*/
+              var chartOne = new Chart(document.querySelectorAll("#chart2")[5], {
+                type: 'bar',
+                data: {
+                  labels: ['January', 'February', 'March', 'April'],
+                  datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgba(255,255,255,.2)',
+                    borderColor: 'rgba(255,255,255,.55)',
+                    data: [78, 81, 80, 85]
+                  }]
+                },
+                options: {
+                  maintainAspectRatio: false,
+                  legend: {
+                    display: false
+                  },
+                  scales: {
+                    xAxes: [{
+                      display: false,
+                      barPercentage: 0.6
+                    }],
+                    yAxes: [{
+                      display: false
+                    }]
+                  }
+                }
+              }); // eslint-disable-next-line no-unused-vars
+
+
+              var thisStudentCode = event.target.parentElement.parentElement.parentElement.querySelector(".falta_container").getAttribute("student_cod");
+
+              // align the numbers
+              alignNumberHolder();
+
+              // Right arrow for the next student
+              document.querySelectorAll(".arrow-dirc-icons-3")[1].onclick = function() {
+                console.log(clickCount);
+                feedStudentData(event, ((event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText - 1) + clickCount));
+
+                if (clickCount == (event.target.parentElement.parentElement.parentElement.parentElement.children.length - 1)) {
+                  ;
+                } else {
+                  clickCount++;
+                }
+
+
+              }
+
+              // left arrow for previous student
+              document.querySelectorAll(".arrow-dirc-icons-1")[1].onclick = function() {
+                console.log(clickCount);
+                feedStudentData(event, ((event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText - 1) + clickCount));
+
+
+
+                clickCount--;
+              }
+
+          }
+
+          function alignNumberHolder() {
+            // align the Number
+            if (event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText < 10) {
+              document.querySelectorAll(".number-holder")[1].style.left = "35%";
+            } else {
+              document.querySelectorAll(".number-holder")[1].style.left = "20%";
+            }
+          }
+
+          //////////////////////////////////////////////////////////////////////////
+          // Esta função é quem da informações do estudante ao modalWindow       //
+          function feedStudentData(event, index) {
+
+            // align the numbers
+            if (index >= 9) document.querySelectorAll(".number-holder")[1].style.left = "25%";
+            if (index < 9) document.querySelectorAll(".number-holder")[1].style.left = "35%"
+
+            document.querySelectorAll(".student_photo")[1].src = event.target.parentElement.parentElement.parentElement.parentElement.children[index].querySelector("img").src;
+            document.querySelectorAll(".name-holder span")[3].innerText = event.target.parentElement.parentElement.parentElement.parentElement.children[index].querySelector(".student_name_holder").innerText;
+            document.querySelectorAll(".number-holder")[1].innerText = event.target.parentElement.parentElement.parentElement.parentElement.children[index].querySelector(".actual-number-holder").innerText + "";
+
+            ///////////////////////////////////////////////////////////////////////////////////*
+            /* Representação dos dados dos estudantes atravéz de gráficos                     */
+            //////////////////////////////////////////////////////////////////////////////////*/
+            var chartOne = new Chart(document.querySelectorAll("#chart2")[5], {
+              type: 'bar',
+              data: {
+                labels: ['Matemática', 'Economia', 'DLC', 'AEF'],
+                datasets: [{
+                  label: 'My First dataset',
+                  backgroundColor: 'rgba(255,255,255,.2)',
+                  borderColor: 'rgba(255,255,255,.55)',
+                  data: [78, 81, 80, 85]
+                }]
+              },
+              options: {
+                maintainAspectRatio: false,
+                legend: {
+                  display: false
+                },
+                scales: {
+                  xAxes: [{
+                    display: false,
+                    barPercentage: 0.6
+                  }],
+                  yAxes: [{
+                    display: false
+                  }]
+                }
+              }
+            }); // eslint-disable-next-line no-unused-vars
+
+
+
+          }
 
           //////////////////////////////////////////////////////////////////////////
           ///// seta os elementos deste modal para um estudante em particular //////
           //////////////////////////////////////////////////////////////////////////
-          document.querySelector(".student_photo").src = event.target.parentElement.parentElement.parentElement.querySelector("img").src;
-          document.querySelector(".name-holder span").innerText = event.target.parentElement.parentElement.parentElement.querySelector(".student_name_holder").innerText;
+          var allFaults = data.filter((student)=> student['turma_id'] == linkURL);
+          var thisStudent = allFaults.filter((student)=> student['estudantecod'] == thisStudentCode);
 
-          var thisStudentCode = event.target.parentElement.parentElement.parentElement.querySelector(".falta_container").getAttribute("student_cod");
-
+          // mostra os estudantes desta classe
+          console.log(thisStudent);
+          console.log(data);
 
           // Testimonial Slider
           var swiper = new Swiper('.testimonial-slider', {
@@ -319,7 +534,7 @@ socket.on('dadosFaltas', function(data){
   } else {
 
     // filtra as faltas para somente os estudantes desta turma
-    var thisClass = data.filter((each)=>{
+    var thisClass = data[0].filter((each)=>{
         return each["turma_id"] == windows.location.pathname.split("_")[1];
     });
 

@@ -241,18 +241,6 @@ socket.on('allStudents', function(data){
                   "class" : "grade-holder"
                 }
               }
-            },
-            {
-              "tag":"td",
-              "attr":{"class":"text-center"},
-              "children":{
-                "tag":"input",
-                "attr" : {
-                  "type" : "text",
-                  "name" : estaTurma[counter].estudantecod,
-                  "class" : "grade-holder"
-                }
-              }
             }
 
             ]
@@ -359,7 +347,7 @@ socket.on('allStudents', function(data) {
   // crie tantos inputs quanto o número de inputs para mapeiarem o seu valor
   for (let cadaAluno = 0; cadaAluno < estaTurma.length; cadaAluno++) {
 
-    for (let counter = 1; counter <= 4; counter++) {
+    for (let counter = 1; counter <= 3; counter++) {
 
       // crie um input para cada select
       var INPUT_GRADE = objectToHTML({
