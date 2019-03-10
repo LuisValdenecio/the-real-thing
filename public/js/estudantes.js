@@ -377,15 +377,11 @@ socket.on('dadosFaltas', function(data){
                 }
               }); // eslint-disable-next-line no-unused-vars
 
-
-              var thisStudentCode = event.target.parentElement.parentElement.parentElement.querySelector(".falta_container").getAttribute("student_cod");
-
               // align the numbers
               alignNumberHolder();
 
               // Right arrow for the next student
               document.querySelectorAll(".arrow-dirc-icons-3")[1].onclick = function() {
-                console.log(clickCount);
                 feedStudentData(event, ((event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText - 1) + clickCount));
 
                 if (clickCount == (event.target.parentElement.parentElement.parentElement.parentElement.children.length - 1)) {
@@ -399,12 +395,8 @@ socket.on('dadosFaltas', function(data){
 
               // left arrow for previous student
               document.querySelectorAll(".arrow-dirc-icons-1")[1].onclick = function() {
-                console.log(clickCount);
-                feedStudentData(event, ((event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText - 1) + clickCount));
-
-
-
                 clickCount--;
+                feedStudentData(event, ((event.target.parentElement.parentElement.parentElement.querySelector(".actual-number-holder").innerText - 1) + clickCount));
               }
 
           }
@@ -467,13 +459,15 @@ socket.on('dadosFaltas', function(data){
 
           //////////////////////////////////////////////////////////////////////////
           ///// seta os elementos deste modal para um estudante em particular //////
-          //////////////////////////////////////////////////////////////////////////
-          var allFaults = data.filter((student)=> student['turma_id'] == linkURL);
+          /////////////////////////////////////////////////////////////////////////
+
+          var thisStudentCode = event.target.parentElement.parentElement.parentElement.querySelector(".falta_container").getAttribute("student_cod");
+
+          var allFaults = data[0].filter((student)=> student['turma_id'] == linkURL);
           var thisStudent = allFaults.filter((student)=> student['estudantecod'] == thisStudentCode);
 
           // mostra os estudantes desta classe
           console.log(thisStudent);
-          console.log(data);
 
           // Testimonial Slider
           var swiper = new Swiper('.testimonial-slider', {
@@ -537,8 +531,6 @@ socket.on('dadosFaltas', function(data){
     var thisClass = data[0].filter((each)=>{
         return each["turma_id"] == windows.location.pathname.split("_")[1];
     });
-
-    console.log(thisClass);
 
     // armazena os dados de todos os estudantes da turma nesta variavel
     var ALL_STUDENTS = document.querySelectorAll(".falta_container");
